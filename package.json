@@ -1,0 +1,15 @@
+{
+  "name": "sistema-de-vot-electronic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan Jose Gomez Villegas",
+  "license": "ISC",
+  "dependencies": {
+    "bulma": "^0.9.3",
+    "jquery": "^3.6.0"
+  }
+}
