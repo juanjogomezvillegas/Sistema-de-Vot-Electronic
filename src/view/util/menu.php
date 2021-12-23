@@ -1,4 +1,4 @@
-<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="index.php">
       <img class="image 64x64" src="img/logolight.png">
@@ -31,7 +31,7 @@
               <img class="image is-rounded" src="<?= $dadesUsuarilogat["icona"]; ?>" alt="icona">
             </a>
 
-            <div class="navbar-dropdown has-background-grey-light is-right">
+            <div class="navbar-dropdown	is-right">
               <a class="navbar-item" href="index.php?r=elmeuperfil">
                 <span class="icon mr-1"><i class="fas fa-user"></i></span> El Meu Perfil
               </a>

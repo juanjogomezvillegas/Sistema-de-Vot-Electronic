@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ca" class="has-background-grey-lighter">
+<html lang="ca">
     <head>
         <?php include "../src/view/util/head.php"; ?>
         <title>Sistema de Vot Electronic</title>
@@ -10,7 +10,7 @@
         <div class="is-full">
             <div class="columns is-multiline is-variable is-centered">
                 <?php foreach ($llistatCandidats as $actual) { ?>
-                    <div class="card column is-one-quarter m-2 has-background-grey-light">
+                    <div class="card column is-one-quarter m-2">
                     <a href="index.php?r=votar&id=<?= $actual["id"]; ?>">
                         <header class="card-header">
                             <figure class="image is-48x48">

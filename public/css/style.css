@@ -1,6 +1,40 @@
+html, body {
+    background-color: hsl(0, 0%, 86%) !important;
+}
+.fonsDark {
+    background-color: hsl(0, 0%, 14%) !important;
+}
 div.divVotar {
     margin-top: 10em;
 }
-.iconaAdmin {
-    font-size: 4em;
+nav.navbar, .navbar-dropdown {
+    background-color: hsl(0, 0%, 21%) !important;
+}
+nav.navbar a, .navbar-dropdown a {
+    color: hsl(0, 0%, 96%) !important;
+    transition: background-color 0.5s, color 0.5s;
+}
+nav.navbar a:hover, .navbar-dropdown a:hover {
+    background-color: hsl(0, 0%, 96%) !important;
+    color: hsl(0, 0%, 21%) !important;
+    transition: background-color 0.5s, color 0.5s;
+}
+div.card {
+    border-radius: 7px !important;
+    box-shadow: 0 0 10px 3px hsl(0, 0%, 7%) !important;
+    background-color: hsl(0, 0%, 48%) !important;
+    color: hsl(0, 0%, 96%) !important;
+    transition: background-color 0.5s;
+}
+div.card .card-header-title {
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3) !important;
+    color: hsl(0, 0%, 96%) !important;
+    transition: background-color 0.5s;
+}
+div.card:hover {
+    background-color: hsl(0, 0%, 29%) !important;
+    transition: background-color 0.5s;
+}
+.formlogin {
+    box-shadow: 0 0 20px 10px hsl(0, 0%, 14%) !important;
 }

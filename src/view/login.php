@@ -10,7 +10,7 @@
                 <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-                    <form action="index.php?r=dologin" method="POST" class="box">
+                    <form action="index.php?r=dologin" method="POST" class="box formlogin">
                         <div class="field">
                             <a href="index.php"><img class="image" src="img/logodark.png" alt="logodark"></a>
                         </div>

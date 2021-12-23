@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ca" class="has-background-grey-lighter">
+<html lang="ca">
     <head>
         <?php include "../src/view/util/head.php"; ?>
         <title>Sistema de Vot Electronic</title>
