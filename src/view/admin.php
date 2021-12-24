@@ -7,35 +7,33 @@
     <body class="fonsDark">
         <?php include "../src/view/util/menuadmin.php"; ?>
         <br>
+        <div class="field is-flex is-justify-content-start">
+            <p class="control has-icons-left">
+                <input class="input itemAdmin is-size-6" type="text" id="tempsRefresc" value="10">
+                <span class="icon is-small is-left is-size-6">
+                <i class="fas fa-sync"></i>
+                </span>
+            </p>
+        </div>
+        <br>
         <div class="is-full mt-6">
             <div class="columns is-variable">
-                <div class="column m-4 is-flex is-justify-content-center is-align-items-center">
-                    <p class="mr-6"><span class="icon"><i class="fas fa-users is-size-1"></i></span></p>
-                    <p class="mr-5 is-size-2">Usuaris</p>
-                    <p class="is-size-2">0</p>
+                <div id="itemAdminVots" class="itemAdmin column m-4 is-flex is-justify-content-center is-align-items-center">
+                    <p class="mr-5 is-variable"><span class="icon"><i class="fas fa-poll is-size-1"></i></span></p>
+                    <p class="mr-2 is-size-2 is-variable">Vots</p>
+                    <p id="itemAdminVotsNum" class="is-size-2">0</p>
                 </div>
-                <div class="column m-4 is-flex is-justify-content-center is-align-items-center">
-                    <p class="mr-6"><span class="icon"><i class="fas fa-person-booth is-size-1"></i></span></p>
-                    <p class="mr-5 is-size-2">Candidats</p>
-                    <p class="is-size-2">0</p>
+                <div id="itemAdminUsuari" class="itemAdmin column m-4 is-flex is-justify-content-center is-align-items-center">
+                    <p class="mr-5 is-variable"><span class="icon"><i class="fas fa-users is-size-1"></i></span></p>
+                    <p class="mr-2 is-size-2 is-variable">Usuaris</p>
+                    <p id="itemAdminUsuariNum" class="is-size-2">0</p>
+                </div>
+                <div id="itemAdminCandidat" class="itemAdmin column m-4 is-flex is-justify-content-center is-align-items-center">
+                    <p class="mr-5 is-variable"><span class="icon"><i class="fas fa-person-booth is-size-1"></i></span></p>
+                    <p class="mr-2 is-size-2 is-variable">Candidats</p>
+                    <p id="itemAdminCandidatNum" class="is-size-2">0</p>
                 </div>
             </div>
         </div>
-        <!-- <div class="level mt-6">
-            <div class="level-item has-text-centered has-background-light m-6 p-3">
-                <div class="is-flex is-align-items-center">
-                    <p class="heading mr-6"><span class="icon"><i class="fas fa-users iconaAdmin"></i></span></p>
-                    <p class="heading mr-6 subtitle is-3">Usuaris</p>
-                    <p class="subtitle is-2">0</p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered has-background-light m-6 p-3">
-                <div class="is-flex is-align-items-center">
-                    <p class="mr-6"><span class="icon"><i class="fas fa-person-booth iconaAdmin"></i></span></p>
-                    <p class="heading mr-6 subtitle is-3">Candidats</p>
-                    <p class="subtitle is-2">0</p>
-                </div>
-            </div>
-        </div> -->
     </body>
 </html>

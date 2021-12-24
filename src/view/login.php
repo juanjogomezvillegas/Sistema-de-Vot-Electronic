@@ -5,7 +5,7 @@
         <title>Inicia Sessió | Sistema de Vot Electronic</title>
     </head>
     <body>
-        <section class="hero is-dark is-fullheight">
+        <section class="hero is-link is-fullheight">
             <div class="hero-body">
                 <div class="container">
                 <div class="columns is-centered">
@@ -33,7 +33,7 @@
                         </div>
                         </div>
                         <div class="field">
-                        <button class="button is-black is-large is-fullwidth">
+                        <button class="button is-link is-large is-fullwidth">
                             Inicia Sessió
                         </button>
                         </div>

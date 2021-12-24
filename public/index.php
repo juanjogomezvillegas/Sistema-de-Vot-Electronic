@@ -5,6 +5,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 /*Inclou el fitxer config.php*/
 include "../src/config.php";
 /*Inclou els controladors*/
+include "../src/controller/ajaxServer.php";
 include "../src/controller/portada.php";
 include "../src/controller/votar.php";
 include "../src/controller/login.php";
@@ -17,6 +18,10 @@ include "../src/middleware/middleLogat.php";
 
 $contenidor = new \Emeset\Contenidor($config, $rols, $options);
 $app = new \Emeset\Emeset($contenidor);
+
+$app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat"]);
+$app->ruta("countCandidats", "ctrlCountCandidats", ["middleCentral", "middleLogat"]);
+$app->ruta("countVots", "ctrlCountVots", ["middleCentral", "middleLogat"]);
 
 $app->ruta("", "ctrlPortada", ["middleCentral"]);
 $app->ruta("votar", "ctrlVotar", ["middleCentral"]);

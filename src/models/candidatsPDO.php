@@ -23,6 +23,17 @@ class CandidatsPDO extends ModelPDO
         return $total;
     }
 
+    public function countVots()
+    {
+        $query = "select sum(vots) total from candidat;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
+        
+        $total = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        return $total;
+    }
+
     public function get($id)
     {
         $query = "select * from candidat where id = :id;";

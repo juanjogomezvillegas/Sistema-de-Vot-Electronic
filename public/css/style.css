@@ -1,40 +1,69 @@
+/* Fons */
+
 html, body {
-    background-color: hsl(0, 0%, 86%) !important;
+    background-color: hsl(219, 70%, 96%) !important;
 }
 .fonsDark {
-    background-color: hsl(0, 0%, 14%) !important;
+    background-color: hsl(0, 0%, 7%) !important;
 }
-div.divVotar {
-    margin-top: 10em;
-}
+
+/* Navbar */
+
 nav.navbar, .navbar-dropdown {
-    background-color: hsl(0, 0%, 21%) !important;
+    box-shadow: 0 0 5px 1px hsl(0, 0%, 7%) !important;
+    background-color: hsl(217, 71%, 45%) !important;
+}
+div.navbar-menu {
+    background-color: hsl(217, 71%, 45%) !important;
 }
 nav.navbar a, .navbar-dropdown a {
     color: hsl(0, 0%, 96%) !important;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.5s;
 }
 nav.navbar a:hover, .navbar-dropdown a:hover {
-    background-color: hsl(0, 0%, 96%) !important;
-    color: hsl(0, 0%, 21%) !important;
-    transition: background-color 0.5s, color 0.5s;
+    background-color: hsl(217, 71%, 53%) !important;
+    transition: background-color 0.5s;
+}
+
+/* Vista de l'Usuari */
+
+div.divVotar {
+    margin-top: 10em;
 }
 div.card {
     border-radius: 7px !important;
-    box-shadow: 0 0 10px 3px hsl(0, 0%, 7%) !important;
-    background-color: hsl(0, 0%, 48%) !important;
-    color: hsl(0, 0%, 96%) !important;
+    box-shadow: 0 0 5px 1px hsl(0, 0%, 7%) !important;
+    background-color: hsl(204, 86%, 53%) !important;
+    color: hsl(219, 70%, 96%) !important;
     transition: background-color 0.5s;
 }
 div.card .card-header-title {
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3) !important;
-    color: hsl(0, 0%, 96%) !important;
+    color: hsl(219, 70%, 96%) !important;
     transition: background-color 0.5s;
 }
 div.card:hover {
-    background-color: hsl(0, 0%, 29%) !important;
+    background-color: hsl(217, 71%, 53%) !important;
     transition: background-color 0.5s;
 }
+
+/* Panell d'Administració */
+
+.itemAdmin {
+    border: 1px solid #000 !important;
+    border-radius: 10px !important;
+    background-color:  hsl(0, 0%, 21%) !important;
+    color: hsl(219, 70%, 96%) !important;
+    transition: background-color 1s;
+}
+.itemAdmin:hover {
+    background-color: hsl(0, 0%, 29%) !important;
+    transition: background-color 1s;
+}
+
+/* Pantalla de Login */
+
 .formlogin {
-    box-shadow: 0 0 20px 10px hsl(0, 0%, 14%) !important;
+    background-color: hsl(219, 70%, 96%) !important;
+    box-shadow: 0 0 20px 3px hsl(0, 0%, 14%) !important;
 }
