@@ -1,14 +1,20 @@
 let numUsuaris;
 let numCandidats;
 let numVots;
+let tempsRefresc;
 
 $(document).ready(function() {
-    const countUsuaris = $("#itemAdminUsuariNum");
-    const countCandidat = $("#itemAdminCandidatNum");
-    const countVots = $("#itemAdminVotsNum");
+    tempsRefresc = $("#tempsRefresc").val() * 1000;
 
-    obtenirCount(countUsuaris, countCandidat, countVots);
+    refresc();
+    panell = setInterval(refresc, tempsRefresc);
 
+    $("#tempsRefresc").on("change", function() {
+        tempsRefresc = $("#tempsRefresc").val() * 1000;
+
+        clearInterval(panell);
+        panell = setInterval(refresc, tempsRefresc);
+    });
     $("#itemAdminUsuari").click(function() {
         window.location.assign("index.php?r=llistarUsuaris");
     });
@@ -19,6 +25,14 @@ $(document).ready(function() {
         window.location.assign("index.php?r=resultats");
     });
 });
+
+function refresc() {
+    const countUsuaris = $("#itemAdminUsuariNum");
+    const countCandidat = $("#itemAdminCandidatNum");
+    const countVots = $("#itemAdminVotsNum");
+
+    obtenirCount(countUsuaris, countCandidat, countVots);
+};
 
 function obtenirCount(countUsuaris, countCandidat, countVots) {
     $.ajax({

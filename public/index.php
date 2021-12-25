@@ -12,6 +12,9 @@ include "../src/controller/login.php";
 include "../src/controller/dologin.php";
 include "../src/controller/logout.php";
 include "../src/controller/admin.php";
+include "../src/controller/resultats.php";
+include "../src/controller/llistarUsuaris.php";
+include "../src/controller/llistarCandidats.php";
 /*Inclou els middleware*/
 include "../src/middleware/middleCentral.php";
 include "../src/middleware/middleLogat.php";
@@ -29,6 +32,9 @@ $app->ruta("login", "ctrlLogin", ["middleCentral"]);
 $app->ruta("dologin", "ctrlDologin", ["middleCentral"]);
 $app->ruta("logout", "ctrlLogout", ["middleCentral", "middleLogat"]);
 $app->ruta("admin", "ctrlAdmin", ["middleCentral", "middleLogat"]);
+$app->ruta("resultats", "ctrlResultats", ["middleCentral", "middleLogat"]);
+$app->ruta("llistarUsuaris", "ctrlLlistarUsuaris", ["middleCentral", "middleLogat"]);
+$app->ruta("llistarCandidats", "ctrlLlistarCandidats", ["middleCentral", "middleLogat"]);
 
 $app->executa();
 

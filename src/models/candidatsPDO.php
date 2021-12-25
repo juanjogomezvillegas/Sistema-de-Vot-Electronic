@@ -16,6 +16,21 @@ class CandidatsPDO extends ModelPDO
         return $registres;
     }
 
+    public function resultats()
+    {
+        $query = "select c.*, round((c.vots / (select sum(vots) from candidat)) * :numEscons) as escons
+        from candidat c order by c.vots desc;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':numEscons' => 350]);
+ 
+        $registres = array();
+        while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $registres[$registre["id"]] = $registre;
+        }
+ 
+        return $registres;
+    }
+
     public function countRegistres()
     {
         $total = parent::countRegistresModel("candidat");

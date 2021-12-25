@@ -17,6 +17,9 @@
         <a class="navbar-item" href="index.php">
             <span class="icon mr-1"><i class="fas fa-globe"></i></span> Web
         </a>
+        <a class="navbar-item" href="index.php?r=resultats">
+            <span class="icon mr-1"><i class="fas fa-poll"></i></span> Resultats
+        </a>
         <a class="navbar-item" href="index.php?r=llistarUsuaris">
             <span class="icon mr-1"><i class="fas fa-users"></i></span> Gestió d'Usuaris
         </a>
