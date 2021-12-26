@@ -2,7 +2,7 @@
 <html lang="ca">
     <head>
         <?php include "../src/view/util/head.php"; ?>
-        <title>Sistema de Vot Electronic</title>
+        <title><?= $titolAplicacio["titol"]; ?></title>
     </head>
     <body>
         <?php include "../src/view/util/menu.php"; ?>

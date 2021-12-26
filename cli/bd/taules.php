@@ -2,8 +2,9 @@
 /*Crea totes les taules a la base de dades que necessita l'aplicació per funcionar*/
 $connexio->query("CREATE TABLE config (
     id INT AUTO_INCREMENT,
-    numEscons INT NOT NULL,
+    numEscons INT NOT NULL DEFAULT 100,
     logo VARCHAR(200) NOT NULL DEFAULT 'img/bd/logo.png', 
+    titol VARCHAR(200) NOT NULL DEFAULT 'Sistema de Vot Electronic', 
     PRIMARY KEY(id));");
 
 $connexio->query("CREATE TABLE usuari (

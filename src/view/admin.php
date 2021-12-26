@@ -2,7 +2,7 @@
 <html lang="ca" class="fonsDark">
     <head>
         <?php include "../src/view/util/head.php"; ?>
-        <title>Sistema de Vot Electronic</title>
+        <title>Panell d'Administració | <?= $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
         <?php include "../src/view/util/menuadmin.php"; ?>

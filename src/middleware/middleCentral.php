@@ -17,9 +17,12 @@ function middleCentral($peticio, $resposta, $config, $next)
 
     $logoAplicacio = $configPDO->getLogo();
 
+    $titolAplicacio = $configPDO->getTitol();
+
     $resposta->set("logat", $logat);
     $resposta->set("dadesUsuarilogat", $dadesUsuarilogat);
     $resposta->set("logoAplicacio", $logoAplicacio);
+    $resposta->set("titolAplicacio", $titolAplicacio);
 
     $resposta = nextMiddleware($peticio, $resposta, $config, $next);
 

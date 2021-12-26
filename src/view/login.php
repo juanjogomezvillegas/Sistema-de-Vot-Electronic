@@ -2,7 +2,7 @@
 <html lang="ca">
     <head>
         <?php include "../src/view/util/head.php"; ?>
-        <title>Inicia Sessió | Sistema de Vot Electronic</title>
+        <title>Inicia Sessió | <?= $titolAplicacio["titol"]; ?></title>
     </head>
     <body>
         <section class="hero is-link is-fullheight">
