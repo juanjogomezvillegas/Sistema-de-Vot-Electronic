@@ -25,12 +25,14 @@ $app = new \Emeset\Emeset($contenidor);
 $app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat"]);
 $app->ruta("countCandidats", "ctrlCountCandidats", ["middleCentral", "middleLogat"]);
 $app->ruta("countVots", "ctrlCountVots", ["middleCentral", "middleLogat"]);
+$app->ruta("actualitzarEscons", "ctrlActualitzarEscons", ["middleCentral", "middleLogat"]);
 
 $app->ruta("", "ctrlPortada", ["middleCentral"]);
 $app->ruta("votar", "ctrlVotar", ["middleCentral"]);
 $app->ruta("login", "ctrlLogin", ["middleCentral"]);
 $app->ruta("dologin", "ctrlDologin", ["middleCentral"]);
 $app->ruta("logout", "ctrlLogout", ["middleCentral", "middleLogat"]);
+
 $app->ruta("admin", "ctrlAdmin", ["middleCentral", "middleLogat"]);
 $app->ruta("resultats", "ctrlResultats", ["middleCentral", "middleLogat"]);
 $app->ruta("llistarUsuaris", "ctrlLlistarUsuaris", ["middleCentral", "middleLogat"]);

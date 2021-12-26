@@ -2,6 +2,7 @@ let numUsuaris;
 let numCandidats;
 let numVots;
 let tempsRefresc;
+let numEscons;
 
 $(document).ready(function() {
     tempsRefresc = $("#tempsRefresc").val() * 1000;
@@ -10,11 +11,21 @@ $(document).ready(function() {
     panell = setInterval(refresc, tempsRefresc);
 
     $("#tempsRefresc").on("change", function() {
-        tempsRefresc = $("#tempsRefresc").val() * 1000;
+        tempsRefresc = $(this).val() * 1000;
 
         clearInterval(panell);
         panell = setInterval(refresc, tempsRefresc);
     });
+    $("#numEscons").on("change", function() {
+        numEscons = $(this).val();
+
+        $.ajax({
+            url: "index.php?r=actualitzarEscons", 
+            type: "POST",
+            data: { numEscons }
+        });
+    });
+
     $("#itemAdminUsuari").click(function() {
         window.location.assign("index.php?r=llistarUsuaris");
     });

@@ -73,6 +73,11 @@ class Contenidor
         return new \CandidatsPDO($this->connexio);
     }
 
+    public function configPDO()
+    {
+        return new \ConfigPDO($this->connexio);
+    }
+
     public function options()
     {
         return $this->options;

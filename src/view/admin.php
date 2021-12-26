@@ -15,6 +15,14 @@
                 </span>
             </p>
         </div>
+        <div class="field is-flex is-justify-content-start">
+            <p class="control has-icons-left">
+                <input class="input itemAdmin is-size-6" type="text" id="numEscons" value="<?= $numEscons["numEscons"]; ?>">
+                <span class="icon is-small is-left is-size-6">
+                <i class="fas fa-chair"></i>
+                </span>
+            </p>
+        </div>
         <br>
         <div class="is-full mt-6">
             <div class="columns is-variable">
@@ -35,6 +43,7 @@
                 </div>
             </div>
         </div>
+        <?php include "../src/view/util/script.php"; ?>
         <script src="js/admin.js"></script>
     </body>
 </html>

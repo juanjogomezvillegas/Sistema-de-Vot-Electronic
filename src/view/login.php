@@ -43,5 +43,6 @@
                 </div>
             </div>
         </section>
+        <?php include "../src/view/util/script.php"; ?>
     </body>
 </html>

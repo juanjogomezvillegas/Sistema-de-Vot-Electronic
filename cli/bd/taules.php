@@ -1,5 +1,10 @@
 <?php
 /*Crea totes les taules a la base de dades que necessita l'aplicació per funcionar*/
+$connexio->query("CREATE TABLE config (
+    id INT AUTO_INCREMENT,
+    numEscons INT NOT NULL,
+    PRIMARY KEY(id));");
+
 $connexio->query("CREATE TABLE usuari (
     id INT AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL UNIQUE,

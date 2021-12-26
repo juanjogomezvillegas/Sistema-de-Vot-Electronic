@@ -1,4 +1,8 @@
 <?php
+/*Afageix dades per defecte a la taula "config" de la base de dades*/
+$sql = $connexio->prepare("INSERT INTO config VALUES  (:id,:numEscons)");
+$sql->execute([":id" => 1,":numEscons" => 100]);
+
 /*Afageix dades per defecte a la taula "usuari" de la base de dades*/
 $usuaris = $usuaris = [
     ["id" => 1,"user" => "admin","pass" => '$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',"tipus" => "Administrator"],

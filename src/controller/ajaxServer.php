@@ -32,3 +32,14 @@ function ctrlCountVots($peticio, $resposta, $contenidor)
 
     return $resposta;
 }
+
+function ctrlActualitzarEscons($peticio, $resposta, $contenidor)
+{
+    $configPDO = $contenidor->configPDO();
+
+    $numEscons = $peticio->get(INPUT_POST, "numEscons");
+
+    $configPDO->updateNumEscons($numEscons);
+
+    return $resposta;
+}

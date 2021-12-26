@@ -39,5 +39,6 @@
                 </table>
             </div>
         </div>
+        <?php include "../src/view/util/script.php"; ?>
     </body>
 </html>

@@ -10,5 +10,6 @@
             <br>
             <span class="subtitle is-1 has-text-success is-flex is-justify-content-center"><i class="fas fa-check"></i></span>
         </div>
+        <?php include "../src/view/util/script.php"; ?>
     </body>
 </html>
