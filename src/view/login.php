@@ -12,7 +12,7 @@
                     <div class="column is-5-tablet is-4-desktop is-3-widescreen">
                     <form action="index.php?r=dologin" method="POST" class="box formlogin">
                         <div class="field">
-                            <a href="index.php"><img class="image" src="img/logodark.png" alt="logodark"></a>
+                            <a href="index.php"><img class="image" src="<?= $logoAplicacio["logo"]; ?>" alt="logo"></a>
                         </div>
                         <div class="field">
                         <label for="inputUsername" class="label">Usuari</label>
