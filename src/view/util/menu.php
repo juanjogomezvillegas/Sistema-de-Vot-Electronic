@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="index.php">
-      <img class="image 64x64" src="img/logolight.png">
+      <img class="image logoNavbar" src="<?= $logoAplicacio["logo"]; ?>">
     </a>
 
     <a id="btnNavbarBasicExample" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">

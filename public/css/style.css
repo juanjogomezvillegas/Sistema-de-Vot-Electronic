@@ -9,6 +9,10 @@ html, body {
 
 /* Navbar */
 
+img.logoNavbar {
+    margin: 5px !important;
+    transform: scale(1.7);
+}
 nav.navbar, .navbar-dropdown {
     box-shadow: 0 0 5px 1px hsl(0, 0%, 7%) !important;
     background-color: hsl(217, 71%, 45%) !important;

@@ -3,6 +3,7 @@
 $connexio->query("CREATE TABLE config (
     id INT AUTO_INCREMENT,
     numEscons INT NOT NULL,
+    logo VARCHAR(200) NOT NULL DEFAULT 'img/bd/logo.png', 
     PRIMARY KEY(id));");
 
 $connexio->query("CREATE TABLE usuari (
@@ -10,7 +11,7 @@ $connexio->query("CREATE TABLE usuari (
     username VARCHAR(100) NOT NULL UNIQUE,
     contrasenya TEXT NOT NULL,
     rol VARCHAR(100) NOT NULL DEFAULT 'Supervisor',
-    icona VARCHAR(200) NOT NULL DEFAULT 'img/bd/user.png',
+    icona VARCHAR(200) NOT NULL DEFAULT 'img/usuaris/user.png',
     PRIMARY KEY(id));");
 
 $connexio->query("CREATE TABLE candidat (
@@ -18,6 +19,6 @@ $connexio->query("CREATE TABLE candidat (
     dni VARCHAR(9) NOT NULL UNIQUE,
     nom VARCHAR(200) NOT NULL,
     lema_campanya VARCHAR(200) NOT NULL,
-    icona VARCHAR(200) NOT NULL DEFAULT 'img/bd/user.png',
+    icona VARCHAR(200) NOT NULL DEFAULT 'img/candidats/user.png',
     vots INT NOT NULL DEFAULT 0,
     PRIMARY KEY(id));");

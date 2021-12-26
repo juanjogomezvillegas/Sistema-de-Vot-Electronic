@@ -2,6 +2,36 @@
 
 class ConfigPDO extends ModelPDO
 {
+    public function getLogo()
+    {
+        $query = "select logo from config;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function updateLogo($logo)
+    {
+        $query = "update config set logo = :logo;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':logo' => $logo]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function getNumEscons()
     {
         $query = "select numEscons from config;";
