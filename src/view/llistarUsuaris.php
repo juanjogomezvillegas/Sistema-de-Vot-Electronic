@@ -9,7 +9,7 @@
         <br>
         <div class="is-full mt-6 mb-2">
             <div class="is-flex is-justify-content-center mb-5">
-                <a href="index.php?r=crearUsuari" class="button is-danger">Crear Candidat <i class="fas fa-folder-plus ml-2"></i></a>
+                <a href="index.php?r=crearUsuari" class="button is-danger">Crear Usuari <i class="fas fa-folder-plus ml-2"></i></a>
             </div>
             <div class="table-container is-flex is-justify-content-center">
                 <table class="table">
