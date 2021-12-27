@@ -5,3 +5,4 @@
 
 <!-- Fitxers Java Script -->
 <script src="js/menu.js"></script>
+<script src="js/missatges.js"></script>

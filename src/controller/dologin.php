@@ -30,10 +30,10 @@ function ctrlDologin($peticio, $resposta, $contenidor)
 
             $resposta->redirect("Location:index.php?r=admin");
         } else {
-            $resposta->redirect("Location:index.php?r=login");
+            $resposta->redirect("Location:index.php?r=login&error=1");
         }
     } else {
-        $resposta->redirect("Location:index.php?r=login");
+        $resposta->redirect("Location:index.php?r=login&error=1");
     }
 
     return $resposta;

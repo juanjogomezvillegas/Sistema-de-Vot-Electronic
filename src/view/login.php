@@ -14,6 +14,11 @@
                         <div class="field">
                             <a href="index.php"><img class="image" src="<?= $logoAplicacio["logo"]; ?>" alt="logo"></a>
                         </div>
+                        <?php if (isset($error) && $error == "1") { ?>
+                            <div id="app">
+                                <missatge-error tittle="Usuari o Contrasenya Incorrectes"></missatge-error>
+                            </div>
+                        <?php } ?>
                         <div class="field">
                         <label for="inputUsername" class="label">Usuari</label>
                         <div class="control has-icons-left">
