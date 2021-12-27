@@ -10,7 +10,7 @@ function ctrlVotar($peticio, $resposta, $contenidor)
 
     $candidatsPDO->votar($idCandidat);
 
-    $resposta->redirect("Location:index.php");
+    $resposta->SetTemplate("votar.php");
 
     return $resposta;
 }
