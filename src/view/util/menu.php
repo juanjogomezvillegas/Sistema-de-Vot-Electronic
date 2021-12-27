@@ -26,6 +26,9 @@
               <span class="icon mr-1"><i class="fas fa-sign-in-alt"></i></span> Inicia Sessió
             </a>
         <?php } else { ?>
+          <a class="navbar-item" href="index.php?r=configuracio">
+              <span class="icon"><i class="fas fa-cog"></i></span>
+          </a>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               <img class="image is-rounded" src="<?= $dadesUsuarilogat["icona"]; ?>" alt="icona">
