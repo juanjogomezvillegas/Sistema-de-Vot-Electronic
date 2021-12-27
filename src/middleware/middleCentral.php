@@ -23,6 +23,7 @@ function middleCentral($peticio, $resposta, $config, $next)
     $resposta->set("dadesUsuarilogat", $dadesUsuarilogat);
     $resposta->set("logoAplicacio", $logoAplicacio);
     $resposta->set("titolAplicacio", $titolAplicacio);
+    $resposta->set("rols", $config->rols);
 
     $resposta = nextMiddleware($peticio, $resposta, $config, $next);
 
