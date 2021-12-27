@@ -11,12 +11,17 @@
                 <div class="columns is-centered">
                     <div class="column is-5-tablet is-4-desktop is-3-widescreen">
                     <form action="index.php?r=dologin" method="POST" class="box formlogin">
+                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                         <div class="field">
                             <a href="index.php"><img class="image" src="<?= $logoAplicacio["logo"]; ?>" alt="logo"></a>
                         </div>
                         <?php if (isset($error) && $error == "1") { ?>
                             <div id="app">
                                 <missatge-error tittle="Usuari o Contrasenya Incorrectes"></missatge-error>
+                            </div>
+                        <?php } else if (isset($error) && $error == "2") { ?>
+                            <div id="app">
+                                <missatge-error tittle="Hi ha hagut algun error"></missatge-error>
                             </div>
                         <?php } ?>
                         <div class="field">

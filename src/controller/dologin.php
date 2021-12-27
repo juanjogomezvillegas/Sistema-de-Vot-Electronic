@@ -6,34 +6,41 @@ function ctrlDologin($peticio, $resposta, $contenidor)
 
     $usuari2 = $peticio->get(INPUT_POST, "inputUsername");
     $password2 = $peticio->get(INPUT_POST, "inputPassword");
+    $recaptcha_response = $peticio->get(INPUT_POST, "recaptcha_response");
 
     $usuari = trim(filter_var($usuari2, FILTER_SANITIZE_STRING));
     $password = trim(filter_var($password2, FILTER_SANITIZE_STRING));
 
-    $error = false;
-    if (!isset($usuari)) {
-        $error = true;
-    } else {
-        $resposta->setCookie("usuariLogat", $usuari, strtotime("+1 month"));
-    }
-    if (!isset($password)) {
-        $error = true;
-    }
+    $recaptcha = $usuarisPDO->recaptcha($recaptcha_response);
 
-    if (!$error) {
-        $logat = $usuarisPDO->isLogin($usuari, $password, $contenidor->options());
-        if ($logat) {
-            $dadesUsuari = $usuarisPDO->get($usuari);
+    if ($recaptcha->score >= 0.7) {
+        $error = false;
+        if (!isset($usuari)) {
+            $error = true;
+        } else {
+            $resposta->setCookie("usuariLogat", $usuari, strtotime("+1 month"));
+        }
+        if (!isset($password)) {
+            $error = true;
+        }
 
-            $resposta->setSession("logat", $logat);
-            $resposta->setSession("dadesUsuari", $dadesUsuari);
+        if (!$error) {
+            $logat = $usuarisPDO->isLogin($usuari, $password, $contenidor->options());
+            if ($logat) {
+                $dadesUsuari = $usuarisPDO->get($usuari);
 
-            $resposta->redirect("Location:index.php?r=admin");
+                $resposta->setSession("logat", $logat);
+                $resposta->setSession("dadesUsuari", $dadesUsuari);
+
+                $resposta->redirect("Location:index.php?r=admin");
+            } else {
+                $resposta->redirect("Location:index.php?r=login&error=1");
+            }
         } else {
             $resposta->redirect("Location:index.php?r=login&error=1");
         }
     } else {
-        $resposta->redirect("Location:index.php?r=login&error=1");
+        $resposta->redirect("Location:index.php?r=login&error=2");
     }
 
     return $resposta;
