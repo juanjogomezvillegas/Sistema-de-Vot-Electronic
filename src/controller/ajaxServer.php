@@ -37,9 +37,26 @@ function ctrlActualitzarEscons($peticio, $resposta, $contenidor)
 {
     $configPDO = $contenidor->configPDO();
 
-    $numEscons = $peticio->get(INPUT_POST, "numEscons");
+    $numEscons2 = $peticio->get(INPUT_POST, "numEscons");
+
+    $numEscons = trim(filter_var($numEscons2, FILTER_SANITIZE_STRING));
 
     $configPDO->updateNumEscons($numEscons);
+
+    return $resposta;
+}
+
+function ctrlActualitzarUsuari($peticio, $resposta, $contenidor)
+{
+    $usuarisPDO = $contenidor->usuarisPDO();
+
+    $nomUsuari2 = $peticio->get(INPUT_POST, "nomUsuari");
+
+    $nomUsuari = trim(filter_var($nomUsuari2, FILTER_SANITIZE_STRING));
+
+    $dadesUsuari = $usuarisPDO->get($nomUsuari);
+
+    echo json_encode($dadesUsuari);
 
     return $resposta;
 }

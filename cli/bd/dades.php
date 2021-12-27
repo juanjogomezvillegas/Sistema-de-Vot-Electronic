@@ -17,21 +17,21 @@ foreach ($usuaris as $actual) {
 
 /*Afageix dades per defecte a la taula "candidat" de la base de dades*/
 $candidats = $candidats = [
-    ["id" => 1,"dni" => "74382891V","nom" => "Dani Prados","lema" => "Pel Canvi"],
-    ["id" => 2,"dni" => "96769454J","nom" => "Xavier Vallejo","lema" => "Distancia, Mans, Mascareta i Ventilació"],
-    ["id" => 3,"dni" => "54070914F","nom" => "Josep Maria Serrainat","lema" => "Fem que siguem claus"],
-    ["id" => 4,"dni" => "63104244H","nom" => "Angel Bosch","lema" => "Soc Necessari"],
-    ["id" => 5,"dni" => "63681355J","nom" => "Josep Maria Tolsa","lema" => "Si vols solucions, vota solucions"],
-    ["id" => 6,"dni" => "42189903Z","nom" => "Albert Ibiza","lema" => "Anem a Més"],
-    ["id" => 7,"dni" => "12069477C","nom" => "Juaquim Rubio","lema" => "Amb el teu vot, es possible"],
-    ["id" => 8,"dni" => "64982182Y","nom" => "David Valles","lema" => "Rebel·lat!"],
-    ["id" => 9,"dni" => "43125844Q","nom" => "Josep Antoni Sanchez","lema" => "Amb Il·lusió!"],
-    ["id" => 10,"dni" => "80448519Q","nom" => "Albert Sabria","lema" => "Si t'ho penses, Albert Sabria"],
-    ["id" => 11,"dni" => "58282078D","nom" => "Genis de Tuero","lema" => "Tornarem més forts"],
-    ["id" => 12,"dni" => "63195738H","nom" => "Jesus Picornell","lema" => "Solucions?"],
+    ["id" => 1,"nom" => "Dani Prados","lema" => "Pel Canvi"],
+    ["id" => 2,"nom" => "Xavier Vallejo","lema" => "Distancia, Mans, Mascareta i Ventilació"],
+    ["id" => 3,"nom" => "Josep Maria Serrainat","lema" => "Fem que siguem claus"],
+    ["id" => 4,"nom" => "Angel Bosch","lema" => "Soc Necessari"],
+    ["id" => 5,"nom" => "Josep Maria Tolsa","lema" => "Si vols solucions, vota solucions"],
+    ["id" => 6,"nom" => "Albert Ibiza","lema" => "Anem a Més"],
+    ["id" => 7,"nom" => "Juaquim Rubio","lema" => "Amb el teu vot, es possible"],
+    ["id" => 8,"nom" => "David Valles","lema" => "Rebel·lat!"],
+    ["id" => 9,"nom" => "Josep Antoni Sanchez","lema" => "Amb Il·lusió!"],
+    ["id" => 10,"nom" => "Albert Sabria","lema" => "Si t'ho penses, Albert Sabria"],
+    ["id" => 11,"nom" => "Genis de Tuero","lema" => "Tornarem més forts"],
+    ["id" => 12,"nom" => "Jesus Picornell","lema" => "Solucions?"],
 ];
 
 foreach ($candidats as $actual) {
-    $sql = $connexio->prepare("INSERT INTO candidat (id,dni,nom,lema_campanya) VALUES  (:id,:dni,:nom,:lema)");
-    $sql->execute([":id" => $actual["id"],":dni" => $actual["dni"],":nom" => $actual["nom"],":lema" => $actual["lema"]]);
+    $sql = $connexio->prepare("INSERT INTO candidat (id,nom,lema_campanya) VALUES  (:id,:nom,:lema)");
+    $sql->execute([":id" => $actual["id"],":nom" => $actual["nom"],":lema" => $actual["lema"]]);
 }

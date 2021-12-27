@@ -17,7 +17,6 @@ $connexio->query("CREATE TABLE usuari (
 
 $connexio->query("CREATE TABLE candidat (
     id INT AUTO_INCREMENT,
-    dni VARCHAR(9) NOT NULL UNIQUE,
     nom VARCHAR(200) NOT NULL,
     lema_campanya VARCHAR(200) NOT NULL,
     icona VARCHAR(200) NOT NULL DEFAULT 'img/candidats/user.png',

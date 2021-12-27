@@ -27,6 +27,7 @@ $app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat"])
 $app->ruta("countCandidats", "ctrlCountCandidats", ["middleCentral", "middleLogat"]);
 $app->ruta("countVots", "ctrlCountVots", ["middleCentral", "middleLogat"]);
 $app->ruta("actualitzarEscons", "ctrlActualitzarEscons", ["middleCentral", "middleLogat"]);
+$app->ruta("actualitzarUsuari", "ctrlActualitzarUsuari", ["middleCentral", "middleLogat"]);
 
 $app->ruta("", "ctrlPortada", ["middleCentral"]);
 $app->ruta("votar", "ctrlVotar", ["middleCentral"]);

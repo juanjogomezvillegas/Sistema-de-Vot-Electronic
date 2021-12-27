@@ -9,14 +9,13 @@
         <br>
         <div class="is-full mt-6 mb-2">
             <div class="is-flex is-justify-content-center mb-5">
-                <a href="index.php?r=crearCandidat" class="button is-danger">Crear Candidat <i class="fas fa-folder-plus ml-2"></i></a>
+                <button id="botoCrearCandidat" class="button is-danger">Crear Candidat <i class="fas fa-folder-plus ml-2"></i></button>
             </div>
             <div class="table-container is-flex is-justify-content-center">
                 <table class="table">
                     <thead class="has-background-white-ter">
                         <tr>
                             <th>Icona</th>
-                            <th>DNI</th>
                             <th>Nom i Cognoms</th>
                             <th>Lema de Campanya</th>
                             <th>Accions</th>
@@ -26,7 +25,6 @@
                         <?php foreach ($candidats as $actual) { ?>
                             <tr>
                                 <td><img class="icon" src="<?= $actual["icona"]; ?>" alt="icona"></td>
-                                <td><?= $actual["dni"]; ?></td>
                                 <td><?= $actual["nom"]; ?></td>
                                 <td><?= $actual["lema_campanya"]; ?></td>
                                 <td>
@@ -40,5 +38,37 @@
             </div>
         </div>
         <?php include "../src/view/util/script.php"; ?>
+        <script src="js/llestarCandidat.js"></script>
     </body>
+
+    <!-- Modal de Crear -->
+    <div id="modalCrearCandidat" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <form action="index.php?r=docrearcandidat" method="POST">
+                <header class="modal-card-head">
+                    <p class="modal-card-title"><i class="fas fa-user-plus mr-2"></i> Crear un Candidat Nou</p>
+                    <a id="btnCloseModal" class="delete" aria-label="close"></a>
+                </header>
+                <section class="modal-card-body">
+                    <div class="field">
+                        <label class="label">Nom i Cognoms</label>
+                        <div class="control">
+                            <input id="nomCandidat" name="nomCandidat" class="input" type="text" placeholder="Nom i Cognoms">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Lema de Campanya</label>
+                        <div class="control">
+                            <input id="lemaCampanya" name="lemaCampanya" class="input" type="text" placeholder="Lema de Campanya">
+                        </div>
+                    </div>
+                </section>
+                <footer class="modal-card-foot is-flex is-justify-content-end">
+                    <button type="submit" class="button is-info">Crear Candidat <i class="fas fa-folder-plus ml-2"></i></button>
+                    <a class="button is-light" id="btnCancelaModal">Cancel·la</a>
+                </footer>
+            </form>
+        </div>
+    </div>
 </html>
