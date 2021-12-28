@@ -26,12 +26,15 @@
               <span class="icon mr-1"><i class="fas fa-sign-in-alt"></i></span> Inicia Sessió
             </a>
         <?php } else { ?>
+          <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
           <a class="navbar-item" href="index.php?r=configuracio">
               <span class="icon"><i class="fas fa-cog"></i></span>
           </a>
+          <?php } ?>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
-              <img class="image is-rounded" src="<?= $dadesUsuarilogat["icona"]; ?>" alt="icona">
+              <?= $dadesUsuarilogat["username"]; ?>
+              <img class="image is-rounded ml-2" src="<?= $dadesUsuarilogat["icona"]; ?>" alt="icona">
             </a>
 
             <div class="navbar-dropdown	is-right">

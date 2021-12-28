@@ -15,7 +15,7 @@ function middleLogat($peticio, $resposta, $config, $next)
     if ($logat) {
         $resposta = nextMiddleware($peticio, $resposta, $config, $next);
     } else {
-        $resposta->redirect("Location:index.php?r=login");
+        $resposta->redirect("Location:index.php?r=login&error=3");
     }
 
     return $resposta;

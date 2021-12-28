@@ -15,13 +15,17 @@
                         <div class="field">
                             <a href="index.php"><img class="image" src="<?= $logoAplicacio["logo"]; ?>" alt="logo"></a>
                         </div>
-                        <?php if (isset($error) && $error == "1") { ?>
+                        <?php if (isset($error) && $error === "1") { ?>
                             <div id="app">
                                 <missatge-error tittle="Usuari o Contrasenya Incorrectes"></missatge-error>
                             </div>
-                        <?php } else if (isset($error) && $error == "2") { ?>
+                        <?php } else if (isset($error) && $error === "2") { ?>
                             <div id="app">
                                 <missatge-error tittle="Hi ha hagut algun error"></missatge-error>
+                            </div>
+                        <?php } else if (isset($error) && $error === "3") { ?>
+                            <div id="app">
+                                <missatge-error tittle="Accés Denegat"></missatge-error>
                             </div>
                         <?php } ?>
                         <div class="field">
@@ -54,5 +58,7 @@
             </div>
         </section>
         <?php include "../src/view/util/script.php"; ?>
+        <script src='https://www.google.com/recaptcha/api.js?render=6LdYiNAdAAAAAIV1eoknbB6PrfaRSpQXIdRT4uDv'></script>
+        <script src="js/recaptcha.js"></script>
     </body>
 </html>

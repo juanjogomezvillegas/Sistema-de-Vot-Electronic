@@ -25,6 +25,9 @@ include "../src/controller/doesborrarcandidat.php";
 /*Inclou els middleware*/
 include "../src/middleware/middleCentral.php";
 include "../src/middleware/middleLogat.php";
+include "../src/middleware/middleAdmin.php";
+include "../src/middleware/middleManager.php";
+include "../src/middleware/middleSupervisor.php";
 
 $contenidor = new \Emeset\Contenidor($config, $rols, $options);
 $app = new \Emeset\Emeset($contenidor);
@@ -43,15 +46,15 @@ $app->ruta("dologin", "ctrlDologin", ["middleCentral"]);
 $app->ruta("logout", "ctrlLogout", ["middleCentral", "middleLogat"]);
 
 $app->ruta("admin", "ctrlAdmin", ["middleCentral", "middleLogat"]);
-$app->ruta("resultats", "ctrlResultats", ["middleCentral", "middleLogat"]);
-$app->ruta("pactometre", "ctrlPactometre", ["middleCentral", "middleLogat"]);
-$app->ruta("llistarUsuaris", "ctrlLlistarUsuaris", ["middleCentral", "middleLogat"]);
-$app->ruta("llistarCandidats", "ctrlLlistarCandidats", ["middleCentral", "middleLogat"]);
-$app->ruta("docrearusuari", "ctrlDocrearusuari", ["middleCentral", "middleLogat"]);
-$app->ruta("doactualitzarusuari", "ctrlDoactualitzarusuari", ["middleCentral", "middleLogat"]);
-$app->ruta("doesborrarusuari", "ctrlDoesborrarusuari", ["middleCentral", "middleLogat"]);
-$app->ruta("docrearcandidat", "ctrlDocrearcandidat", ["middleCentral", "middleLogat"]);
-$app->ruta("doactualitzarcandidat", "ctrlDoactualitzarcandidat", ["middleCentral", "middleLogat"]);
-$app->ruta("doesborrarcandidat", "ctrlDoesborrarcandidat", ["middleCentral", "middleLogat"]);
+$app->ruta("resultats", "ctrlResultats", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("pactometre", "ctrlPactometre", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("llistarUsuaris", "ctrlLlistarUsuaris", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("docrearusuari", "ctrlDocrearusuari", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("doactualitzarusuari", "ctrlDoactualitzarusuari", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("doesborrarusuari", "ctrlDoesborrarusuari", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("llistarCandidats", "ctrlLlistarCandidats", ["middleCentral", "middleLogat", "middleManager"]);
+$app->ruta("docrearcandidat", "ctrlDocrearcandidat", ["middleCentral", "middleLogat", "middleManager"]);
+$app->ruta("doactualitzarcandidat", "ctrlDoactualitzarcandidat", ["middleCentral", "middleLogat", "middleManager"]);
+$app->ruta("doesborrarcandidat", "ctrlDoesborrarcandidat", ["middleCentral", "middleLogat", "middleManager"]);
 
 $app->executa();
