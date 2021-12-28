@@ -8,6 +8,29 @@
         <?php include "../src/view/util/menuadmin.php"; ?>
         <br>
         <div class="is-full mt-6 mb-2">
+            <div class="mb-5 is-flex is-justify-content-center">
+                <?php if (isset($errorCrear) && $errorCrear === "1") { ?>
+                    <div id="app">
+                        <missatge-error tittle="La Contrasenya no s'ha verificat correctament"></missatge-error>
+                    </div>
+                <?php } else if ((isset($errorCrear) && $errorCrear === "2") || (isset($errorEditar) && $errorEditar === "1")) { ?>
+                    <div id="app">
+                        <missatge-error tittle="Hi ha algun camp buit"></missatge-error>
+                    </div>
+                <?php } else if (isset($infoCrea) && $infoCrea === "1") { ?>
+                    <div id="app">
+                        <missatge-info tittle="L'Usuari s'ha creat correctament"></missatge-info>
+                    </div>
+                <?php } else if (isset($infoEdita) && $infoEdita === "1") { ?>
+                    <div id="app">
+                        <missatge-info tittle="L'Usuari s'ha actualitzat correctament"></missatge-info>
+                    </div>
+                <?php } else if (isset($infoEsborrar) && $infoEsborrar === "1") { ?>
+                    <div id="app">
+                        <missatge-info tittle="L'Usuari s'ha esborrat correctament"></missatge-info>
+                    </div>
+                <?php } ?>
+            </div>
             <div class="is-flex is-justify-content-center mb-5">
                 <button id="botoCrearUsuari" class="button is-danger">Crear Usuari <i class="fas fa-folder-plus ml-2"></i></button>
             </div>

@@ -74,11 +74,13 @@ class UsuarisPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function add($username, $contrasenya, $rol)
+    public function add($username, $contrasenya, $rol, $options)
     {
+        $hash = password_hash($contrasenya, PASSWORD_DEFAULT, $options);
+
         $query = "insert into usuari (username,contrasenya,rol) values (:user,:pass,:rol);";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':user' => $username,':pass' => $contrasenya,':rol' => $rol]);
+        $result = $stm->execute([':user' => $username,':pass' => $hash,':rol' => $rol]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
@@ -106,11 +108,11 @@ class UsuarisPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function update($id, $rol)
+    public function update($id, $username, $rol)
     {
-        $query = "update usuari set rol = :rol where id = :id;";
+        $query = "update usuari set username = :user,rol = :rol where id = :id;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':id' => $id,':rol' => $rol]);
+        $result = $stm->execute([':id' => $id, ':user' => $username,':rol' => $rol]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
