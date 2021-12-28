@@ -33,9 +33,10 @@
                                     <a class="has-text-link">
                                         <input type="hidden" name="usernameUsuari" value="<?= $actual["username"]; ?>">
                                         <i class="fas fa-edit editaUsuari"></i></a>
-                                    <a class="has-text-danger" href="index.php?r=esborrarUsuari&id=<?= $actual["id"] ?>"><i class="fas fa-trash-alt"></i></a>
+                                    <a class="has-text-danger">
+                                        <input type="hidden" name="idUsuari" value="<?= $actual["id"]; ?>">
+                                        <i class="fas fa-trash-alt borrarUsuari"></i></a>
                                 </td>
-                                <!-- href="index.php?r=editarUsuari&id=" -->
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -53,7 +54,7 @@
             <form action="index.php?r=docrearusuari" method="POST">
                 <header class="modal-card-head">
                     <p class="modal-card-title"><i class="fas fa-user-plus mr-2"></i> Crear un Usuari Nou</p>
-                    <a id="btnCloseModal" class="delete" aria-label="close"></a>
+                    <a id="btnCloseModal1" class="delete" aria-label="close"></a>
                 </header>
                 <section class="modal-card-body">
                     <div class="field">
@@ -84,7 +85,7 @@
                 </section>
                 <footer class="modal-card-foot is-flex is-justify-content-end">
                     <button type="submit" class="button is-info">Crear Usuari <i class="fas fa-folder-plus ml-2"></i></button>
-                    <a class="button is-light" id="btnCancelaModal">Cancel·la</a>
+                    <a class="button is-light" id="btnCancelaModal1">Cancel·la</a>
                 </footer>
             </form>
         </div>
@@ -94,10 +95,10 @@
     <div id="modalEditaUsuari" class="modal">
         <div class="modal-background"></div>
         <div class="modal-card">
-            <form action="index.php?r=docrearusuari" method="POST">
+            <form action="index.php?r=doactualitzarusuari" method="POST">
                 <header class="modal-card-head">
-                    <p class="modal-card-title"><i class="fas fa-user-edit mr-2"></i> Actualitzar un Usuari</p>
-                    <a id="btnCloseModal" class="delete" aria-label="close"></a>
+                    <p id="headerModalEditaUsuari" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Usuari</p>
+                    <a id="btnCloseModal2" class="delete" aria-label="close"></a>
                 </header>
                 <section id="cosFormEditaUsuari" class="modal-card-body">
                     <div class="field">
@@ -120,8 +121,27 @@
                     </div>
                 </section>
                 <footer class="modal-card-foot is-flex is-justify-content-end">
-                    <button type="submit" class="button is-info">Aplicar els Canvis <i class="fas fa-save ml-2"></i></button>
-                    <a class="button is-light" id="btnCancelaModal">Cancel·la</a>
+                    <button type="submit" class="button is-info">Desar els Canvis <i class="fas fa-save ml-2"></i></button>
+                    <a class="button is-light" id="btnCancelaModal2">Cancel·la</a>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Esborrar -->
+    <div id="modalBorrarUsuari" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <form action="index.php?r=doesborrarusuari" method="POST">
+                <header class="modal-card-head">
+                    <p id="headerModalEsborrarUsuari" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Usuari</p>
+                    <a id="btnCloseModal3" class="delete" aria-label="close"></a>
+                </header>
+                <section id="cosFormEsborrarUsuari" class="modal-card-body">
+                </section>
+                <footer class="modal-card-foot is-flex is-justify-content-end">
+                    <button type="submit" class="button is-danger">Esborrar Usuari <i class="fas fa-trash-alt ml-2"></i></button>
+                    <a class="button is-light" id="btnCancelaModal3">Cancel·la</a>
                 </footer>
             </form>
         </div>

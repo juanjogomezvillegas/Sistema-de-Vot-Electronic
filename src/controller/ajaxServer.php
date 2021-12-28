@@ -46,7 +46,7 @@ function ctrlActualitzarEscons($peticio, $resposta, $contenidor)
     return $resposta;
 }
 
-function ctrlActualitzarUsuari($peticio, $resposta, $contenidor)
+function ctrlObtenirDadesUsuari($peticio, $resposta, $contenidor)
 {
     $usuarisPDO = $contenidor->usuarisPDO();
 
@@ -57,6 +57,21 @@ function ctrlActualitzarUsuari($peticio, $resposta, $contenidor)
     $dadesUsuari = $usuarisPDO->get($nomUsuari);
 
     echo json_encode($dadesUsuari);
+
+    return $resposta;
+}
+
+function ctrlObtenirDadesCandidat($peticio, $resposta, $contenidor)
+{
+    $candidatsPDO = $contenidor->candidatsPDO();
+
+    $idCandidat2 = $peticio->get(INPUT_POST, "idCandidat");
+
+    $idCandidat = filter_var($idCandidat2, FILTER_SANITIZE_NUMBER_INT);
+
+    $dadesCandidat = $candidatsPDO->get($idCandidat);
+
+    echo json_encode($dadesCandidat);
 
     return $resposta;
 }
