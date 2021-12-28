@@ -8,6 +8,25 @@
         <?php include "../src/view/util/menuadmin.php"; ?>
         <br>
         <div class="is-full mt-6 mb-2">
+            <div class="mb-5 is-flex is-justify-content-center">
+                <?php if ((isset($errorCrear) && $errorCrear === "1") || (isset($errorEditar) && $errorEditar === "1")) { ?>
+                    <div id="app">
+                        <missatge-error tittle="Hi ha algun camp buit"></missatge-error>
+                    </div>
+                <?php } else if (isset($infoCrea) && $infoCrea === "1") { ?>
+                    <div id="app">
+                        <missatge-info tittle="El Candidat s'ha creat correctament"></missatge-info>
+                    </div>
+                <?php } else if (isset($infoEdita) && $infoEdita === "1") { ?>
+                    <div id="app">
+                        <missatge-info tittle="El Candidat s'ha actualitzat correctament"></missatge-info>
+                    </div>
+                <?php } else if (isset($infoEsborrar) && $infoEsborrar === "1") { ?>
+                    <div id="app">
+                        <missatge-info tittle="El Candidat s'ha esborrat correctament"></missatge-info>
+                    </div>
+                <?php } ?>
+            </div>
             <div class="is-flex is-justify-content-center mb-5">
                 <button id="botoCrearCandidat" class="button is-danger">Crear Candidat <i class="fas fa-folder-plus ml-2"></i></button>
             </div>
@@ -111,7 +130,7 @@
     <div id="modalEsborrarCandidat" class="modal">
         <div class="modal-background"></div>
         <div class="modal-card">
-            <form action="index.php?r=doactualitzarcandidat" method="POST">
+            <form action="index.php?r=doesborrarcandidat" method="POST">
                 <header class="modal-card-head">
                     <p id="headerModalEsborrarCandidat" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Candidat</p>
                     <a id="btnCloseModal3" class="delete" aria-label="close"></a>
@@ -119,7 +138,7 @@
                 <section id="cosFormEsborrarCandidat" class="modal-card-body">
                 </section>
                 <footer class="modal-card-foot is-flex is-justify-content-end">
-                    <button type="submit" class="button is-info">Esborrar Candidat <i class="fas fa-trash-alt ml-2"></i></button>
+                    <button type="submit" class="button is-danger">Esborrar Candidat <i class="fas fa-trash-alt ml-2"></i></button>
                     <a class="button is-light" id="btnCancelaModal3">Cancel·la</a>
                 </footer>
             </form>

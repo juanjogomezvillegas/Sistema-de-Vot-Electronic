@@ -19,6 +19,9 @@ include "../src/controller/llistarCandidats.php";
 include "../src/controller/docrearusuari.php";
 include "../src/controller/doactualitzarusuari.php";
 include "../src/controller/doesborrarusuari.php";
+include "../src/controller/docrearcandidat.php";
+include "../src/controller/doactualitzarcandidat.php";
+include "../src/controller/doesborrarcandidat.php";
 /*Inclou els middleware*/
 include "../src/middleware/middleCentral.php";
 include "../src/middleware/middleLogat.php";
@@ -47,5 +50,8 @@ $app->ruta("llistarCandidats", "ctrlLlistarCandidats", ["middleCentral", "middle
 $app->ruta("docrearusuari", "ctrlDocrearusuari", ["middleCentral", "middleLogat"]);
 $app->ruta("doactualitzarusuari", "ctrlDoactualitzarusuari", ["middleCentral", "middleLogat"]);
 $app->ruta("doesborrarusuari", "ctrlDoesborrarusuari", ["middleCentral", "middleLogat"]);
+$app->ruta("docrearcandidat", "ctrlDocrearcandidat", ["middleCentral", "middleLogat"]);
+$app->ruta("doactualitzarcandidat", "ctrlDoactualitzarcandidat", ["middleCentral", "middleLogat"]);
+$app->ruta("doesborrarcandidat", "ctrlDoesborrarcandidat", ["middleCentral", "middleLogat"]);
 
 $app->executa();
