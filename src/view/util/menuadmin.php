@@ -54,7 +54,7 @@
             </a>
 
             <div class="navbar-dropdown is-right">
-              <a class="navbar-item" href="index.php?r=elmeuperfil">
+              <a class="navbar-item" href="index.php?r=elMeuPerfil">
                 <span class="icon mr-1"><i class="fas fa-user"></i></span> El Meu Perfil
               </a>
               </a>

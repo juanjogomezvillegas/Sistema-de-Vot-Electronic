@@ -11,6 +11,7 @@ include "../src/controller/votar.php";
 include "../src/controller/login.php";
 include "../src/controller/dologin.php";
 include "../src/controller/logout.php";
+include "../src/controller/elMeuPerfil.php";
 include "../src/controller/admin.php";
 include "../src/controller/resultats.php";
 include "../src/controller/pactometre.php";
@@ -44,6 +45,7 @@ $app->ruta("votar", "ctrlVotar", ["middleCentral"]);
 $app->ruta("login", "ctrlLogin", ["middleCentral"]);
 $app->ruta("dologin", "ctrlDologin", ["middleCentral"]);
 $app->ruta("logout", "ctrlLogout", ["middleCentral", "middleLogat"]);
+$app->ruta("elMeuPerfil", "ctrlElMeuPerfil", ["middleCentral", "middleLogat"]);
 
 $app->ruta("admin", "ctrlAdmin", ["middleCentral", "middleLogat"]);
 $app->ruta("resultats", "ctrlResultats", ["middleCentral", "middleLogat", "middleSupervisor"]);
