@@ -11,7 +11,7 @@
             <div class="is-flex is-justify-content-center mb-5">
                 <a href="index.php?r=resultats" class="button is-danger mr-2">Refresca Dades <i class="fas fa-redo-alt ml-2"></i></a>
                 <?php if ($dadesUsuarilogat["rol"] === "Administrator" || $dadesUsuarilogat["rol"] === "Manager") { ?>
-                    <a href="index.php?r=doReiniciaResultat" class="button is-danger ml-2 mr-2">Reiniciar Dades <i class="fas fa-redo-alt ml-2"></i></a>
+                    <a id="botoReiniciarDades" class="button is-danger ml-2 mr-2">Reiniciar Dades <i class="fas fa-redo-alt ml-2"></i></a>
                 <?php } ?>
                 <a href="index.php?r=pactometre" class="button is-danger ml-2">Pactometre <i class="fas fa-handshake ml-2"></i></a>
             </div>
@@ -50,5 +50,26 @@
             </div>
         </div>
         <?php include "../src/view/util/script.php"; ?>
+        <script src="js/resultats.js"></script>
     </body>
+
+    <!-- Modal de Confirmació -->
+    <div id="modalReiniciarDades" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <form action="index.php?r=doReiniciaResultat" method="POST">
+                <header class="modal-card-head">
+                    <p class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Estàs Segur que vols Continuar?</p>
+                    <a id="btnCloseModal" class="delete" aria-label="close"></a>
+                </header>
+                <section id="cosFormEsborrarUsuari" class="modal-card-body">
+                    Si continues eliminares tots els vots emesos fins ara.
+                </section>
+                <footer class="modal-card-foot is-flex is-justify-content-end">
+                    <button type="submit" class="button is-danger">Acceptar</button>
+                    <a class="button is-light" id="btnCancelaModal">Cancel·lar</a>
+                </footer>
+            </form>
+        </div>
+    </div>
 </html>

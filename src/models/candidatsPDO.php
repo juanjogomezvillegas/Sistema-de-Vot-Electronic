@@ -37,6 +37,10 @@ class CandidatsPDO extends ModelPDO
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':vots' => 0]);
 
+        $query = "update candidat set posicio = :posicio;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':posicio' => 'no']);
+
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
             $code = $stm->errorCode();
