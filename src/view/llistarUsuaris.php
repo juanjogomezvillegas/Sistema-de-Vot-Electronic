@@ -39,7 +39,6 @@
                     <thead class="has-background-white-ter">
                         <tr>
                             <th>Icona</th>
-                            <th>ID</th>
                             <th>Username</th>
                             <th>Rol</th>
                             <th>Accions</th>
@@ -49,7 +48,6 @@
                         <?php foreach ($usuaris as $actual) { ?>
                             <tr>
                                 <td class="has-text-centered"><img class="icon" src="<?= $actual["icona"]; ?>" alt="icona"></td>
-                                <td class="has-text-centered"><?= $actual["id"]; ?></td>
                                 <td><?= $actual["username"]; ?></td>
                                 <td><?= $actual["rol"]; ?></td>
                                 <td>
