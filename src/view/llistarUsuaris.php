@@ -35,7 +35,7 @@
                 <button id="botoCrearUsuari" class="button is-danger">Crear Usuari <i class="fas fa-folder-plus ml-2"></i></button>
             </div>
             <div class="table-container is-flex is-justify-content-center">
-                <table class="table">
+                <table class="table is-narrow is-bordered is-striped is-hoverable">
                     <thead class="has-background-white-ter">
                         <tr>
                             <th>Icona</th>
@@ -48,8 +48,8 @@
                     <tbody>
                         <?php foreach ($usuaris as $actual) { ?>
                             <tr>
-                                <td><img class="icon" src="<?= $actual["icona"]; ?>" alt="icona"></td>
-                                <td><?= $actual["id"]; ?></td>
+                                <td class="has-text-centered"><img class="icon" src="<?= $actual["icona"]; ?>" alt="icona"></td>
+                                <td class="has-text-centered"><?= $actual["id"]; ?></td>
                                 <td><?= $actual["username"]; ?></td>
                                 <td><?= $actual["rol"]; ?></td>
                                 <td>

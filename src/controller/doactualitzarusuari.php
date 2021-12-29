@@ -4,6 +4,7 @@ function ctrlDoactualitzarusuari($peticio, $resposta, $contenidor)
 {
     $usuarisPDO = $contenidor->usuarisPDO();
 
+    $dadesUsuarilogat = $peticio->get("SESSION", "dadesUsuari");
     $idUsuari2 = $peticio->get(INPUT_POST, "idUsuari");
     $username2 = $peticio->get(INPUT_POST, "username");
     $rolUsuari2 = $peticio->get(INPUT_POST, "rolUsuari");
@@ -15,7 +16,11 @@ function ctrlDoactualitzarusuari($peticio, $resposta, $contenidor)
     if (!empty($username) && !empty($rolUsuari)) {
         $usuarisPDO->update($idUsuari, $username, $rolUsuari);
 
-        $resposta->redirect("Location:index.php?r=llistarUsuaris&infoEdita=1");
+        if ($idUsuari === $dadesUsuarilogat["id"]) {
+            $resposta->redirect("Location:index.php?r=login&error=3");
+        } else {
+            $resposta->redirect("Location:index.php?r=llistarUsuaris&infoEdita=1");
+        }
     } else {
         $resposta->redirect("Location:index.php?r=llistarUsuaris&errorEditar=1");
     }

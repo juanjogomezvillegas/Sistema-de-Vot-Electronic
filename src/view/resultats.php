@@ -13,7 +13,7 @@
                 <a href="index.php?r=pactometre" class="button is-danger ml-2">Pactometre <i class="fas fa-handshake ml-2"></i></a>
             </div>
             <div class="table-container is-flex is-justify-content-center">
-                <table class="table">
+                <table class="table is-narrow is-bordered is-striped is-hoverable">
                     <thead class="has-background-white-ter">
                         <tr>
                             <th>Icona</th>
@@ -26,11 +26,11 @@
                     <tbody id="tablaResultats">
                         <?php foreach ($candidats as $actual) { ?>
                             <tr>
-                                <td><img class="icon" src="<?= $actual["icona"]; ?>" alt="icona"></td>
+                                <td class="has-text-centered"><img class="icon" src="<?= $actual["icona"]; ?>" alt="icona"></td>
                                 <td><?= $actual["nom"]; ?></td>
                                 <td><?= $actual["lema_campanya"]; ?></td>
-                                <td><?= $actual["vots"]; ?></td>
-                                <td><?= $actual["escons"]; ?></td>
+                                <td class="has-text-centered"><?= $actual["vots"]; ?></td>
+                                <td class="has-text-centered"><?= $actual["escons"]; ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -39,8 +39,8 @@
                             <th></th>
                             <th></th>
                             <th></th>
-                            <th><?= $countVots["total"]; ?></th>
-                            <th><?= $numEscons["numEscons"]; ?></th>
+                            <th class="has-text-centered"><?= $countVots["total"]; ?></th>
+                            <th class="has-text-centered"><?= $numEscons["numEscons"]; ?></th>
                         </tr>
                     </tfoot>
                 </table>
