@@ -78,7 +78,6 @@
                             <th></th>
                             <th class="has-text-centered"><?= $countVots["total"]; ?></th>
                             <th class="has-text-centered"><?= $numEscons["numEscons"]; ?></th>
-                            <th></th>
                         </tr>
                     </tfoot>
                 </table>
