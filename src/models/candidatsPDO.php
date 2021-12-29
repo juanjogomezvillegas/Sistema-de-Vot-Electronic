@@ -59,7 +59,7 @@ class CandidatsPDO extends ModelPDO
 
     public function countVots()
     {
-        $query = "select sum(vots) total from candidat;";
+        $query = "select IFNULL(sum(vots), 0) total from candidat;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
         
