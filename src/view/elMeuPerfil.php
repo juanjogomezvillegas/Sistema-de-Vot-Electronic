@@ -11,11 +11,11 @@
                 <img class="is-rounded" src="<?= $dadesUsuarilogat["icona"]; ?>">
             </figure>
         </div>
-        <form action="index.php?r=canviarImatgePerfil" method="POST" class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-1 mb-6" enctype="multipart/form-data">
+        <form action="index.php?r=canviarImatgeUsuari" method="POST" class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-1 mb-4" enctype="multipart/form-data">
             <button id="botoCanviarImage" class="button is-link">Canviar Imatge <i class="fas fa-camera ml-2"></i></button>
             <div id="file-js-example" class="file has-name mt-3 is-link">
                 <label class="file-label">
-                    <input class="file-input" type="file" name="imatgePerfil">
+                    <input class="file-input" type="file" name="imatgeUsuari">
                     <span class="file-cta">
                     <span class="file-icon">
                         <i class="fas fa-upload"></i>
@@ -30,20 +30,23 @@
                 </label>
             </div>
         </form>
-        <br>
         <div class="is-full">
-            <div class="table-container">
-                <table class="table is-narrow is-bordered is-striped is-hoverable is-fullwidth">
+            <div class="table-container ml-6 mr-6">
+                <p class="title is-2 ">Informació Bàsica</p>
+                <table class="table is-narrow is-bordered is-hoverable is-fullwidth">
                     <tr>
-                        <th>Username</th>
+                        <th class="has-background-white-ter">Username</th>
                         <td><?= $dadesUsuarilogat["username"]; ?></td>
                     </tr>
                     <tr>
-                        <th>Rol</th>
+                        <th class="has-background-white-ter">Rol</th>
                         <td><?= $dadesUsuarilogat["rol"]; ?></td>
                     </tr>
                 </table>
             </div>
+        </div>
+        <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-4">
+            <a href="index.php?r=canviarContrasenya" id="botoCanviarImage" class="button is-link">Canviar Contrasenya <i class="fas fa-key ml-2"></i></a>
         </div>
         <?php include "../src/view/util/script.php"; ?>
         <script src="js/elMeuPerfil.js"></script>

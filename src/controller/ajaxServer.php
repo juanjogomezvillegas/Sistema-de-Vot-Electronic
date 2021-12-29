@@ -75,3 +75,51 @@ function ctrlObtenirDadesCandidat($peticio, $resposta, $contenidor)
 
     return $resposta;
 }
+
+function ctrlNumVotsSi($peticio, $resposta, $contenidor)
+{
+    $pactometrePDO = $contenidor->pactometrePDO();
+
+    $count = $pactometrePDO->get("si");
+
+    echo $count["total"];
+
+    return $resposta;
+}
+
+function ctrlNumVotsNo($peticio, $resposta, $contenidor)
+{
+    $pactometrePDO = $contenidor->pactometrePDO();
+
+    $count = $pactometrePDO->get("no");
+
+    echo $count["total"];
+
+    return $resposta;
+}
+
+function ctrlNumVotsAbstencio($peticio, $resposta, $contenidor)
+{
+    $pactometrePDO = $contenidor->pactometrePDO();
+
+    $count = $pactometrePDO->get("abstencio");
+
+    echo $count["total"];
+
+    return $resposta;
+}
+
+function ctrlActualitzarPosicio($peticio, $resposta, $contenidor)
+{
+    $pactometrePDO = $contenidor->pactometrePDO();
+
+    $idCandidat2 = $peticio->get(INPUT_POST, "idCandidat");
+    $posicioNova2 = $peticio->get(INPUT_POST, "posicioNova");
+
+    $idCandidat = filter_var($idCandidat2, FILTER_SANITIZE_NUMBER_INT);
+    $posicioNova = trim(filter_var($posicioNova2, FILTER_SANITIZE_STRING));
+
+    $count = $pactometrePDO->updatePosicio($idCandidat, $posicioNova);
+
+    return $resposta;
+}

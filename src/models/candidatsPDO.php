@@ -21,7 +21,7 @@ class CandidatsPDO extends ModelPDO
         $query = "select c.*, IFNULL(round((c.vots / (select sum(vots) from candidat)) * (select numEscons from config limit 1)), 0) as escons
         from candidat c order by c.vots desc;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':numEscons' => 350]);
+        $result = $stm->execute([]);
  
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {

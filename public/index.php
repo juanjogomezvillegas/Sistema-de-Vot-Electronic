@@ -33,12 +33,16 @@ include "../src/middleware/middleSupervisor.php";
 $contenidor = new \Emeset\Contenidor($config, $rols, $options);
 $app = new \Emeset\Emeset($contenidor);
 
-$app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat"]);
-$app->ruta("countCandidats", "ctrlCountCandidats", ["middleCentral", "middleLogat"]);
-$app->ruta("countVots", "ctrlCountVots", ["middleCentral", "middleLogat"]);
-$app->ruta("actualitzarEscons", "ctrlActualitzarEscons", ["middleCentral", "middleLogat"]);
-$app->ruta("obtenirDadesUsuari", "ctrlObtenirDadesUsuari", ["middleCentral", "middleLogat"]);
-$app->ruta("obtenirDadesCandidat", "ctrlObtenirDadesCandidat", ["middleCentral", "middleLogat"]);
+$app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("countCandidats", "ctrlCountCandidats", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("countVots", "ctrlCountVots", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("actualitzarEscons", "ctrlActualitzarEscons", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("obtenirDadesUsuari", "ctrlObtenirDadesUsuari", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("obtenirDadesCandidat", "ctrlObtenirDadesCandidat", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("numVotsSi", "ctrlNumVotsSi", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("numVotsNo", "ctrlNumVotsNo", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("numVotsAbstencio", "ctrlNumVotsAbstencio", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("actualitzarPosicio", "ctrlActualitzarPosicio", ["middleCentral", "middleLogat", "middleSupervisor"]);
 
 $app->ruta("", "ctrlPortada", ["middleCentral"]);
 $app->ruta("votar", "ctrlVotar", ["middleCentral"]);
