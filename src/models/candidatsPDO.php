@@ -31,6 +31,21 @@ class CandidatsPDO extends ModelPDO
         return $registres;
     }
 
+    public function reiniciarResultats()
+    {
+        $query = "update candidat set vots = :vots;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':vots' => 0]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function countRegistres()
     {
         $total = parent::countRegistresModel("candidat");

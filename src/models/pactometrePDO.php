@@ -4,7 +4,7 @@ class PactometrePDO extends ModelPDO
 {
     public function get($posicio)
     {
-        $query = "select sum(a.escons) as total
+        $query = "select IFNULL(sum(a.escons), 0) as total
         from (select c.posicio, IFNULL(round((c.vots / (select sum(vots) from candidat)) * (select numEscons from config limit 1)), 0) as escons
         from candidat c order by c.vots desc) as a
         where a.posicio like :posicio;";

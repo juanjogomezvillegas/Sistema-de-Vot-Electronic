@@ -10,6 +10,9 @@
         <div class="is-full mt-6 mb-2">
             <div class="is-flex is-justify-content-center mb-5">
                 <a href="index.php?r=resultats" class="button is-danger mr-2">Refresca Dades <i class="fas fa-redo-alt ml-2"></i></a>
+                <?php if ($dadesUsuarilogat["rol"] === "Administrator" || $dadesUsuarilogat["rol"] === "Manager") { ?>
+                    <a href="index.php?r=doReiniciaResultat" class="button is-danger ml-2 mr-2">Reiniciar Dades <i class="fas fa-redo-alt ml-2"></i></a>
+                <?php } ?>
                 <a href="index.php?r=pactometre" class="button is-danger ml-2">Pactometre <i class="fas fa-handshake ml-2"></i></a>
             </div>
             <div class="table-container is-flex is-justify-content-center">

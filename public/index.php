@@ -14,6 +14,7 @@ include "../src/controller/logout.php";
 include "../src/controller/elMeuPerfil.php";
 include "../src/controller/admin.php";
 include "../src/controller/resultats.php";
+include "../src/controller/doReiniciaResultat.php";
 include "../src/controller/pactometre.php";
 include "../src/controller/llistarUsuaris.php";
 include "../src/controller/llistarCandidats.php";
@@ -53,6 +54,7 @@ $app->ruta("elMeuPerfil", "ctrlElMeuPerfil", ["middleCentral", "middleLogat"]);
 
 $app->ruta("admin", "ctrlAdmin", ["middleCentral", "middleLogat"]);
 $app->ruta("resultats", "ctrlResultats", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("doReiniciaResultat", "ctrlDoReiniciaResultat", ["middleCentral", "middleLogat", "middleManager"]);
 $app->ruta("pactometre", "ctrlPactometre", ["middleCentral", "middleLogat", "middleSupervisor"]);
 $app->ruta("llistarUsuaris", "ctrlLlistarUsuaris", ["middleCentral", "middleLogat", "middleAdmin"]);
 $app->ruta("docrearusuari", "ctrlDocrearusuari", ["middleCentral", "middleLogat", "middleAdmin"]);
