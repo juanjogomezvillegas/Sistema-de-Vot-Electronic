@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="index.php?r=admin">
-      <img class="image logoNavbar" src="<?= $logoAplicacio["logo"]; ?>">
+      <img class="image logoNavbar is-rounded" src="<?= $logoAplicacio["logo"]; ?>">
     </a>
 
     <a id="btnNavbarBasicExample" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -50,7 +50,9 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               <?= $dadesUsuarilogat["username"]; ?>
-              <img class="image is-rounded ml-2" src="<?= $dadesUsuarilogat["icona"]; ?>" alt="icona">
+              <figure class="image">
+                <img class="is-rounded ml-2" src="<?= $dadesUsuarilogat["icona"]; ?>" alt="icona">
+              </figure>
             </a>
 
             <div class="navbar-dropdown is-right">

@@ -12,7 +12,13 @@
             </figure>
         </div>
         <form action="index.php?r=canviarImatgeUsuari" method="POST" class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-1 mb-4" enctype="multipart/form-data">
+            <?php if (isset($error) && $error === "1") { ?>
+                <div id="app">
+                    <missatge-error tittle="No has pujat cap imatge, o la imatge no està en el format .jpg o .png"></ missatge-error>
+                </div>
+            <?php } ?>
             <button id="botoCanviarImage" class="button is-link">Canviar Imatge <i class="fas fa-camera ml-2"></i></button>
+            <input type="hidden" name="idUsuari" value="<?= $dadesUsuarilogat["id"]; ?>">
             <div id="file-js-example" class="file has-name mt-3 is-link">
                 <label class="file-label">
                     <input class="file-input" type="file" name="imatgeUsuari">
