@@ -28,6 +28,7 @@
                 </div>
             </nav>
             <br>
+            <?php if ($countVots["total"] > 0) { ?>
             <div class="is-flex is-justify-content-center">
                 <table class="table is-narrow is-bordered is-striped is-hoverable is-centered">
                     <thead class="has-background-white-ter">
@@ -41,6 +42,7 @@
                     </thead>
                     <tbody id="tablaResultats">
                         <?php foreach ($candidats as $actual) { ?>
+                            <?php if ($actual["escons"] > 0) { ?>
                             <tr>
                                 <td class="has-text-centered"><img class="icon" src="<?= $actual["icona"]; ?>" alt="icona"></td>
                                 <td><?= $actual["nom"]; ?></td>
@@ -69,19 +71,16 @@
                                     </div>
                                 </td>
                             </tr>
+                            <?php } ?>
                         <?php } ?>
                     </tbody>
-                    <tfoot class="has-background-white-ter">
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th class="has-text-centered"><?= $countVots["total"]; ?></th>
-                            <th class="has-text-centered"><?= $numEscons["numEscons"]; ?></th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
+            <?php } else { ?>
+                <div id="app">
+                    <missatge-info tittle="El Pactometre no està disponible en Aquest Moment"></missatge-info>
+                </div>
+            <?php } ?>
         </div>
         <?php include "../src/view/util/script.php"; ?>
         <script src="js/pactometre.js"></script>

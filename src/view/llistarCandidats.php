@@ -61,7 +61,7 @@
             </div>
         </div>
         <?php include "../src/view/util/script.php"; ?>
-        <script src="js/llestarCandidat.js"></script>
+        <script src="js/llistarCandidat.js"></script>
     </body>
 
     <!-- Modal de Crear -->

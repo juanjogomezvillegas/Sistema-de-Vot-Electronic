@@ -9,11 +9,8 @@ function ctrlPactometre($peticio, $resposta, $contenidor)
 
     $countVots = $candidatsPDO->countVots();
 
-    $numEscons = $configPDO->getNumEscons();
-
     $resposta->set("candidats", $candidats);
     $resposta->set("countVots", $countVots);
-    $resposta->set("numEscons", $numEscons);
 
     $resposta->SetTemplate("pactometre.php");
 
