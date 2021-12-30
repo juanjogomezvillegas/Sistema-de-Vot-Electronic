@@ -16,6 +16,7 @@ include "../src/controller/canviarContrasenya.php";
 include "../src/controller/doCanviarContrasenya.php";
 include "../src/controller/canviarImatgeUsuari.php";
 include "../src/controller/canviarImatgeCandidat.php";
+include "../src/controller/configuracio.php";
 include "../src/controller/admin.php";
 include "../src/controller/resultats.php";
 include "../src/controller/doReiniciaResultat.php";
@@ -60,6 +61,9 @@ $app->ruta("doCanviarContrasenya", "ctrlDoCanviarContrasenya", ["middleCentral",
 $app->ruta("canviarImatgeUsuari", "ctrlCanviarImatgeUsuari", ["middleCentral", "middleLogat"]);
 $app->ruta("canviarImatgeCandidat", "ctrlCanviarImatgeCandidat", ["middleCentral", "middleLogat"]);
 
+$app->ruta("configuracio", "ctrlConfiguracio", ["middleCentral", "middleLogat"]);
+$app->ruta("canviarTitolAplicacio", "ctrlCanviarTitolAplicacio", ["middleCentral", "middleLogat"]);
+$app->ruta("canviarImatgeAplicacio", "ctrlCanviarImatgeAplicacio", ["middleCentral", "middleLogat"]);
 $app->ruta("admin", "ctrlAdmin", ["middleCentral", "middleLogat"]);
 $app->ruta("resultats", "ctrlResultats", ["middleCentral", "middleLogat", "middleSupervisor"]);
 $app->ruta("doReiniciaResultat", "ctrlDoReiniciaResultat", ["middleCentral", "middleLogat", "middleManager"]);
