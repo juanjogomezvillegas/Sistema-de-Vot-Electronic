@@ -35,12 +35,12 @@ function ctrlCanviarImatgeAplicacio($peticio, $resposta, $contenidor)
     $configPDO = $contenidor->configPDO();
 
     $imatge = $peticio->get("FILES", "imatgeAplicacio");
-    
-    if (isset($imatge) && ($imatge["type"] === "image/jpeg" || $imatge["type"] === "image/png")) {
-        $configPDO->updateLogo("img/bd/".$imatge["name"]);
 
-        move_uploaded_file($imatge["tmp_name"], "img/bd/".$imatge["name"]);
-    
+    if (isset($imatge) && ($imatge["type"] === "image/jpeg" || $imatge["type"] === "image/png")) {
+        $configPDO->updateLogo("img/bd/" . $imatge["name"]);
+
+        move_uploaded_file($imatge["tmp_name"], "img/bd/" . $imatge["name"]);
+
         $resposta->redirect("Location:index.php?r=configuracio");
     } else {
         $resposta->redirect("Location:index.php?r=configuracio&error=1");

@@ -10,9 +10,9 @@ class PactometrePDO extends ModelPDO
         where a.posicio like :posicio;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':posicio' => $posicio]);
- 
+
         $registres = $stm->fetch(\PDO::FETCH_ASSOC);
- 
+
         return $registres;
     }
 

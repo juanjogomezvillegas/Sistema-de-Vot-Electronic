@@ -13,19 +13,19 @@
                     <div id="app">
                         <missatge-error tittle="Hi ha algun camp buit"></missatge-error>
                     </div>
-                <?php } else if (isset($infoCrea) && $infoCrea === "1") { ?>
+                <?php } elseif (isset($infoCrea) && $infoCrea === "1") { ?>
                     <div id="app">
                         <missatge-info tittle="El Candidat s'ha creat correctament"></missatge-info>
                     </div>
-                <?php } else if (isset($infoEdita) && $infoEdita === "1") { ?>
+                <?php } elseif (isset($infoEdita) && $infoEdita === "1") { ?>
                     <div id="app">
                         <missatge-info tittle="El Candidat s'ha actualitzat correctament"></missatge-info>
                     </div>
-                <?php } else if (isset($infoEsborrar) && $infoEsborrar === "1") { ?>
+                <?php } elseif (isset($infoEsborrar) && $infoEsborrar === "1") { ?>
                     <div id="app">
                         <missatge-info tittle="El Candidat s'ha esborrat correctament"></missatge-info>
                     </div>
-                <?php } else if (isset($errorImatge) && $errorImatge === "1") { ?>
+                <?php } elseif (isset($errorImatge) && $errorImatge === "1") { ?>
                     <div id="app">
                         <missatge-error tittle="No has pujat cap imatge, o la imatge no està en el format .jpg o .png"></missatge-error>
                     </div>

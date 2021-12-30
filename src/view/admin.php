@@ -39,7 +39,7 @@
                         <p class="mr-2 is-size-2 is-variable">Usuaris</p>
                         <p id="itemAdminUsuariNum" class="is-size-2">0</p>
                     </div>
-                <?php } else if ($dadesUsuarilogat["rol"] === "Manager") { ?>
+                <?php } elseif ($dadesUsuarilogat["rol"] === "Manager") { ?>
                     <div class="itemAdmin column m-4 is-flex is-justify-content-center is-align-items-center">
                         <p class="mr-5 is-variable"><span class="icon"><i class="fas fa-users is-size-1"></i></span></p>
                         <p class="mr-2 is-size-2 is-variable">Usuaris</p>

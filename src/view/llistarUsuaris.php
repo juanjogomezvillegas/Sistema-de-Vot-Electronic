@@ -13,19 +13,19 @@
                     <div id="app">
                         <missatge-error tittle="La Contrasenya no s'ha verificat correctament"></missatge-error>
                     </div>
-                <?php } else if ((isset($errorCrear) && $errorCrear === "2") || (isset($errorEditar) && $errorEditar === "1")) { ?>
+                <?php } elseif ((isset($errorCrear) && $errorCrear === "2") || (isset($errorEditar) && $errorEditar === "1")) { ?>
                     <div id="app">
                         <missatge-error tittle="Hi ha algun camp buit"></missatge-error>
                     </div>
-                <?php } else if (isset($infoCrea) && $infoCrea === "1") { ?>
+                <?php } elseif (isset($infoCrea) && $infoCrea === "1") { ?>
                     <div id="app">
                         <missatge-info tittle="L'Usuari s'ha creat correctament"></missatge-info>
                     </div>
-                <?php } else if (isset($infoEdita) && $infoEdita === "1") { ?>
+                <?php } elseif (isset($infoEdita) && $infoEdita === "1") { ?>
                     <div id="app">
                         <missatge-info tittle="L'Usuari s'ha actualitzat correctament"></missatge-info>
                     </div>
-                <?php } else if (isset($infoEsborrar) && $infoEsborrar === "1") { ?>
+                <?php } elseif (isset($infoEsborrar) && $infoEsborrar === "1") { ?>
                     <div id="app">
                         <missatge-info tittle="L'Usuari s'ha esborrat correctament"></missatge-info>
                     </div>

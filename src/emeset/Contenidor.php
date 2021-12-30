@@ -55,7 +55,7 @@ class Contenidor
 
     public function connexio()
     {
-       return $this->connexio;
+        return $this->connexio;
     }
 
     public function modelPDO()

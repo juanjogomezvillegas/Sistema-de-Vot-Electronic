@@ -5,14 +5,14 @@ class UsuarisPDO extends ModelPDO
     public function llistat()
     {
         $registres = parent::llistatModel("usuari");
- 
+
         return $registres;
     }
 
     public function countRegistres()
     {
         $total = parent::countRegistresModel("usuari");
- 
+
         return $total;
     }
 
@@ -20,11 +20,11 @@ class UsuarisPDO extends ModelPDO
     {
         $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
         $recaptcha_secret = '6LdYiNAdAAAAAJHbglNb5T7PZLrqxzcp0IZ-bJXg';
-        
+
         $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
-        
+
         $recaptcha = json_decode($recaptcha);
-        
+
         return $recaptcha;
     }
 
@@ -33,7 +33,7 @@ class UsuarisPDO extends ModelPDO
         $query = "select id,username,contrasenya from usuari where username = :nom;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':nom' => $usuari]);
- 
+
         $usuariLogat = $stm->fetch(\PDO::FETCH_ASSOC);
 
         $exists = false;

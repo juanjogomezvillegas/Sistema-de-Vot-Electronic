@@ -1,4 +1,5 @@
 <?php
+
 /*Inclou el fitxer config.php*/
 include "../src/config.php";
 

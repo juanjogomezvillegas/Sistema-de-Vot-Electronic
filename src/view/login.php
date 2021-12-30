@@ -19,11 +19,11 @@
                             <div id="app">
                                 <missatge-error tittle="Usuari o Contrasenya Incorrectes"></missatge-error>
                             </div>
-                        <?php } else if (isset($error) && $error === "2") { ?>
+                        <?php } elseif (isset($error) && $error === "2") { ?>
                             <div id="app">
                                 <missatge-error tittle="Hi ha hagut algun error"></missatge-error>
                             </div>
-                        <?php } else if (isset($error) && $error === "3") { ?>
+                        <?php } elseif (isset($error) && $error === "3") { ?>
                             <div id="app">
                                 <missatge-error tittle="Accés Denegat"></missatge-error>
                             </div>

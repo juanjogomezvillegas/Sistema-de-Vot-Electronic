@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Middleware que controla que l'usuari sigui Administrator, Manager o Supervisor
  * **/

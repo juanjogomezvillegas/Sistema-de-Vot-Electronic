@@ -13,7 +13,7 @@
                     <div id="app">
                         <missatge-error tittle="No has pujat cap imatge, o la imatge no està en el format .jpg o .png"></missatge-error>
                     </div>
-                <?php } else if (isset($error) && $error === "2") { ?>
+                <?php } elseif (isset($error) && $error === "2") { ?>
                     <div id="app">
                         <missatge-error tittle='El Camp "Títol" està buit'></missatge-error>
                     </div>

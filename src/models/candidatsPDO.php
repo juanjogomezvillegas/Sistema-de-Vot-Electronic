@@ -7,12 +7,12 @@ class CandidatsPDO extends ModelPDO
         $query = "select * from candidat order by vots desc;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
- 
+
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
- 
+
         return $registres;
     }
 
@@ -22,12 +22,12 @@ class CandidatsPDO extends ModelPDO
         from candidat c order by c.vots desc;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
- 
+
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
- 
+
         return $registres;
     }
 
@@ -53,7 +53,7 @@ class CandidatsPDO extends ModelPDO
     public function countRegistres()
     {
         $total = parent::countRegistresModel("candidat");
- 
+
         return $total;
     }
 
@@ -62,7 +62,7 @@ class CandidatsPDO extends ModelPDO
         $query = "select IFNULL(sum(vots), 0) total from candidat;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
-        
+
         $total = $stm->fetch(\PDO::FETCH_ASSOC);
 
         return $total;

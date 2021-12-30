@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Middleware que controla l'aplicació
  * **/

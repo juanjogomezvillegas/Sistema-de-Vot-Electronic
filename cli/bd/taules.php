@@ -1,4 +1,5 @@
 <?php
+
 /*Crea totes les taules a la base de dades que necessita l'aplicació per funcionar*/
 $connexio->query("CREATE TABLE config (
     id INT AUTO_INCREMENT,

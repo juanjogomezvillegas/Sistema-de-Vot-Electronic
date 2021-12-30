@@ -23,16 +23,16 @@
         <a class="navbar-item" href="index.php?r=pactometre">
             <span class="icon mr-1"><i class="fas fa-handshake"></i></span> Pactometre
         </a>
-        <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
+          <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
         <a class="navbar-item" href="index.php?r=llistarUsuaris">
             <span class="icon mr-1"><i class="fas fa-users"></i></span> Gestió d'Usuaris
         </a>
-        <?php } ?>
-        <?php if ($dadesUsuarilogat["rol"] === "Administrator" || $dadesUsuarilogat["rol"] === "Manager") { ?>
+          <?php } ?>
+          <?php if ($dadesUsuarilogat["rol"] === "Administrator" || $dadesUsuarilogat["rol"] === "Manager") { ?>
         <a class="navbar-item" href="index.php?r=llistarCandidats">
             <span class="icon mr-1"><i class="fas fa-person-booth"></i></span> Gestió de Candidats
         </a>
-        <?php } ?>
+          <?php } ?>
       <?php } ?>
     </div>
 
@@ -42,11 +42,11 @@
                 <span class="icon mr-1"><i class="fas fa-sign-in-alt"></i></span> Inicia Sessió
             </a>
         <?php } else { ?>
-          <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
+            <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
           <a class="navbar-item" href="index.php?r=configuracio">
               <span class="icon"><i class="fas fa-cog"></i></span>
           </a>
-          <?php } ?>
+            <?php } ?>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               <?= $dadesUsuarilogat["username"]; ?>

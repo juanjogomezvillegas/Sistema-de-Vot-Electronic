@@ -11,11 +11,11 @@
                 <div id="app">
                     <missatge-error tittle="La Contrasenya Actual es Incorrecte"></missatge-error>
                 </div>
-            <?php } else if (isset($error) && $error === "2") { ?>
+            <?php } elseif (isset($error) && $error === "2") { ?>
                 <div id="app">
                     <missatge-error tittle="La Contrasenya no s'ha verificat correctament"></missatge-error>
                 </div>
-            <?php } else if (isset($error) && $error === "3") { ?>
+            <?php } elseif (isset($error) && $error === "3") { ?>
                 <div id="app">
                     <missatge-error tittle="Hi ha algun camp buit"></missatge-error>
                 </div>

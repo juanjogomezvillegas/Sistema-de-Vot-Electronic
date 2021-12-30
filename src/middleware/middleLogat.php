@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Middleware que controla si l'usuari està identificat
  * **/

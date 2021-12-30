@@ -14,7 +14,7 @@ function ctrlDoactualitzarcandidat($peticio, $resposta, $contenidor)
 
     if (!empty($nomCandidat) && !empty($lemaCampanya)) {
         $candidatsPDO->update($idCandidat, $nomCandidat, $lemaCampanya);
-        
+
         $resposta->redirect("Location:index.php?r=llistarCandidats&infoEdita=1");
     } else {
         $resposta->redirect("Location:index.php?r=llistarCandidats&errorEditar=1");

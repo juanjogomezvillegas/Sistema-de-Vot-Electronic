@@ -26,11 +26,11 @@
               <span class="icon mr-1"><i class="fas fa-sign-in-alt"></i></span> Inicia Sessió
             </a>
         <?php } else { ?>
-          <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
+            <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
           <a class="navbar-item" href="index.php?r=configuracio">
               <span class="icon"><i class="fas fa-cog"></i></span>
           </a>
-          <?php } ?>
+            <?php } ?>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               <?= $dadesUsuarilogat["username"]; ?>
@@ -39,7 +39,7 @@
               </figure>
             </a>
 
-            <div class="navbar-dropdown	is-right">
+            <div class="navbar-dropdown is-right">
               <a class="navbar-item" href="index.php?r=elMeuPerfil">
                 <span class="icon mr-1"><i class="fas fa-user"></i></span> El Meu Perfil
               </a>

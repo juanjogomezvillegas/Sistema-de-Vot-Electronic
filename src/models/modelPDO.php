@@ -28,12 +28,12 @@ class ModelPDO
         $query = "select * from $taula;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
- 
+
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
- 
+
         return $registres;
     }
 
@@ -42,7 +42,7 @@ class ModelPDO
         $query = "select count(*) as total from $taula;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
-        
+
         $total = $stm->fetch(\PDO::FETCH_ASSOC);
 
         return $total;

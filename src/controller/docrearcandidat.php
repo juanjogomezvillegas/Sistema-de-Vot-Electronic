@@ -12,7 +12,7 @@ function ctrlDocrearcandidat($peticio, $resposta, $contenidor)
 
     if (!empty($nomCandidat) && !empty($lemaCampanya)) {
         $candidatsPDO->add($nomCandidat, $lemaCampanya);
-        
+
         $resposta->redirect("Location:index.php?r=llistarCandidats&infoCrea=1");
     } else {
         $resposta->redirect("Location:index.php?r=llistarCandidats&errorCrear=1");
