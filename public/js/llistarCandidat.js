@@ -12,6 +12,36 @@ $(document).ready(function() {
         $("#modalEsborrarCandidat").toggleClass("is-active");
     });
 
+    $(".editaImatgeCandidat").click(function(e) {
+        let idCandidat = $( e.target ).siblings("input").val();
+
+        $("#app").remove();
+
+        $("#formCanviImatge").children().remove();
+
+        $("#formCanviImatge").append(`<form action="index.php?r=canviarImatgeCandidat" method="POST" enctype="multipart/form-data" class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-1 mb-4">
+        <button class="button is-link">Canviar Imatge <i class="fas fa-camera ml-2"></i></button>
+        <input type="hidden" name="idCandidat" value="${ idCandidat }">
+        <div id="file-js-example" class="file has-name mt-3 is-link">
+            <label class="file-label">
+                <input class="file-input" type="file" name="imatgeCandidat">
+                <span class="file-cta">
+                <span class="file-icon">
+                    <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label">
+                    Puja una Imatge ...
+                </span>
+                </span>
+                <span class="file-name has-background-link-light">
+                    No has pujat cap imatge
+                </span>
+            </label>
+        </div>
+    </form>
+    <script src="js/elMeuPerfil.js"></script>`);
+    });
+
     $(".editaCandidat").click(function(e) {
         let idCandidat = $( e.target ).siblings("input").val();
 

@@ -25,8 +25,13 @@
                     <div id="app">
                         <missatge-info tittle="El Candidat s'ha esborrat correctament"></missatge-info>
                     </div>
+                <?php } else if (isset($errorImatge) && $errorImatge === "1") { ?>
+                    <div id="app">
+                        <missatge-error tittle="No has pujat cap imatge, o la imatge no està en el format .jpg o .png"></missatge-error>
+                    </div>
                 <?php } ?>
             </div>
+            <div id="formCanviImatge" class="mb-5 is-flex is-justify-content-center"></div>
             <div class="is-flex is-justify-content-center mb-5">
                 <button id="botoCrearCandidat" class="button is-danger">Crear Candidat <i class="fas fa-folder-plus ml-2"></i></button>
             </div>
@@ -50,6 +55,9 @@
                                     <a class="has-text-link">
                                         <input type="hidden" name="idCandidat1" value="<?= $actual["id"]; ?>">
                                         <i class="fas fa-edit editaCandidat"></i></a>
+                                    <a class="has-text-primary">
+                                        <input type="hidden" name="idCandidat1" value="<?= $actual["id"]; ?>">
+                                        <i class="fas fa-image editaImatgeCandidat"></i></a>
                                     <a class="has-text-danger">
                                         <input type="hidden" name="idCandidat2" value="<?= $actual["id"]; ?>">
                                         <i class="fas fa-trash-alt esborrarCandidat"></i></a>
