@@ -5,7 +5,7 @@
         <title>Configuració | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
-        <?php require "../src/view/util/menu.php"; ?>
+        <?php require "../src/view/util/menuadmin.php"; ?>
         <br>
         <div class="is-full">
             <div class="is-full mr-6 ml-6 mb-4">
