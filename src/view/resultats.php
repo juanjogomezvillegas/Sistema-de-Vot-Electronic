@@ -16,6 +16,7 @@
                 <a href="index.php?r=pactometre" class="button is-danger ml-2">Pactometre <i class="fas fa-handshake ml-2"></i></a>
             </div>
             <div class="table-container is-flex is-justify-content-center">
+                <?php if (count($candidats) > 0) { ?>
                 <table class="table is-narrow is-bordered is-striped is-hoverable">
                     <thead class="has-background-white-ter">
                         <tr>
@@ -47,6 +48,11 @@
                         </tr>
                     </tfoot>
                 </table>
+                <?php } else { ?>
+                    <div id="app">
+                        <missatge-info tittle="Els Resultats no estàn disponibles en Aquest Moment"></missatge-info>
+                    </div>
+                <?php } ?>
             </div>
         </div>
         <?php include "../src/view/util/script.php"; ?>
