@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ca" class="fonsDark">
     <head>
-        <?php include "../src/view/util/head.php"; ?>
-        <title>Gestió d'Usuaris | <?= $titolAplicacio["titol"]; ?></title>
+        <?php require "../src/view/util/head.php"; ?>
+        <title>Gestió d'Usuaris | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
-        <?php include "../src/view/util/menuadmin.php"; ?>
+        <?php require "../src/view/util/menuadmin.php"; ?>
         <br>
         <div class="is-full mt-6 mb-2">
             <div class="mb-5 is-flex is-justify-content-center">
@@ -47,15 +47,15 @@
                     <tbody>
                         <?php foreach ($usuaris as $actual) { ?>
                             <tr>
-                                <td class="has-text-centered"><img class="icon" src="<?= $actual["icona"]; ?>" alt="icona"></td>
-                                <td><?= $actual["username"]; ?></td>
-                                <td><?= $actual["rol"]; ?></td>
+                                <td class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
+                                <td><?php echo $actual["username"]; ?></td>
+                                <td><?php echo $actual["rol"]; ?></td>
                                 <td>
                                     <a class="has-text-link">
-                                        <input type="hidden" name="usernameUsuari" value="<?= $actual["username"]; ?>">
+                                        <input type="hidden" name="usernameUsuari" value="<?php echo $actual["username"]; ?>">
                                         <i class="fas fa-edit editaUsuari"></i></a>
                                     <a class="has-text-danger">
-                                        <input type="hidden" name="idUsuari" value="<?= $actual["id"]; ?>">
+                                        <input type="hidden" name="idUsuari" value="<?php echo $actual["id"]; ?>">
                                         <i class="fas fa-trash-alt borrarUsuari"></i></a>
                                 </td>
                             </tr>
@@ -64,7 +64,7 @@
                 </table>
             </div>
         </div>
-        <?php include "../src/view/util/script.php"; ?>
+        <?php require "../src/view/util/script.php"; ?>
         <script src="js/llistarUsuaris.js"></script>
     </body>
 
@@ -97,7 +97,7 @@
                             <div class="select">
                                 <select id="rol" name="rolUsuari">
                                     <?php foreach ($rols as $actual) { ?>
-                                        <option value="<?= $actual ?>"><?= $actual ?></option>
+                                        <option value="<?php echo $actual ?>"><?php echo $actual ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -134,7 +134,7 @@
                             <div class="select">
                                 <select id="rol" name="rolUsuari">
                                     <?php foreach ($rols as $actual) { ?>
-                                        <option value="<?= $actual ?>"><?= $actual ?></option>
+                                        <option value="<?php echo $actual ?>"><?php echo $actual ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

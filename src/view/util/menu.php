@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="index.php">
-      <img class="image logoNavbar" src="<?= $logoAplicacio["logo"]; ?>">
+      <img class="image logoNavbar" src="<?php echo $logoAplicacio["logo"]; ?>">
     </a>
 
     <a id="btnNavbarBasicExample" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -33,9 +33,9 @@
             <?php } ?>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
-              <?= $dadesUsuarilogat["username"]; ?>
+              <?php echo $dadesUsuarilogat["username"]; ?>
               <figure class="image">
-                <img class="is-rounded ml-2" src="<?= $dadesUsuarilogat["icona"]; ?>" alt="icona">
+                <img class="is-rounded ml-2" src="<?php echo $dadesUsuarilogat["icona"]; ?>" alt="icona">
               </figure>
             </a>
 

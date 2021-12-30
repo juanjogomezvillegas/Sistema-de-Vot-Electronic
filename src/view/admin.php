@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ca" class="fonsDark">
     <head>
-        <?php include "../src/view/util/head.php"; ?>
-        <title>Panell d'Administració | <?= $titolAplicacio["titol"]; ?></title>
+        <?php require "../src/view/util/head.php"; ?>
+        <title>Panell d'Administració | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
-        <?php include "../src/view/util/menuadmin.php"; ?>
+        <?php require "../src/view/util/menuadmin.php"; ?>
         <br>
         <div class="field is-flex is-justify-content-start">
             <p class="control has-icons-left">
@@ -18,7 +18,7 @@
         <?php if ($dadesUsuarilogat["rol"] === "Administrator" || $dadesUsuarilogat["rol"] === "Manager") { ?>
             <div class="field is-flex is-justify-content-start">
                 <p class="control has-icons-left">
-                    <input class="input itemAdmin is-size-6" type="text" id="numEscons" value="<?= $numEscons["numEscons"]; ?>">
+                    <input class="input itemAdmin is-size-6" type="text" id="numEscons" value="<?php echo $numEscons["numEscons"]; ?>">
                     <span class="icon is-small is-left is-size-6">
                     <i class="fas fa-chair"></i>
                     </span>
@@ -61,7 +61,7 @@
                 <?php } ?>
             </div>
         </div>
-        <?php include "../src/view/util/script.php"; ?>
+        <?php require "../src/view/util/script.php"; ?>
         <script src="js/admin.js"></script>
     </body>
 </html>

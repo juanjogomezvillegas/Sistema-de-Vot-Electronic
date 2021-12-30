@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ca" class="fonsDark">
     <head>
-        <?php include "../src/view/util/head.php"; ?>
-        <title>Configuració | <?= $titolAplicacio["titol"]; ?></title>
+        <?php require "../src/view/util/head.php"; ?>
+        <title>Configuració | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
-        <?php include "../src/view/util/menu.php"; ?>
+        <?php require "../src/view/util/menu.php"; ?>
         <br>
         <div class="is-full">
             <div class="is-full mr-6 ml-6 mb-4">
@@ -21,7 +21,7 @@
                 <form action="index.php?r=canviarTitolAplicacio" method="POST" class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-6 mb-6">
                     <div class="field m-3 mb-5">
                         <div class="control">
-                            <input class="input itemAdmin" type="text" id="titolAplicacio" name="titolAplicacio" value="<?= $titolAplicacio["titol"]; ?>">
+                            <input class="input itemAdmin" type="text" id="titolAplicacio" name="titolAplicacio" value="<?php echo $titolAplicacio["titol"]; ?>">
                         </div>
                     </div>
                     <button id="botoCanviarImage" class="button is-link">Canviar el Títol</button>
@@ -29,7 +29,7 @@
             </div>
             <div class="columns is-variable mr-6 ml-6">
                 <div class="column">
-                    <img class="image is-rounded" src="<?= $logoAplicacio["logo"]; ?>">
+                    <img class="image is-rounded" src="<?php echo $logoAplicacio["logo"]; ?>">
                 </div>
                 <div class="column">
                     <form action="index.php?r=canviarImatgeAplicacio" method="POST" class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-6 mb-4" enctype="multipart/form-data">
@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <?php include "../src/view/util/script.php"; ?>
+        <?php require "../src/view/util/script.php"; ?>
         <script src="js/elMeuPerfil.js"></script>
     </body>
 </html>

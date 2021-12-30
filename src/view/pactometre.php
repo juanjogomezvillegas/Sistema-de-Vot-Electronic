@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ca" class="fonsDark">
     <head>
-        <?php include "../src/view/util/head.php"; ?>
-        <title>Pactometre | <?= $titolAplicacio["titol"]; ?></title>
+        <?php require "../src/view/util/head.php"; ?>
+        <title>Pactometre | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
-        <?php include "../src/view/util/menuadmin.php"; ?>
+        <?php require "../src/view/util/menuadmin.php"; ?>
         <div class="is-full mt-5 mb-1 mr-6 ml-6">
             <nav class="level">
                 <div class="level-item has-text-centered">
@@ -44,13 +44,13 @@
                         <?php foreach ($candidats as $actual) { ?>
                             <?php if ($actual["escons"] > 0) { ?>
                             <tr>
-                                <td class="has-text-centered"><img class="icon" src="<?= $actual["icona"]; ?>" alt="icona"></td>
-                                <td><?= $actual["nom"]; ?></td>
-                                <td class="has-text-centered"><?= $actual["vots"]; ?></td>
-                                <td class="has-text-centered"><?= $actual["escons"]; ?></td>
+                                <td class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
+                                <td><?php echo $actual["nom"]; ?></td>
+                                <td class="has-text-centered"><?php echo $actual["vots"]; ?></td>
+                                <td class="has-text-centered"><?php echo $actual["escons"]; ?></td>
                                 <td>
                                     <div class="select is-rounded">
-                                        <input type="hidden" name="idCandidat" value="<?= $actual["id"]; ?>">
+                                        <input type="hidden" name="idCandidat" value="<?php echo $actual["id"]; ?>">
                                         <select class="SelectPosicio">
                                             <?php if ($actual["posicio"] === "si") { ?>
                                                 <option value="si" selected>Sí</option>
@@ -82,7 +82,7 @@
                 </div>
             <?php } ?>
         </div>
-        <?php include "../src/view/util/script.php"; ?>
+        <?php require "../src/view/util/script.php"; ?>
         <script src="js/pactometre.js"></script>
     </body>
 </html>

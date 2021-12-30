@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ca" class="fonsDark">
     <head>
-        <?php include "../src/view/util/head.php"; ?>
-        <title>Gestió de Candidats | <?= $titolAplicacio["titol"]; ?></title>
+        <?php require "../src/view/util/head.php"; ?>
+        <title>Gestió de Candidats | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
-        <?php include "../src/view/util/menuadmin.php"; ?>
+        <?php require "../src/view/util/menuadmin.php"; ?>
         <br>
         <div class="is-full mt-6 mb-2">
             <div class="mb-5 is-flex is-justify-content-center">
@@ -48,18 +48,18 @@
                     <tbody>
                         <?php foreach ($candidats as $actual) { ?>
                             <tr>
-                                <td class="has-text-centered"><img class="icon" src="<?= $actual["icona"]; ?>" alt="icona"></td>
-                                <td><?= $actual["nom"]; ?></td>
-                                <td><?= $actual["lema_campanya"]; ?></td>
+                                <td class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
+                                <td><?php echo $actual["nom"]; ?></td>
+                                <td><?php echo $actual["lema_campanya"]; ?></td>
                                 <td>
                                     <a class="has-text-link">
-                                        <input type="hidden" name="idCandidat1" value="<?= $actual["id"]; ?>">
+                                        <input type="hidden" name="idCandidat1" value="<?php echo $actual["id"]; ?>">
                                         <i class="fas fa-edit editaCandidat"></i></a>
                                     <a class="has-text-primary">
-                                        <input type="hidden" name="idCandidat1" value="<?= $actual["id"]; ?>">
+                                        <input type="hidden" name="idCandidat1" value="<?php echo $actual["id"]; ?>">
                                         <i class="fas fa-image editaImatgeCandidat"></i></a>
                                     <a class="has-text-danger">
-                                        <input type="hidden" name="idCandidat2" value="<?= $actual["id"]; ?>">
+                                        <input type="hidden" name="idCandidat2" value="<?php echo $actual["id"]; ?>">
                                         <i class="fas fa-trash-alt esborrarCandidat"></i></a>
                                 </td>
                             </tr>
@@ -68,7 +68,7 @@
                 </table>
             </div>
         </div>
-        <?php include "../src/view/util/script.php"; ?>
+        <?php require "../src/view/util/script.php"; ?>
         <script src="js/llistarCandidat.js"></script>
     </body>
 

@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Gestor de Vot Electronic
+ *
+ * @author: Juan José Gómez Villegas
+ *
+ * Permet crear, gestionar i esborrar candidats i usuaris, votar als candidats i gestionar els resultats.
+ * Per provar com funcionar podeu executar php -S localhost:8000 a la carpeta public.
+ * I amb el navegador visitar la url http://192.168.0.10:8000/
+ **/
+
 $config = array();
 $rols = array();
 $options = ['cost' => 11];

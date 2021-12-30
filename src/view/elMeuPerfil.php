@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ca">
     <head>
-        <?php include "../src/view/util/head.php"; ?>
-        <title>El Meu Perfil | <?= $titolAplicacio["titol"]; ?></title>
+        <?php require "../src/view/util/head.php"; ?>
+        <title>El Meu Perfil | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body>
-        <?php include "../src/view/util/menu.php"; ?>
+        <?php require "../src/view/util/menu.php"; ?>
         <div class="is-flex is-justify-content-center mt-6 mb-1">
             <figure class="image is-128x128">
-                <img class="is-rounded" src="<?= $dadesUsuarilogat["icona"]; ?>">
+                <img class="is-rounded" src="<?php echo $dadesUsuarilogat["icona"]; ?>">
             </figure>
         </div>
         <form action="index.php?r=canviarImatgeUsuari" method="POST" class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-1 mb-4" enctype="multipart/form-data">
@@ -18,7 +18,7 @@
                 </div>
             <?php } ?>
             <button id="botoCanviarImage" class="button is-link">Canviar Imatge <i class="fas fa-camera ml-2"></i></button>
-            <input type="hidden" name="idUsuari" value="<?= $dadesUsuarilogat["id"]; ?>">
+            <input type="hidden" name="idUsuari" value="<?php echo $dadesUsuarilogat["id"]; ?>">
             <div id="file-js-example" class="file has-name mt-3 is-link">
                 <label class="file-label">
                     <input class="file-input" type="file" name="imatgeUsuari">
@@ -42,11 +42,11 @@
                 <table class="table is-narrow is-bordered is-hoverable is-fullwidth">
                     <tr>
                         <th class="has-background-white-ter">Username</th>
-                        <td><?= $dadesUsuarilogat["username"]; ?></td>
+                        <td><?php echo $dadesUsuarilogat["username"]; ?></td>
                     </tr>
                     <tr>
                         <th class="has-background-white-ter">Rol</th>
-                        <td><?= $dadesUsuarilogat["rol"]; ?></td>
+                        <td><?php echo $dadesUsuarilogat["rol"]; ?></td>
                     </tr>
                 </table>
             </div>
@@ -54,7 +54,7 @@
         <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-4">
             <a href="index.php?r=canviarContrasenya" id="botoCanviarImage" class="button is-link">Canviar Contrasenya <i class="fas fa-key ml-2"></i></a>
         </div>
-        <?php include "../src/view/util/script.php"; ?>
+        <?php require "../src/view/util/script.php"; ?>
         <script src="js/elMeuPerfil.js"></script>
     </body>
 </html>

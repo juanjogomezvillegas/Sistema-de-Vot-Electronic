@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ca">
     <head>
-        <?php include "../src/view/util/head.php"; ?>
-        <title>Canvia la Contrasenya | <?= $titolAplicacio["titol"]; ?></title>
+        <?php require "../src/view/util/head.php"; ?>
+        <title>Canvia la Contrasenya | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body>
-        <?php include "../src/view/util/menu.php"; ?>
+        <?php require "../src/view/util/menu.php"; ?>
         <form action="index.php?r=doCanviarContrasenya" method="POST" class="is-flex is-flex-direction-column is-justify-content-center m-6">
             <?php if (isset($error) && $error === "1") { ?>
                 <div id="app">
@@ -20,7 +20,7 @@
                     <missatge-error tittle="Hi ha algun camp buit"></missatge-error>
                 </div>
             <?php } ?>
-            <input type="hidden" name="idUsuari" value="<?= $dadesUsuarilogat["id"]; ?>">
+            <input type="hidden" name="idUsuari" value="<?php echo $dadesUsuarilogat["id"]; ?>">
             <div class="field m-3">
                 <label for="passAct" class="label">Contrasenya Actual</label>
                 <div class="control">
@@ -41,7 +41,7 @@
             </div>
             <button id="botoCanviarImage" class="button is-link m-6">Canviar Contrasenya <i class="fas fa-key ml-2"></i></button>
         </form>
-        <?php include "../src/view/util/script.php"; ?>
+        <?php require "../src/view/util/script.php"; ?>
         <script src="js/elMeuPerfil.js"></script>
     </body>
 </html>

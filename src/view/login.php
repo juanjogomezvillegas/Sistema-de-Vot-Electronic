@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ca">
     <head>
-        <?php include "../src/view/util/head.php"; ?>
-        <title>Inicia Sessió | <?= $titolAplicacio["titol"]; ?></title>
+        <?php require "../src/view/util/head.php"; ?>
+        <title>Inicia Sessió | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body>
         <section class="hero is-link is-fullheight">
@@ -13,7 +13,7 @@
                     <form action="index.php?r=dologin" method="POST" class="box formlogin">
                         <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                         <div class="field">
-                            <a href="index.php"><img class="image" src="<?= $logoAplicacio["logo"]; ?>" alt="logo"></a>
+                            <a href="index.php"><img class="image" src="<?php echo $logoAplicacio["logo"]; ?>" alt="logo"></a>
                         </div>
                         <?php if (isset($error) && $error === "1") { ?>
                             <div id="app">
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </section>
-        <?php include "../src/view/util/script.php"; ?>
+        <?php require "../src/view/util/script.php"; ?>
         <script src='https://www.google.com/recaptcha/api.js?render=6LdYiNAdAAAAAIV1eoknbB6PrfaRSpQXIdRT4uDv'></script>
         <script src="js/recaptcha.js"></script>
     </body>

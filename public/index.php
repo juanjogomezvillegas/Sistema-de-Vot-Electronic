@@ -1,40 +1,50 @@
 <?php
 
+/**
+ * Gestor de Vot Electronic
+ *
+ * @author: Juan José Gómez Villegas
+ *
+ * Permet crear, gestionar i esborrar candidats i usuaris, votar als candidats i gestionar els resultats.
+ * Per provar com funcionar podeu executar php -S localhost:8000 a la carpeta public.
+ * I amb el navegador visitar la url http://192.168.0.10:8000/
+ **/
+
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 /*Inclou el fitxer config.php*/
-include "../src/config.php";
+require_once "../src/config.php";
 /*Inclou els controladors*/
-include "../src/controller/ajaxServer.php";
-include "../src/controller/portada.php";
-include "../src/controller/votar.php";
-include "../src/controller/login.php";
-include "../src/controller/dologin.php";
-include "../src/controller/logout.php";
-include "../src/controller/elMeuPerfil.php";
-include "../src/controller/canviarContrasenya.php";
-include "../src/controller/doCanviarContrasenya.php";
-include "../src/controller/canviarImatgeUsuari.php";
-include "../src/controller/canviarImatgeCandidat.php";
-include "../src/controller/configuracio.php";
-include "../src/controller/admin.php";
-include "../src/controller/resultats.php";
-include "../src/controller/doReiniciaResultat.php";
-include "../src/controller/pactometre.php";
-include "../src/controller/llistarUsuaris.php";
-include "../src/controller/llistarCandidats.php";
-include "../src/controller/docrearusuari.php";
-include "../src/controller/doactualitzarusuari.php";
-include "../src/controller/doesborrarusuari.php";
-include "../src/controller/docrearcandidat.php";
-include "../src/controller/doactualitzarcandidat.php";
-include "../src/controller/doesborrarcandidat.php";
+require_once "../src/controller/ajaxServer.php";
+require_once "../src/controller/portada.php";
+require_once "../src/controller/votar.php";
+require_once "../src/controller/login.php";
+require_once "../src/controller/dologin.php";
+require_once "../src/controller/logout.php";
+require_once "../src/controller/elMeuPerfil.php";
+require_once "../src/controller/canviarContrasenya.php";
+require_once "../src/controller/doCanviarContrasenya.php";
+require_once "../src/controller/canviarImatgeUsuari.php";
+require_once "../src/controller/canviarImatgeCandidat.php";
+require_once "../src/controller/configuracio.php";
+require_once "../src/controller/admin.php";
+require_once "../src/controller/resultats.php";
+require_once "../src/controller/doReiniciaResultat.php";
+require_once "../src/controller/pactometre.php";
+require_once "../src/controller/llistarUsuaris.php";
+require_once "../src/controller/llistarCandidats.php";
+require_once "../src/controller/docrearusuari.php";
+require_once "../src/controller/doactualitzarusuari.php";
+require_once "../src/controller/doesborrarusuari.php";
+require_once "../src/controller/docrearcandidat.php";
+require_once "../src/controller/doactualitzarcandidat.php";
+require_once "../src/controller/doesborrarcandidat.php";
 /*Inclou els middleware*/
-include "../src/middleware/middleCentral.php";
-include "../src/middleware/middleLogat.php";
-include "../src/middleware/middleAdmin.php";
-include "../src/middleware/middleManager.php";
-include "../src/middleware/middleSupervisor.php";
+require_once "../src/middleware/middleCentral.php";
+require_once "../src/middleware/middleLogat.php";
+require_once "../src/middleware/middleAdmin.php";
+require_once "../src/middleware/middleManager.php";
+require_once "../src/middleware/middleSupervisor.php";
 
 $contenidor = new \Emeset\Contenidor($config, $rols, $options);
 $app = new \Emeset\Emeset($contenidor);

@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="index.php?r=admin">
-      <img class="image logoNavbar is-rounded" src="<?= $logoAplicacio["logo"]; ?>">
+      <img class="image logoNavbar is-rounded" src="<?php echo $logoAplicacio["logo"]; ?>">
     </a>
 
     <a id="btnNavbarBasicExample" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -23,16 +23,16 @@
         <a class="navbar-item" href="index.php?r=pactometre">
             <span class="icon mr-1"><i class="fas fa-handshake"></i></span> Pactometre
         </a>
-          <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
+            <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
         <a class="navbar-item" href="index.php?r=llistarUsuaris">
             <span class="icon mr-1"><i class="fas fa-users"></i></span> Gestió d'Usuaris
         </a>
-          <?php } ?>
-          <?php if ($dadesUsuarilogat["rol"] === "Administrator" || $dadesUsuarilogat["rol"] === "Manager") { ?>
+            <?php } ?>
+            <?php if ($dadesUsuarilogat["rol"] === "Administrator" || $dadesUsuarilogat["rol"] === "Manager") { ?>
         <a class="navbar-item" href="index.php?r=llistarCandidats">
             <span class="icon mr-1"><i class="fas fa-person-booth"></i></span> Gestió de Candidats
         </a>
-          <?php } ?>
+            <?php } ?>
       <?php } ?>
     </div>
 
@@ -49,9 +49,9 @@
             <?php } ?>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
-              <?= $dadesUsuarilogat["username"]; ?>
+              <?php echo $dadesUsuarilogat["username"]; ?>
               <figure class="image">
-                <img class="is-rounded ml-2" src="<?= $dadesUsuarilogat["icona"]; ?>" alt="icona">
+                <img class="is-rounded ml-2" src="<?php echo $dadesUsuarilogat["icona"]; ?>" alt="icona">
               </figure>
             </a>
 
