@@ -41,6 +41,7 @@
                         <tr>
                             <th>Icona</th>
                             <th>Nom i Cognoms</th>
+                            <th>Ideologia</th>
                             <th>Lema de Campanya</th>
                             <th>Accions</th>
                         </tr>
@@ -50,6 +51,7 @@
                             <tr>
                                 <td class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
                                 <td><?php echo $actual["nom"]; ?></td>
+                                <td><?php echo $actual["ideologia"]; ?></td>
                                 <td><?php echo $actual["lema_campanya"]; ?></td>
                                 <td>
                                     <a class="has-text-link">
@@ -86,6 +88,12 @@
                         <label class="label">Nom i Cognoms</label>
                         <div class="control">
                             <input id="nomCandidat" name="nomCandidat" class="input" type="text" placeholder="Nom i Cognoms">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Ideologia</label>
+                        <div class="control">
+                            <input id="ideologia" name="ideologia" class="input" type="text" placeholder="Ideologia">
                         </div>
                     </div>
                     <div class="field">

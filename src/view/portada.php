@@ -8,25 +8,34 @@
         <?php require "../src/view/util/menu.php"; ?>
         <br>
         <div class="is-full">
+            <?php if (isset($error) && $error === "1") { ?>
+                <div id="app">
+                    <missatge-error tittle="Hi ha hagut algun error"></missatge-error>
+                </div>
+            <?php } ?>
             <?php if (count($llistatCandidats) > 0) { ?>
             <div class="columns is-multiline is-variable is-centered">
                 <?php foreach ($llistatCandidats as $actual) { ?>
                     <div class="card column is-one-quarter m-2">
-                    <a href="index.php?r=votar&id=<?php echo $actual["id"]; ?>">
-                        <header class="card-header">
-                            <figure class="image is-48x48">
-                                <img src="<?php echo $actual["icona"]; ?>" alt="<?php echo $actual["nom"]; ?>">
-                            </figure>
-                            <p class="card-header-title">
-                                <?php echo $actual["nom"]; ?>
-                            </p>
-                        </header>
-                        </a>
-                        <div class="card-content">
-                            <div class="content">
-                                <?php echo $actual["lema_campanya"]; ?>
+                        <form action="index.php?r=votar&id=<?php echo $actual["id"]; ?>" method="POST">
+                            <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+                            <header class="card-header">
+                                <figure class="image is-48x48">
+                                    <img src="<?php echo $actual["icona"]; ?>" alt="<?php echo $actual["nom"]; ?>">
+                                </figure>
+                                <p class="card-header-title">
+                                    <?php echo $actual["nom"]; ?>
+                                </p>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <?php echo $actual["lema_campanya"]; ?>
+                                </div>
+                                <div class="is-flex is-justify-content-center is-align-items-center">
+                                    <button id="botoVotarCandidat" class="button is-dark">Votar <i class="fas fa-paper-plane ml-2"></i></button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 <?php } ?>
             </div>
@@ -37,5 +46,7 @@
             <?php } ?>
         </div>
         <?php require "../src/view/util/script.php"; ?>
+        <script src='https://www.google.com/recaptcha/api.js?render=6LdYiNAdAAAAAIV1eoknbB6PrfaRSpQXIdRT4uDv'></script>
+        <script src="js/recaptcha.js"></script>
     </body>
 </html>

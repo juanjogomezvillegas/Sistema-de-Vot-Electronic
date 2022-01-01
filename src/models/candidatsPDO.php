@@ -83,11 +83,11 @@ class CandidatsPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function add($nom, $lema)
+    public function add($nom, $lema, $ideologia)
     {
-        $query = "insert into candidat (nom,lema_campanya) values (:nom,:lema);";
+        $query = "insert into candidat (nom,lema_campanya,ideologia) values (:nom,:lema,:ideologia);";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':nom' => $nom,':lema' => $lema]);
+        $result = $stm->execute([':nom' => $nom,':lema' => $lema,':ideologia' => $ideologia]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
@@ -115,11 +115,11 @@ class CandidatsPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function update($id, $nom, $lema)
+    public function update($id, $nom, $lema, $ideologia)
     {
-        $query = "update candidat set nom = :nom,lema_campanya = :lema where id = :id;";
+        $query = "update candidat set nom = :nom,lema_campanya = :lema,ideologia = :ideologia where id = :id;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':id' => $id,':nom' => $nom,':lema' => $lema]);
+        $result = $stm->execute([':id' => $id,':nom' => $nom,':lema' => $lema,':ideologia' => $ideologia]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();

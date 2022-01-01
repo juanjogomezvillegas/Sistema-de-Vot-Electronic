@@ -35,8 +35,8 @@
                         <tr>
                             <th>Icona</th>
                             <th>Candidat</th>
-                            <th>Vots Obtinguts</th>
-                            <th>Escons Obtinguts</th>
+                            <th>Ideologia</th>
+                            <th>Escons</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -46,7 +46,7 @@
                             <tr>
                                 <td class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
                                 <td><?php echo $actual["nom"]; ?></td>
-                                <td class="has-text-centered"><?php echo $actual["vots"]; ?></td>
+                                <td class="has-text-centered"><?php echo $actual["ideologia"]; ?></td>
                                 <td class="has-text-centered"><?php echo $actual["escons"]; ?></td>
                                 <td>
                                     <div class="select is-rounded">

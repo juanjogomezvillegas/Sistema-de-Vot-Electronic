@@ -62,6 +62,12 @@ $(document).ready(function() {
                     </div>
                 </div>
                 <div class="field">
+                    <label class="label">Ideologia</label>
+                    <div class="control">
+                        <input id="ideologia" name="ideologia" value="${ dadesCandidat["ideologia"] }" class="input" type="text" placeholder="Ideologia">
+                    </div>
+                </div>
+                <div class="field">
                     <label class="label">Lema de Campanya</label>
                     <div class="control">
                         <input id="lemaCampanya" name="lemaCampanya" value="${ dadesCandidat["lema_campanya"] }" class="input" type="text" placeholder="Lema de Campanya">
