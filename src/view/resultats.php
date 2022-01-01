@@ -22,6 +22,7 @@
                         <tr>
                             <th>Icona</th>
                             <th>Candidat</th>
+                            <th>Ideologia</th>
                             <th>Lema de Campanya</th>
                             <th>Vots Obtinguts</th>
                             <th>Escons Obtinguts</th>
@@ -32,6 +33,7 @@
                             <tr>
                                 <td class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
                                 <td><?php echo $actual["nom"]; ?></td>
+                                <td><?php echo $actual["ideologia"]; ?></td>
                                 <td><?php echo $actual["lema_campanya"]; ?></td>
                                 <td class="has-text-centered"><?php echo $actual["vots"]; ?></td>
                                 <td class="has-text-centered"><?php echo $actual["escons"]; ?></td>
@@ -40,6 +42,7 @@
                     </tbody>
                     <tfoot class="has-background-white-ter">
                         <tr>
+                            <th></th>
                             <th></th>
                             <th></th>
                             <th></th>
