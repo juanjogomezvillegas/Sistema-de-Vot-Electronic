@@ -57,11 +57,6 @@
                     </div>
                 <?php } ?>
             </div>
-            <?php if (count($candidats) > 0) { ?>
-                <div class="chart-container">
-                    <canvas id="myChart"></canvas>
-                </div>
-            <?php } ?>
         </div>
         <?php require "../src/view/util/script.php"; ?>
         <script src="js/resultats.js"></script>

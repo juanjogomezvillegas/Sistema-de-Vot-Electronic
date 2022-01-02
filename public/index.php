@@ -59,7 +59,6 @@ $app->ruta("numVotsSi", "ctrlNumVotsSi", ["middleCentral", "middleLogat", "middl
 $app->ruta("numVotsNo", "ctrlNumVotsNo", ["middleCentral", "middleLogat", "middleSupervisor"]);
 $app->ruta("numVotsAbstencio", "ctrlNumVotsAbstencio", ["middleCentral", "middleLogat", "middleSupervisor"]);
 $app->ruta("actualitzarPosicio", "ctrlActualitzarPosicio", ["middleCentral", "middleLogat", "middleSupervisor"]);
-$app->ruta("obtenirResultatsGrafic", "ctrlObtenirResultatsGrafic", ["middleCentral", "middleLogat", "middleSupervisor"]);
 $app->ruta("sumaVots", "ctrlSumaVots", ["middleCentral", "middleLogat", "middleSupervisor"]);
 $app->ruta("restaVots", "ctrlRestaVots", ["middleCentral", "middleLogat", "middleSupervisor"]);
 
