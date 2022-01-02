@@ -94,4 +94,24 @@ $(document).ready(function() {
 
         $("#modalEsborrarCandidat").toggleClass("is-active");
     });
+
+    $(".sumaVots").click(function(e) {
+        let idCandidat = $( e.target ).siblings("input").val();
+
+        $.ajax({
+            url: "index.php?r=sumaVots", 
+            type: "POST",
+            data: { idCandidat }
+        });
+    });
+
+    $(".restaVots").click(function(e) {
+        let idCandidat = $( e.target ).siblings("input").val();
+
+        $.ajax({
+            url: "index.php?r=restaVots", 
+            type: "POST",
+            data: { idCandidat }
+        });
+    });
 });

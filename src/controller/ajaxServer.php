@@ -134,3 +134,29 @@ function ctrlObtenirResultatsGrafic($peticio, $resposta, $contenidor)
 
     return $resposta;
 }
+
+function ctrlSumaVots($peticio, $resposta, $contenidor)
+{
+    $candidatsPDO = $contenidor->candidatsPDO();
+
+    $idCandidat2 = $peticio->get(INPUT_POST, "idCandidat");
+
+    $idCandidat = filter_var($idCandidat2, FILTER_SANITIZE_NUMBER_INT);
+
+    $candidatsPDO->sumaVots($idCandidat);
+
+    return $resposta;
+}
+
+function ctrlRestaVots($peticio, $resposta, $contenidor)
+{
+    $candidatsPDO = $contenidor->candidatsPDO();
+
+    $idCandidat2 = $peticio->get(INPUT_POST, "idCandidat");
+
+    $idCandidat = filter_var($idCandidat2, FILTER_SANITIZE_NUMBER_INT);
+
+    $candidatsPDO->restaVots($idCandidat);
+
+    return $resposta;
+}

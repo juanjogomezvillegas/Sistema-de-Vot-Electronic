@@ -44,6 +44,7 @@
                             <th>Ideologia</th>
                             <th>Lema de Campanya</th>
                             <th>Accions</th>
+                            <th>Vots</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,11 +59,19 @@
                                         <input type="hidden" name="idCandidat1" value="<?php echo $actual["id"]; ?>">
                                         <i class="fas fa-edit editaCandidat"></i></a>
                                     <a class="has-text-primary">
-                                        <input type="hidden" name="idCandidat1" value="<?php echo $actual["id"]; ?>">
+                                        <input type="hidden" name="idCandidat2" value="<?php echo $actual["id"]; ?>">
                                         <i class="fas fa-image editaImatgeCandidat"></i></a>
                                     <a class="has-text-danger">
-                                        <input type="hidden" name="idCandidat2" value="<?php echo $actual["id"]; ?>">
+                                        <input type="hidden" name="idCandidat3" value="<?php echo $actual["id"]; ?>">
                                         <i class="fas fa-trash-alt esborrarCandidat"></i></a>
+                                </td>
+                                <td>
+                                <a class="has-text-dark">
+                                        <input type="hidden" name="idCandidat1" value="<?php echo $actual["id"]; ?>">
+                                        <i class="fas fa-plus sumaVots"></i></a>
+                                    <a class="has-text-dark">
+                                        <input type="hidden" name="idCandidat2" value="<?php echo $actual["id"]; ?>">
+                                        <i class="fas fa-minus restaVots"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>

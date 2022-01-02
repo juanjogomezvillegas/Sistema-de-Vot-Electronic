@@ -130,9 +130,24 @@ class CandidatsPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function votar($id)
+    public function sumaVots($id)
     {
         $query = "update candidat set vots = vots + 1 where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function restaVots($id)
+    {
+        $query = "update candidat set vots = vots - 1 where id = :id and vots > 0;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id]);
 

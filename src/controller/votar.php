@@ -8,7 +8,7 @@ function ctrlVotar($peticio, $resposta, $contenidor)
 
     $idCandidat = filter_var($idCandidat2, FILTER_SANITIZE_NUMBER_INT);
 
-    $candidatsPDO->votar($idCandidat);
+    $candidatsPDO->sumaVots($idCandidat);
 
     $resposta->SetTemplate("votar.php");
 
