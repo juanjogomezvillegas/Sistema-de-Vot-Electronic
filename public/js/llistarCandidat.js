@@ -39,7 +39,7 @@ $(document).ready(function() {
             </label>
         </div>
     </form>
-    <script src="js/elMeuPerfil.js"></script>`);
+    <script src="js/showFitxerPujat.js"></script>`);
     });
 
     $(".editaCandidat").click(function(e) {

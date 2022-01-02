@@ -18,7 +18,6 @@
                 <?php foreach ($llistatCandidats as $actual) { ?>
                     <div class="card column is-one-quarter m-2">
                         <form action="index.php?r=votar&id=<?php echo $actual["id"]; ?>" method="POST">
-                            <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                             <header class="card-header">
                                 <figure class="image is-48x48">
                                     <img src="<?php echo $actual["icona"]; ?>" alt="<?php echo $actual["nom"]; ?>">
@@ -46,7 +45,5 @@
             <?php } ?>
         </div>
         <?php require "../src/view/util/script.php"; ?>
-        <script src='https://www.google.com/recaptcha/api.js?render=6LdYiNAdAAAAAIV1eoknbB6PrfaRSpQXIdRT4uDv'></script>
-        <script src="js/recaptcha.js"></script>
     </body>
 </html>

@@ -123,3 +123,14 @@ function ctrlActualitzarPosicio($peticio, $resposta, $contenidor)
 
     return $resposta;
 }
+
+function ctrlObtenirResultatsGrafic($peticio, $resposta, $contenidor)
+{
+    $candidatsPDO = $contenidor->candidatsPDO();
+
+    $candidats = $candidatsPDO->resultats();
+
+    echo json_encode($candidats);
+
+    return $resposta;
+}
