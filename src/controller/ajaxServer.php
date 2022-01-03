@@ -160,3 +160,14 @@ function ctrlRestaVots($peticio, $resposta, $contenidor)
 
     return $resposta;
 }
+
+function ctrlObtenirResultat($peticio, $resposta, $contenidor)
+{
+    $candidatsPDO = $contenidor->candidatsPDO();
+
+    $candidats = $candidatsPDO->resultats();
+
+    echo json_encode($candidats);
+
+    return $resposta;
+}

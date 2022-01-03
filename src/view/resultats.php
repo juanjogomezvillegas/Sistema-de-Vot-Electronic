@@ -31,7 +31,7 @@
                     <tbody id="tablaResultats">
                         <?php foreach ($candidats as $actual) { ?>
                             <tr>
-                                <td class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
+                                <td style="background-color: <?php echo $actual["color"]; ?>;" class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
                                 <td><?php echo $actual["nom"]; ?></td>
                                 <td><?php echo $actual["ideologia"]; ?></td>
                                 <td><?php echo $actual["lema_campanya"]; ?></td>

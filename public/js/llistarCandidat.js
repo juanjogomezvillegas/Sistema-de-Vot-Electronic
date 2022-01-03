@@ -72,6 +72,12 @@ $(document).ready(function() {
                     <div class="control">
                         <input id="lemaCampanya" name="lemaCampanya" value="${ dadesCandidat["lema_campanya"] }" class="input" type="text" placeholder="Lema de Campanya">
                     </div>
+                </div>
+                <div class="field">
+                    <label class="label">Color</label>
+                    <div class="control">
+                        <input id="colorCandidat" name="colorCandidat" value="${ dadesCandidat["color"] }" class="input" type="color">
+                    </div>
                 </div>`);
 
                 $("#headerModalEditaCandidat").html(`

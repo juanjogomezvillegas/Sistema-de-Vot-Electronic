@@ -13,6 +13,7 @@ CREATE TABLE `candidat` (
   `nom` varchar(200) NOT NULL,
   `ideologia` varchar(200) NOT NULL,
   `lema_campanya` varchar(200) NOT NULL,
+  `color` varchar(100) NOT NULL,
   `icona` varchar(200) NOT NULL DEFAULT 'img/candidats/user.png',
   `vots` int(11) NOT NULL DEFAULT 0,
   `posicio` varchar(20) NOT NULL DEFAULT 'no',
@@ -48,4 +49,4 @@ INSERT INTO `usuari` (`id`, `username`, `contrasenya`, `rol`, `icona`) VALUES
 (2,	'manager',	'$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',	'Manager',	'img/usuaris/user.png'),
 (3,	'supervisor',	'$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',	'Supervisor',	'img/usuaris/user.png');
 
--- 2022-01-02 10:33:11
+-- 2022-01-03 13:27:10

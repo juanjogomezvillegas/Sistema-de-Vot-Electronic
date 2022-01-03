@@ -26,6 +26,7 @@ $connexio->query(
     nom VARCHAR(200) NOT NULL,
     ideologia VARCHAR(200) NOT NULL,
     lema_campanya VARCHAR(200) NOT NULL,
+    color VARCHAR(100) NOT NULL,
     icona VARCHAR(200) NOT NULL DEFAULT 'img/candidats/user.png',
     vots INT NOT NULL DEFAULT 0,
     posicio VARCHAR(20) NOT NULL DEFAULT 'no',

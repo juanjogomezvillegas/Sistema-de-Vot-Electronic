@@ -44,30 +44,32 @@
                         <?php foreach ($candidats as $actual) { ?>
                             <?php if ($actual["escons"] > 0) { ?>
                             <tr>
-                                <td class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
+                                <td style="background-color: <?php echo $actual["color"]; ?>;" class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
                                 <td><?php echo $actual["nom"]; ?></td>
                                 <td class="has-text-centered"><?php echo $actual["ideologia"]; ?></td>
                                 <td class="has-text-centered"><?php echo $actual["escons"]; ?></td>
                                 <td>
                                     <div class="select is-rounded">
                                         <input type="hidden" name="idCandidat" value="<?php echo $actual["id"]; ?>">
-                                        <select class="SelectPosicio">
-                                            <?php if ($actual["posicio"] === "si") { ?>
+                                        <?php if ($actual["posicio"] === "si") { ?>
+                                            <select class="SelectPosicio">
                                                 <option value="si" selected>Sí</option>
-                                            <?php } else { ?>
-                                                <option value="si">Sí</option>
-                                            <?php } ?>
-                                            <?php if ($actual["posicio"] === "no") { ?>
-                                                <option value="no" selected>No</option>
-                                            <?php } else { ?>
                                                 <option value="no">No</option>
-                                            <?php } ?>
-                                            <?php if ($actual["posicio"] === "abstencio") { ?>
-                                                <option value="abstencio" selected>Abstenció</option>
-                                            <?php } else { ?>
                                                 <option value="abstencio">Abstenció</option>
-                                            <?php } ?>
-                                        </select>
+                                            </select>
+                                        <?php } else if ($actual["posicio"] === "no") { ?>
+                                            <select class="SelectPosicio">
+                                                <option value="si">Sí</option>
+                                                <option value="no" selected>No</option>
+                                                <option value="abstencio">Abstenció</option>
+                                            </select>
+                                        <?php } else if ($actual["posicio"] === "abstencio") { ?>
+                                            <select class="SelectPosicio">
+                                                <option value="si">Sí</option>
+                                                <option value="no">No</option>
+                                                <option value="abstencio" selected>Abstenció</option>
+                                            </select>
+                                        <?php } ?>
                                     </div>
                                 </td>
                             </tr>
@@ -75,6 +77,10 @@
                         <?php } ?>
                     </tbody>
                 </table>
+            </div>
+            <br>
+            <div class="chart-container" style="width:75%">
+                <canvas id="chart"></canvas>
             </div>
             <?php } else { ?>
                 <div id="app">

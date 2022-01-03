@@ -50,7 +50,7 @@
                     <tbody>
                         <?php foreach ($candidats as $actual) { ?>
                             <tr>
-                                <td class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
+                                <td style="background-color: <?php echo $actual["color"]; ?>;" class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
                                 <td><?php echo $actual["nom"]; ?></td>
                                 <td><?php echo $actual["ideologia"]; ?></td>
                                 <td><?php echo $actual["lema_campanya"]; ?></td>
@@ -109,6 +109,12 @@
                         <label class="label">Lema de Campanya</label>
                         <div class="control">
                             <input id="lemaCampanya" name="lemaCampanya" class="input" type="text" placeholder="Lema de Campanya">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Color</label>
+                        <div class="control">
+                            <input id="colorCandidat" name="colorCandidat" class="input" type="color">
                         </div>
                     </div>
                 </section>
