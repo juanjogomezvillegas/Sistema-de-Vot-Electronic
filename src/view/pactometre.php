@@ -78,8 +78,7 @@
                     </tbody>
                 </table>
             </div>
-            <br>
-            <div class="chart-container" style="width:75%">
+            <div class="chart-container" style="width: 75%;">
                 <canvas id="chart"></canvas>
             </div>
             <?php } else { ?>

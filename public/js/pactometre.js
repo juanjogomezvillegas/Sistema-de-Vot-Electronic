@@ -80,6 +80,12 @@ function crearGrafic() {
                 },
                 options: {
                     responsive: true,
+                    circumference: 180,
+                    rotation: -90,
+                    layout: {
+                        autoPadding: false,
+                        padding: 0
+                    },
                     plugins: {
                         legend: {
                             display: true,
