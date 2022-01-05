@@ -16,18 +16,6 @@ class UsuarisPDO extends ModelPDO
         return $total;
     }
 
-    public function recaptcha($recaptcha_response)
-    {
-        $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-        $recaptcha_secret = '6LdYiNAdAAAAAJHbglNb5T7PZLrqxzcp0IZ-bJXg';
-
-        $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
-
-        $recaptcha = json_decode($recaptcha);
-
-        return $recaptcha;
-    }
-
     public function isLogin($usuari, $password, $options)
     {
         $query = "select id,username,contrasenya from usuari where username = :nom;";

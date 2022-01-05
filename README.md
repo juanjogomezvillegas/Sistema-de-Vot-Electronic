@@ -1,6 +1,6 @@
 # Sistema-de-Vot-Electronic
 
-# Autors
+# Autor
 
 - Juan José Gómez Villegas
 
@@ -32,21 +32,6 @@ I posant la barra d'adreces del navegador (http://{IP_del_servidor}:8081).
 
 Nota: "IP_del_servidor" s'ha de canviar per la IP del servidor on heu clonat el repositori.
 
-# Domini
-
-Per accedir a l'aplicació fent servir un domini, s'ha d'executar l'script addhost.sh.
-
-```sh
-$ cd cli/
-$ ./addhost.sh parametre1 parametre2
-```
-
-Nota: El primer parametre correspon al domini que usarem per accedir a l'aplicació. I el segon parametre es el password de l'usuari de la base de dades.
-
-Per accedir a l'aplicació via web usarem l'adreça "https://www.election.daw".
-
-Nota: www.election.daw s'ha de canviar per el domini real.
-
 # Dades
 
 Base de dades de l'aplicació.
@@ -55,9 +40,7 @@ Base de dades de l'aplicació.
 CREATE DATABASE election_daw;
 ```
 
-Nota: Només cal crear la base de dades si no has executat l'script addhost.sh.
-
-Configurar el config.php per accedir a la base de dades.
+Només cal crear la base de dades, i configurar el config.php per accedir a la base de dades.
 
 Nota: Les més importants són "$config['user']" i "$config['pass']"
 

@@ -21,10 +21,6 @@
                             </div>
                         <?php } elseif (isset($error) && $error === "2") { ?>
                             <div id="app">
-                                <missatge-error tittle="Hi ha hagut algun error"></missatge-error>
-                            </div>
-                        <?php } elseif (isset($error) && $error === "3") { ?>
-                            <div id="app">
                                 <missatge-error tittle="Accés Denegat"></missatge-error>
                             </div>
                         <?php } ?>
@@ -58,7 +54,5 @@
             </div>
         </section>
         <?php require "../src/view/util/script.php"; ?>
-        <script src='https://www.google.com/recaptcha/api.js?render=6LdYiNAdAAAAAIV1eoknbB6PrfaRSpQXIdRT4uDv'></script>
-        <script src="js/recaptcha.js"></script>
     </body>
 </html>
