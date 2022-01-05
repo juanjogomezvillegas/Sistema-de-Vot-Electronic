@@ -42,6 +42,5 @@
             <button id="botoCanviarImage" class="button is-link m-6">Canviar Contrasenya <i class="fas fa-key ml-2"></i></button>
         </form>
         <?php require "../src/view/util/script.php"; ?>
-        <script src="js/elMeuPerfil.js"></script>
     </body>
 </html>

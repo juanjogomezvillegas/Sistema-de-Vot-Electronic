@@ -83,11 +83,11 @@ class CandidatsPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function add($nom, $lema, $ideologia)
+    public function add($nom, $lema, $ideologia, $color)
     {
-        $query = "insert into candidat (nom,lema_campanya,ideologia) values (:nom,:lema,:ideologia);";
+        $query = "insert into candidat (nom,lema_campanya,ideologia,color) values (:nom,:lema,:ideologia,:color);";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':nom' => $nom,':lema' => $lema,':ideologia' => $ideologia]);
+        $result = $stm->execute([':nom' => $nom,':lema' => $lema,':ideologia' => $ideologia,':color' => $color]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
@@ -115,11 +115,11 @@ class CandidatsPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function update($id, $nom, $lema, $ideologia)
+    public function update($id, $nom, $lema, $ideologia, $color)
     {
-        $query = "update candidat set nom = :nom,lema_campanya = :lema,ideologia = :ideologia where id = :id;";
+        $query = "update candidat set nom = :nom,lema_campanya = :lema,ideologia = :ideologia,color = :color where id = :id;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':id' => $id,':nom' => $nom,':lema' => $lema,':ideologia' => $ideologia]);
+        $result = $stm->execute([':id' => $id,':nom' => $nom,':lema' => $lema,':ideologia' => $ideologia,':color' => $color]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
@@ -130,9 +130,24 @@ class CandidatsPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function votar($id)
+    public function sumaVots($id)
     {
         $query = "update candidat set vots = vots + 1 where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function restaVots($id)
+    {
+        $query = "update candidat set vots = vots - 1 where id = :id and vots > 0;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id]);
 

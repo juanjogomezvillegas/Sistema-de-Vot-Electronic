@@ -39,7 +39,7 @@ $(document).ready(function() {
             </label>
         </div>
     </form>
-    <script src="js/elMeuPerfil.js"></script>`);
+    <script src="js/showFitxerPujat.js"></script>`);
     });
 
     $(".editaCandidat").click(function(e) {
@@ -72,6 +72,12 @@ $(document).ready(function() {
                     <div class="control">
                         <input id="lemaCampanya" name="lemaCampanya" value="${ dadesCandidat["lema_campanya"] }" class="input" type="text" placeholder="Lema de Campanya">
                     </div>
+                </div>
+                <div class="field">
+                    <label class="label">Color</label>
+                    <div class="control">
+                        <input id="colorCandidat" name="colorCandidat" value="${ dadesCandidat["color"] }" class="input" type="color">
+                    </div>
                 </div>`);
 
                 $("#headerModalEditaCandidat").html(`
@@ -93,5 +99,25 @@ $(document).ready(function() {
         $("#cosFormEsborrarCandidat").append(`<input type="hidden" name="idCandidat" value="${ idCandidat }">`);
 
         $("#modalEsborrarCandidat").toggleClass("is-active");
+    });
+
+    $(".sumaVots").click(function(e) {
+        let idCandidat = $( e.target ).siblings("input").val();
+
+        $.ajax({
+            url: "index.php?r=sumaVots", 
+            type: "POST",
+            data: { idCandidat }
+        });
+    });
+
+    $(".restaVots").click(function(e) {
+        let idCandidat = $( e.target ).siblings("input").val();
+
+        $.ajax({
+            url: "index.php?r=restaVots", 
+            type: "POST",
+            data: { idCandidat }
+        });
     });
 });

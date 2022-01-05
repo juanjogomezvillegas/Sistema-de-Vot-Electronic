@@ -55,6 +55,6 @@
             <a href="index.php?r=canviarContrasenya" id="botoCanviarImage" class="button is-link">Canviar Contrasenya <i class="fas fa-key ml-2"></i></a>
         </div>
         <?php require "../src/view/util/script.php"; ?>
-        <script src="js/elMeuPerfil.js"></script>
+        <script src="js/showFitxerPujat.js"></script>
     </body>
 </html>

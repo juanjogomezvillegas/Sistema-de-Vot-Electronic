@@ -44,12 +44,13 @@
                             <th>Ideologia</th>
                             <th>Lema de Campanya</th>
                             <th>Accions</th>
+                            <th>Vots</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($candidats as $actual) { ?>
                             <tr>
-                                <td class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
+                                <td style="background-color: <?php echo $actual["color"]; ?>;" class="has-text-centered"><img class="icon" src="<?php echo $actual["icona"]; ?>" alt="icona"></td>
                                 <td><?php echo $actual["nom"]; ?></td>
                                 <td><?php echo $actual["ideologia"]; ?></td>
                                 <td><?php echo $actual["lema_campanya"]; ?></td>
@@ -58,11 +59,19 @@
                                         <input type="hidden" name="idCandidat1" value="<?php echo $actual["id"]; ?>">
                                         <i class="fas fa-edit editaCandidat"></i></a>
                                     <a class="has-text-primary">
-                                        <input type="hidden" name="idCandidat1" value="<?php echo $actual["id"]; ?>">
+                                        <input type="hidden" name="idCandidat2" value="<?php echo $actual["id"]; ?>">
                                         <i class="fas fa-image editaImatgeCandidat"></i></a>
                                     <a class="has-text-danger">
-                                        <input type="hidden" name="idCandidat2" value="<?php echo $actual["id"]; ?>">
+                                        <input type="hidden" name="idCandidat3" value="<?php echo $actual["id"]; ?>">
                                         <i class="fas fa-trash-alt esborrarCandidat"></i></a>
+                                </td>
+                                <td>
+                                <a class="has-text-dark">
+                                        <input type="hidden" name="idCandidat1" value="<?php echo $actual["id"]; ?>">
+                                        <i class="fas fa-plus sumaVots"></i></a>
+                                    <a class="has-text-dark">
+                                        <input type="hidden" name="idCandidat2" value="<?php echo $actual["id"]; ?>">
+                                        <i class="fas fa-minus restaVots"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -100,6 +109,12 @@
                         <label class="label">Lema de Campanya</label>
                         <div class="control">
                             <input id="lemaCampanya" name="lemaCampanya" class="input" type="text" placeholder="Lema de Campanya">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Color</label>
+                        <div class="control">
+                            <input id="colorCandidat" name="colorCandidat" class="input" type="color">
                         </div>
                     </div>
                 </section>

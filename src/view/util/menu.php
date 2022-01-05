@@ -34,9 +34,7 @@
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               <?php echo $dadesUsuarilogat["username"]; ?>
-              <figure class="image">
-                <img class="is-rounded ml-2" src="<?php echo $dadesUsuarilogat["icona"]; ?>" alt="icona">
-              </figure>
+              <img class="image is-rounded ml-2" src="<?php echo $dadesUsuarilogat["icona"]; ?>" alt="icona">
             </a>
 
             <div class="navbar-dropdown is-right">

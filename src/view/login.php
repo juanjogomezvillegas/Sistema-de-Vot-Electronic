@@ -31,7 +31,7 @@
                         <div class="field">
                         <label for="inputUsername" class="label">Usuari</label>
                         <div class="control has-icons-left">
-                            <input type="text" id="inputUsername" name="inputUsername" placeholder="Nom d'Usuari" class="input" required>
+                            <input type="text" id="inputUsername" name="inputUsername" value="<?php echo $usuari; ?>" placeholder="Nom d'Usuari" class="input" required>
                             <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                             </span>

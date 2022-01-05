@@ -55,6 +55,6 @@
             </div>
         </div>
         <?php require "../src/view/util/script.php"; ?>
-        <script src="js/elMeuPerfil.js"></script>
+        <script src="js/showFitxerPujat.js"></script>
     </body>
 </html>
