@@ -20,7 +20,7 @@ $(document).ready(function() {
         $("#formCanviImatge").children().remove();
 
         $("#formCanviImatge").append(`<form action="index.php?r=canviarImatgeCandidat" method="POST" enctype="multipart/form-data" class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-1 mb-4">
-        <button class="button is-link">Canviar Imatge <i class="fas fa-camera ml-2"></i></button>
+        <button class="button is-link">Change Image <i class="fas fa-camera ml-2"></i></button>
         <input type="hidden" name="idCandidat" value="${ idCandidat }">
         <div id="file-js-example" class="file has-name mt-3 is-link">
             <label class="file-label">
@@ -30,11 +30,11 @@ $(document).ready(function() {
                     <i class="fas fa-upload"></i>
                 </span>
                 <span class="file-label">
-                    Puja una Imatge ...
+                    Upload an Image ...
                 </span>
                 </span>
                 <span class="file-name has-background-link-light">
-                    No has pujat cap imatge
+                    You have not uploaded any images
                 </span>
             </label>
         </div>
@@ -56,21 +56,21 @@ $(document).ready(function() {
 
                 $("#cosFormEditaCandidat").append(`<input type="hidden" name="idCandidat" value="${ dadesCandidat["id"] }">
                 <div class="field">
-                    <label class="label">Nom i Cognoms</label>
+                    <label class="label">Name</label>
                     <div class="control">
-                        <input id="nomCandidat" name="nomCandidat" value="${ dadesCandidat["nom"] }" class="input" type="text" placeholder="Nom i Cognoms">
+                        <input id="nomCandidat" name="nomCandidat" value="${ dadesCandidat["nom"] }" class="input" type="text" placeholder="Name">
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Ideologia</label>
+                    <label class="label">Ideology or Party</label>
                     <div class="control">
-                        <input id="ideologia" name="ideologia" value="${ dadesCandidat["ideologia"] }" class="input" type="text" placeholder="Ideologia">
+                        <input id="ideologia" name="ideologia" value="${ dadesCandidat["ideologia"] }" class="input" type="text" placeholder="Ideology or Party">
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Lema de Campanya</label>
+                    <label class="label">Campaign</label>
                     <div class="control">
-                        <input id="lemaCampanya" name="lemaCampanya" value="${ dadesCandidat["lema_campanya"] }" class="input" type="text" placeholder="Lema de Campanya">
+                        <input id="lemaCampanya" name="lemaCampanya" value="${ dadesCandidat["lema_campanya"] }" class="input" type="text" placeholder="Campaign">
                     </div>
                 </div>
                 <div class="field">
@@ -91,12 +91,10 @@ $(document).ready(function() {
     $(".esborrarCandidat").click(function(e) {
         let idCandidat = $( e.target ).siblings("input").val();
 
-        $("#headerModalEsborrarCandidat").html(`
-        <p id="headerModalEsborrarCandidat" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Estàs Segur que vols Esborrar el Candidat ?</p>`);
-
         $("#cosFormEsborrarCandidat").children().remove();
 
-        $("#cosFormEsborrarCandidat").append(`<input type="hidden" name="idCandidat" value="${ idCandidat }">`);
+        $("#cosFormEsborrarCandidat").append(`<input type="hidden" name="idCandidat" value="${ idCandidat }">
+        <p>Are you sure you want to Delete the Candidate?</p>`);
 
         $("#modalEsborrarCandidat").toggleClass("is-active");
     });

@@ -2,7 +2,7 @@
 <html lang="ca" class="fonsDark">
     <head>
         <?php require "../src/view/util/head.php"; ?>
-        <title>Pactometre | <?php echo $titolAplicacio["titol"]; ?></title>
+        <title>Pactometer | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
         <?php require "../src/view/util/menuadmin.php"; ?>
@@ -10,7 +10,7 @@
             <nav class="level">
                 <div class="level-item has-text-centered">
                     <div>
-                    <p class="heading is-size-4 has-text-success">Sí</p>
+                    <p class="heading is-size-4 has-text-success">Yes</p>
                     <p id="numVotsSi" class="title is-2 has-text-success">0</p>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="level-item has-text-centered">
                     <div>
-                    <p class="heading is-size-4 has-text-light">Abstenció</p>
+                    <p class="heading is-size-4 has-text-light">Abstention</p>
                     <p id="numVotsAbstencio" class="title is-2 has-text-light">0</p>
                     </div>
                 </div>
@@ -33,10 +33,10 @@
                 <table class="table is-narrow is-bordered is-striped is-hoverable is-centered">
                     <thead class="has-background-white-ter">
                         <tr>
-                            <th>Icona</th>
-                            <th>Candidat</th>
-                            <th>Ideologia</th>
-                            <th>Escons</th>
+                            <th>Icon</th>
+                            <th>Candidate</th>
+                            <th>Ideology or Party</th>
+                            <th>Seats</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -51,23 +51,23 @@
                                 <td>
                                     <div class="select is-rounded">
                                         <input type="hidden" name="idCandidat" value="<?php echo $actual["id"]; ?>">
-                                        <?php if ($actual["posicio"] === "si") { ?>
+                                        <?php if ($actual["posicio"] === "yes") { ?>
                                             <select class="SelectPosicio">
-                                                <option value="si" selected>Sí</option>
+                                                <option value="yes" selected>Yes</option>
                                                 <option value="no">No</option>
-                                                <option value="abstencio">Abstenció</option>
+                                                <option value="abstention">Abstention</option>
                                             </select>
                                         <?php } else if ($actual["posicio"] === "no") { ?>
                                             <select class="SelectPosicio">
-                                                <option value="si">Sí</option>
+                                                <option value="yes">Yes</option>
                                                 <option value="no" selected>No</option>
-                                                <option value="abstencio">Abstenció</option>
+                                                <option value="abstention">Abstention</option>
                                             </select>
-                                        <?php } else if ($actual["posicio"] === "abstencio") { ?>
+                                        <?php } else if ($actual["posicio"] === "abstention") { ?>
                                             <select class="SelectPosicio">
-                                                <option value="si">Sí</option>
+                                                <option value="yes">Yes</option>
                                                 <option value="no">No</option>
-                                                <option value="abstencio" selected>Abstenció</option>
+                                                <option value="abstention" selected>Abstention</option>
                                             </select>
                                         <?php } ?>
                                     </div>
@@ -83,7 +83,7 @@
             </div>
             <?php } else { ?>
                 <div id="app">
-                    <missatge-info tittle="El Pactometre no està disponible en Aquest Moment"></missatge-info>
+                    <missatge-info tittle="The Pactometer is currently unavailable"></missatge-info>
                 </div>
             <?php } ?>
         </div>

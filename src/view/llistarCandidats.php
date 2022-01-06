@@ -2,7 +2,7 @@
 <html lang="ca" class="fonsDark">
     <head>
         <?php require "../src/view/util/head.php"; ?>
-        <title>Gestió de Candidats | <?php echo $titolAplicacio["titol"]; ?></title>
+        <title>Candidate Management | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
         <?php require "../src/view/util/menuadmin.php"; ?>
@@ -11,40 +11,40 @@
             <div class="mb-5 is-flex is-justify-content-center">
                 <?php if ((isset($errorCrear) && $errorCrear === "1") || (isset($errorEditar) && $errorEditar === "1")) { ?>
                     <div id="app">
-                        <missatge-error tittle="Hi ha algun camp buit"></missatge-error>
+                        <missatge-error tittle="There is an empty field"></missatge-error>
                     </div>
                 <?php } elseif (isset($infoCrea) && $infoCrea === "1") { ?>
                     <div id="app">
-                        <missatge-info tittle="El Candidat s'ha creat correctament"></missatge-info>
+                        <missatge-info tittle="Candidate created successfully"></missatge-info>
                     </div>
                 <?php } elseif (isset($infoEdita) && $infoEdita === "1") { ?>
                     <div id="app">
-                        <missatge-info tittle="El Candidat s'ha actualitzat correctament"></missatge-info>
+                        <missatge-info tittle="Candidate updated successfully"></missatge-info>
                     </div>
                 <?php } elseif (isset($infoEsborrar) && $infoEsborrar === "1") { ?>
                     <div id="app">
-                        <missatge-info tittle="El Candidat s'ha esborrat correctament"></missatge-info>
+                        <missatge-info tittle="Candidate deleted successfully"></missatge-info>
                     </div>
                 <?php } elseif (isset($errorImatge) && $errorImatge === "1") { ?>
                     <div id="app">
-                        <missatge-error tittle="No has pujat cap imatge, o la imatge no està en el format .jpg o .png"></missatge-error>
+                        <missatge-error tittle="You have not uploaded any images, or the image is not in .jpg or .png format"></missatge-error>
                     </div>
                 <?php } ?>
             </div>
             <div id="formCanviImatge" class="mb-5 is-flex is-justify-content-center"></div>
             <div class="is-flex is-justify-content-center mb-5">
-                <button id="botoCrearCandidat" class="button is-danger">Crear Candidat <i class="fas fa-folder-plus ml-2"></i></button>
+                <button id="botoCrearCandidat" class="button is-danger">Create Candidate <i class="fas fa-folder-plus ml-2"></i></button>
             </div>
             <div class="table-container is-flex is-justify-content-center">
                 <table class="table is-narrow is-bordered is-striped is-hoverable">
                     <thead class="has-background-white-ter">
                         <tr>
-                            <th>Icona</th>
-                            <th>Nom i Cognoms</th>
-                            <th>Ideologia</th>
-                            <th>Lema de Campanya</th>
-                            <th>Accions</th>
-                            <th>Vots</th>
+                            <th>Icon</th>
+                            <th>Name</th>
+                            <th>Ideology or Party</th>
+                            <th>Campaign</th>
+                            <th>Actions</th>
+                            <th>Votes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -89,26 +89,26 @@
         <div class="modal-card">
             <form action="index.php?r=docrearcandidat" method="POST">
                 <header class="modal-card-head">
-                    <p class="modal-card-title"><i class="fas fa-user-plus mr-2"></i> Crear un Candidat Nou</p>
+                    <p class="modal-card-title"><i class="fas fa-user-plus mr-2"></i> Create a New Candidate</p>
                     <a id="btnCloseModal1" class="delete" aria-label="close"></a>
                 </header>
                 <section class="modal-card-body">
                     <div class="field">
-                        <label class="label">Nom i Cognoms</label>
+                        <label class="label">Name</label>
                         <div class="control">
-                            <input id="nomCandidat" name="nomCandidat" class="input" type="text" placeholder="Nom i Cognoms">
+                            <input id="nomCandidat" name="nomCandidat" class="input" type="text" placeholder="Name">
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">Ideologia</label>
+                        <label class="label">Ideology or Party</label>
                         <div class="control">
-                            <input id="ideologia" name="ideologia" class="input" type="text" placeholder="Ideologia">
+                            <input id="ideologia" name="ideologia" class="input" type="text" placeholder="Ideology or Party">
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">Lema de Campanya</label>
+                        <label class="label">Campaign</label>
                         <div class="control">
-                            <input id="lemaCampanya" name="lemaCampanya" class="input" type="text" placeholder="Lema de Campanya">
+                            <input id="lemaCampanya" name="lemaCampanya" class="input" type="text" placeholder="Campaign">
                         </div>
                     </div>
                     <div class="field">
@@ -119,8 +119,8 @@
                     </div>
                 </section>
                 <footer class="modal-card-foot is-flex is-justify-content-end">
-                    <button type="submit" class="button is-info">Crear Candidat <i class="fas fa-folder-plus ml-2"></i></button>
-                    <a class="button is-light" id="btnCancelaModal1">Cancel·la</a>
+                    <button type="submit" class="button is-info">Create Candidate <i class="fas fa-folder-plus ml-2"></i></button>
+                    <a class="button is-light" id="btnCancelaModal1">Cancel</a>
                 </footer>
             </form>
         </div>
@@ -132,26 +132,14 @@
         <div class="modal-card">
             <form action="index.php?r=doactualitzarcandidat" method="POST">
                 <header class="modal-card-head">
-                    <p id="headerModalEditaCandidat" class="modal-card-title"><i class="fas fa-user-edit mr-2"></i> Candidat</p>
+                    <p id="headerModalEditaCandidat" class="modal-card-title"><i class="fas fa-user-edit mr-2"></i></p>
                     <a id="btnCloseModal2" class="delete" aria-label="close"></a>
                 </header>
                 <section id="cosFormEditaCandidat" class="modal-card-body">
-                    <div class="field">
-                        <label class="label">Nom i Cognoms</label>
-                        <div class="control">
-                            <input id="nomCandidat" name="nomCandidat" class="input" type="text" placeholder="Nom i Cognoms">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Lema de Campanya</label>
-                        <div class="control">
-                            <input id="lemaCampanya" name="lemaCampanya" class="input" type="text" placeholder="Lema de Campanya">
-                        </div>
-                    </div>
                 </section>
                 <footer class="modal-card-foot is-flex is-justify-content-end">
-                    <button type="submit" class="button is-info">Desar els Canvis <i class="fas fa-save ml-2"></i></button>
-                    <a class="button is-light" id="btnCancelaModal2">Cancel·la</a>
+                    <button type="submit" class="button is-info">Save Changes <i class="fas fa-save ml-2"></i></button>
+                    <a class="button is-light" id="btnCancelaModal2">Cancel</a>
                 </footer>
             </form>
         </div>
@@ -163,14 +151,14 @@
         <div class="modal-card">
             <form action="index.php?r=doesborrarcandidat" method="POST">
                 <header class="modal-card-head">
-                    <p id="headerModalEsborrarCandidat" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Candidat</p>
+                    <p id="headerModalEsborrarCandidat" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Warning!</p>
                     <a id="btnCloseModal3" class="delete" aria-label="close"></a>
                 </header>
                 <section id="cosFormEsborrarCandidat" class="modal-card-body">
                 </section>
                 <footer class="modal-card-foot is-flex is-justify-content-end">
-                    <button type="submit" class="button is-danger">Esborrar Candidat <i class="fas fa-trash-alt ml-2"></i></button>
-                    <a class="button is-light" id="btnCancelaModal3">Cancel·la</a>
+                    <button type="submit" class="button is-danger">Confirm <i class="fas fa-trash-alt ml-2"></i></button>
+                    <a class="button is-light" id="btnCancelaModal3">Cancel</a>
                 </footer>
             </form>
         </div>

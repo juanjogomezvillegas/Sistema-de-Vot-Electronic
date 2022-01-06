@@ -6,7 +6,7 @@ $connexio->query(
     id INT AUTO_INCREMENT,
     numEscons INT NOT NULL DEFAULT 100,
     logo VARCHAR(200) NOT NULL DEFAULT 'img/bd/logo.png', 
-    titol VARCHAR(200) NOT NULL DEFAULT 'Sistema de Vot Electronic', 
+    titol VARCHAR(200) NOT NULL DEFAULT 'Electronic Voting System', 
     PRIMARY KEY(id));"
 );
 
