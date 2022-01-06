@@ -23,9 +23,11 @@ class CandidatsPDO extends ModelPDO
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
 
+        $comptador = 0;
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
-            $registres[$registre["id"]] = $registre;
+            $registres[$comptador] = $registre;
+            $comptador++;
         }
 
         return $registres;
