@@ -73,3 +73,20 @@ div.card:hover {
     background-color: hsl(219, 70%, 96%) !important;
     box-shadow: 0 0 20px 3px hsl(0, 0%, 14%) !important;
 }
+
+/* Traductor */
+.goog-logo-link {
+    display: none !important;
+}
+.goog-te-gadget{
+    color: transparent !important;
+}
+.goog-te-combo{
+    color: black;
+}
+.goog-te-combo {
+    background-color: hsl(217, 71%, 45%) !important;
+    color: hsl(219, 70%, 96%) !important;
+    border: 0px;
+    font-size: 15px !important;
+}

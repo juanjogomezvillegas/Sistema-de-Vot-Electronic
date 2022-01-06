@@ -33,6 +33,7 @@
             <span class="icon mr-1"><i class="fas fa-person-booth"></i></span> Gestió de Candidats
         </a>
             <?php } ?>
+            <div class="navbar-item" id="google_translate_element"></div>
       <?php } ?>
     </div>
 

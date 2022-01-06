@@ -18,6 +18,7 @@
           <span class="icon mr-1"><i class="fas fa-tachometer-alt"></i></span> Panell d'Administració 
         </a>
       <?php } ?>
+      <div class="navbar-item" id="google_translate_element"></div>
     </div>
 
     <div class="navbar-end">
