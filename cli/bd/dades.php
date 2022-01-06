@@ -2,7 +2,7 @@
 
 /*Afageix dades per defecte a la taula "config" de la base de dades*/
 $sql = $connexio->prepare("INSERT INTO config VALUES (:id,:numEscons,:logo,:titol)");
-$sql->execute([":id" => 1,":numEscons" => 100,':logo' => 'img/bd/logo.png',':titol' => 'Sistema de Vot Electronic']);
+$sql->execute([":id" => 1,":numEscons" => 100,':logo' => 'img/bd/logo.png',':titol' => 'Electronic Voting System']);
 
 /*Afageix dades per defecte a la taula "usuari" de la base de dades*/
 $usuaris = $usuaris = [

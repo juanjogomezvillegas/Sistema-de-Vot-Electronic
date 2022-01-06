@@ -2,7 +2,7 @@
 <html lang="ca" class="fonsDark">
     <head>
         <?php require "../src/view/util/head.php"; ?>
-        <title>Panell d'Administració | <?php echo $titolAplicacio["titol"]; ?></title>
+        <title>Dashboard | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
         <?php require "../src/view/util/menuadmin.php"; ?>
@@ -30,32 +30,32 @@
             <div class="columns is-variable">
                 <div id="itemAdminVots" class="itemAdmin is-clickable column m-4 is-flex is-justify-content-center is-align-items-center">
                     <p class="mr-5 is-variable"><span class="icon"><i class="fas fa-poll is-size-1"></i></span></p>
-                    <p class="mr-2 is-size-2 is-variable">Vots</p>
+                    <p class="mr-2 is-size-2 is-variable">Votes</p>
                     <p id="itemAdminVotsNum" class="is-size-2">0</p>
                 </div>
                 <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
                     <div id="itemAdminUsuari" class="itemAdmin is-clickable column m-4 is-flex is-justify-content-center is-align-items-center">
                         <p class="mr-5 is-variable"><span class="icon"><i class="fas fa-users is-size-1"></i></span></p>
-                        <p class="mr-2 is-size-2 is-variable">Usuaris</p>
+                        <p class="mr-2 is-size-2 is-variable">Users</p>
                         <p id="itemAdminUsuariNum" class="is-size-2">0</p>
                     </div>
                 <?php } elseif ($dadesUsuarilogat["rol"] === "Manager") { ?>
                     <div class="itemAdmin column m-4 is-flex is-justify-content-center is-align-items-center">
                         <p class="mr-5 is-variable"><span class="icon"><i class="fas fa-users is-size-1"></i></span></p>
-                        <p class="mr-2 is-size-2 is-variable">Usuaris</p>
+                        <p class="mr-2 is-size-2 is-variable">Users</p>
                         <p id="itemAdminUsuariNum" class="is-size-2">0</p>
                     </div>
                 <?php } ?>
                 <?php if ($dadesUsuarilogat["rol"] === "Administrator" || $dadesUsuarilogat["rol"] === "Manager") { ?>
                     <div id="itemAdminCandidat" class="itemAdmin is-clickable column m-4 is-flex is-justify-content-center is-align-items-center">
                         <p class="mr-5 is-variable"><span class="icon"><i class="fas fa-person-booth is-size-1"></i></span></p>
-                        <p class="mr-2 is-size-2 is-variable">Candidats</p>
+                        <p class="mr-2 is-size-2 is-variable">Candidates</p>
                         <p id="itemAdminCandidatNum" class="is-size-2">0</p>
                     </div>
                 <?php } else { ?>
                     <div class="itemAdmin column m-4 is-flex is-justify-content-center is-align-items-center">
                         <p class="mr-5 is-variable"><span class="icon"><i class="fas fa-person-booth is-size-1"></i></span></p>
-                        <p class="mr-2 is-size-2 is-variable">Candidats</p>
+                        <p class="mr-2 is-size-2 is-variable">Candidates</p>
                         <p id="itemAdminCandidatNum" class="is-size-2">0</p>
                     </div>
                 <?php } ?>

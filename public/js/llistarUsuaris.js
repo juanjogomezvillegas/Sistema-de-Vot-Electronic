@@ -26,13 +26,13 @@ $(document).ready(function() {
 
                 $("#cosFormEditaUsuari").append(`<input type="hidden" name="idUsuari" value="${ dadesUsuari["id"] }">
                 <div class="field">
-                    <label class="label">Nom d'Usuari</label>
+                    <label class="label">Username</label>
                     <div class="control">
-                        <input value="${ dadesUsuari["username"] }" id="username" name="username" class="input" type="text" placeholder="Nom d'Usuari">
+                        <input value="${ dadesUsuari["username"] }" id="username" name="username" class="input" type="text" placeholder="Username">
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Rol de l'Usuari</label>
+                    <label class="label">Role</label>
                     <div class="control">
                         <div class="select">
                             <select id="rol" name="rolUsuari">
@@ -58,10 +58,8 @@ $(document).ready(function() {
 
         $("#cosFormEsborrarUsuari").children().remove();
 
-        $("#cosFormEsborrarUsuari").append(`<input type="hidden" name="idUsuari" value="${ idUsuari }">`);
-
-        $("#headerModalEsborrarUsuari").html(`
-        <p id="headerModalEsborrarUsuari" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Estàs Segur que vols Esborrar l'Usuari ?</p>`);
+        $("#cosFormEsborrarUsuari").append(`<input type="hidden" name="idUsuari" value="${ idUsuari }">
+        <p>Are you sure you want to Delete User?</p> `);
 
         $("#modalBorrarUsuari").toggleClass("is-active");
     });

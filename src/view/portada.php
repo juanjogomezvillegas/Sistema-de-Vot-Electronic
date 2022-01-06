@@ -31,7 +31,7 @@
                                     <?php echo $actual["lema_campanya"]; ?>
                                 </div>
                                 <div class="is-flex is-justify-content-center is-align-items-center">
-                                    <button id="botoVotarCandidat" class="button is-dark">Votar <i class="fas fa-paper-plane ml-2"></i></button>
+                                    <button id="botoVotarCandidat" class="button is-dark">Vote <i class="fas fa-paper-plane ml-2"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -40,7 +40,7 @@
             </div>
             <?php } else { ?>
                 <div id="app" class="mr-6 ml-6">
-                    <missatge-info tittle="En Aquest Moment no hi han Candidats Disponibles"></missatge-info>
+                    <missatge-info tittle="There are currently no candidates available"></missatge-info>
                 </div>
             <?php } ?>
         </div>

@@ -15,16 +15,15 @@
     <div class="navbar-start">
       <?php if ($logat) { ?>
         <a class="navbar-item" href="index.php?r=admin">
-          <span class="icon mr-1"><i class="fas fa-tachometer-alt"></i></span> Panell d'Administració 
+          <span class="icon mr-1"><i class="fas fa-tachometer-alt"></i></span> Dashboard 
         </a>
       <?php } ?>
-      <div class="navbar-item" id="google_translate_element"></div>
     </div>
 
     <div class="navbar-end">
         <?php if (!$logat) { ?>
             <a class="navbar-item" href="index.php?r=login">
-              <span class="icon mr-1"><i class="fas fa-sign-in-alt"></i></span> Inicia Sessió
+              <span class="icon mr-1"><i class="fas fa-sign-in-alt"></i></span> Login
             </a>
         <?php } else { ?>
             <?php if ($dadesUsuarilogat["rol"] === "Administrator") { ?>
@@ -40,12 +39,12 @@
 
             <div class="navbar-dropdown is-right">
               <a class="navbar-item" href="index.php?r=elMeuPerfil">
-                <span class="icon mr-1"><i class="fas fa-user"></i></span> El Meu Perfil
+                <span class="icon mr-1"><i class="fas fa-user"></i></span> Your Profile
               </a>
               </a>
               <hr class="navbar-divider">
               <a class="navbar-item" href="index.php?r=logout">
-                <span class="icon mr-1"><i class="fas fa-sign-out-alt"></i></span> Tanca Sessió
+                <span class="icon mr-1"><i class="fas fa-sign-out-alt"></i></span> Logout
               </a>
             </div>
           </div>

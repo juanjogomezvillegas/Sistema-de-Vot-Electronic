@@ -26,12 +26,12 @@ CREATE TABLE `config` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `numEscons` int(11) NOT NULL DEFAULT 100,
   `logo` varchar(200) NOT NULL DEFAULT 'img/bd/logo.png',
-  `titol` varchar(200) NOT NULL DEFAULT 'Sistema de Vot Electronic',
+  `titol` varchar(200) NOT NULL DEFAULT 'Electronic Voting System',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `config` (`id`, `numEscons`, `logo`, `titol`) VALUES
-(1,	100,	'img/bd/logo.png',	'Sistema de Vot Electronic');
+(1,	100,	'img/bd/logo.png',	'Electronic Voting System');
 
 DROP TABLE IF EXISTS `usuari`;
 CREATE TABLE `usuari` (
@@ -49,4 +49,4 @@ INSERT INTO `usuari` (`id`, `username`, `contrasenya`, `rol`, `icona`) VALUES
 (2,	'manager',	'$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',	'Manager',	'img/usuaris/user.png'),
 (3,	'supervisor',	'$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',	'Supervisor',	'img/usuaris/user.png');
 
--- 2022-01-03 13:27:10
+-- 2022-01-06 12:36:18

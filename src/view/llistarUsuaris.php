@@ -2,7 +2,7 @@
 <html lang="ca" class="fonsDark">
     <head>
         <?php require "../src/view/util/head.php"; ?>
-        <title>Gestió d'Usuaris | <?php echo $titolAplicacio["titol"]; ?></title>
+        <title>User Management | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
         <?php require "../src/view/util/menuadmin.php"; ?>
@@ -11,37 +11,37 @@
             <div class="mb-5 is-flex is-justify-content-center">
                 <?php if (isset($errorCrear) && $errorCrear === "1") { ?>
                     <div id="app">
-                        <missatge-error tittle="La Contrasenya no s'ha verificat correctament"></missatge-error>
+                        <missatge-error tittle="Password not verified correctly"></missatge-error>
                     </div>
                 <?php } elseif ((isset($errorCrear) && $errorCrear === "2") || (isset($errorEditar) && $errorEditar === "1")) { ?>
                     <div id="app">
-                        <missatge-error tittle="Hi ha algun camp buit"></missatge-error>
+                        <missatge-error tittle="There is an empty field"></missatge-error>
                     </div>
                 <?php } elseif (isset($infoCrea) && $infoCrea === "1") { ?>
                     <div id="app">
-                        <missatge-info tittle="L'Usuari s'ha creat correctament"></missatge-info>
+                        <missatge-info tittle="User created successfully"></missatge-info>
                     </div>
                 <?php } elseif (isset($infoEdita) && $infoEdita === "1") { ?>
                     <div id="app">
-                        <missatge-info tittle="L'Usuari s'ha actualitzat correctament"></missatge-info>
+                        <missatge-info tittle="User updated successfully"></missatge-info>
                     </div>
                 <?php } elseif (isset($infoEsborrar) && $infoEsborrar === "1") { ?>
                     <div id="app">
-                        <missatge-info tittle="L'Usuari s'ha esborrat correctament"></missatge-info>
+                        <missatge-info tittle="User deleted successfully"></missatge-info>
                     </div>
                 <?php } ?>
             </div>
             <div class="is-flex is-justify-content-center mb-5">
-                <button id="botoCrearUsuari" class="button is-danger">Crear Usuari <i class="fas fa-folder-plus ml-2"></i></button>
+                <button id="botoCrearUsuari" class="button is-danger">Create User <i class="fas fa-folder-plus ml-2"></i></button>
             </div>
             <div class="table-container is-flex is-justify-content-center">
                 <table class="table is-narrow is-bordered is-striped is-hoverable">
                     <thead class="has-background-white-ter">
                         <tr>
-                            <th>Icona</th>
+                            <th>Icon</th>
                             <th>Username</th>
-                            <th>Rol</th>
-                            <th>Accions</th>
+                            <th>Role</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,25 +74,25 @@
         <div class="modal-card">
             <form action="index.php?r=docrearusuari" method="POST">
                 <header class="modal-card-head">
-                    <p class="modal-card-title"><i class="fas fa-user-plus mr-2"></i> Crear un Usuari Nou</p>
+                    <p class="modal-card-title"><i class="fas fa-user-plus mr-2"></i> Create a New User</p>
                     <a id="btnCloseModal1" class="delete" aria-label="close"></a>
                 </header>
                 <section class="modal-card-body">
                     <div class="field">
-                        <label class="label">Nom d'Usuari</label>
+                        <label class="label">Username</label>
                         <div class="control">
-                            <input id="username" name="username" class="input" type="text" placeholder="Nom d'Usuari">
+                            <input id="username" name="username" class="input" type="text" placeholder="Username">
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">Contrasenya</label>
+                        <label class="label">Password</label>
                         <div class="control is-flex">
-                            <input id="password1" name="password1" class="input" type="password">
-                            <input id="password2" name="password2" class="input" type="password">
+                            <input id="password1" name="password1" class="input" type="password" placeholder="Password">
+                            <input id="password2" name="password2" class="input" type="password" placeholder="Password">
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">Rol de l'Usuari</label>
+                        <label class="label">Role</label>
                         <div class="control">
                             <div class="select">
                                 <select id="rol" name="rolUsuari">
@@ -105,8 +105,8 @@
                     </div>
                 </section>
                 <footer class="modal-card-foot is-flex is-justify-content-end">
-                    <button type="submit" class="button is-info">Crear Usuari <i class="fas fa-folder-plus ml-2"></i></button>
-                    <a class="button is-light" id="btnCancelaModal1">Cancel·la</a>
+                    <button type="submit" class="button is-info">Create User <i class="fas fa-folder-plus ml-2"></i></button>
+                    <a class="button is-light" id="btnCancelaModal1">Cancel</a>
                 </footer>
             </form>
         </div>
@@ -118,32 +118,14 @@
         <div class="modal-card">
             <form action="index.php?r=doactualitzarusuari" method="POST">
                 <header class="modal-card-head">
-                    <p id="headerModalEditaUsuari" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Usuari</p>
+                    <p id="headerModalEditaUsuari" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i></p>
                     <a id="btnCloseModal2" class="delete" aria-label="close"></a>
                 </header>
                 <section id="cosFormEditaUsuari" class="modal-card-body">
-                    <div class="field">
-                        <label class="label">Nom d'Usuari</label>
-                        <div class="control">
-                            <input id="username" name="username" class="input" type="text" placeholder="Nom d'Usuari">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Rol de l'Usuari</label>
-                        <div class="control">
-                            <div class="select">
-                                <select id="rol" name="rolUsuari">
-                                    <?php foreach ($rols as $actual) { ?>
-                                        <option value="<?php echo $actual ?>"><?php echo $actual ?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
                 </section>
                 <footer class="modal-card-foot is-flex is-justify-content-end">
-                    <button type="submit" class="button is-info">Desar els Canvis <i class="fas fa-save ml-2"></i></button>
-                    <a class="button is-light" id="btnCancelaModal2">Cancel·la</a>
+                    <button type="submit" class="button is-info">Save Changes <i class="fas fa-save ml-2"></i></button>
+                    <a class="button is-light" id="btnCancelaModal2">Cancel</a>
                 </footer>
             </form>
         </div>
@@ -155,14 +137,14 @@
         <div class="modal-card">
             <form action="index.php?r=doesborrarusuari" method="POST">
                 <header class="modal-card-head">
-                    <p id="headerModalEsborrarUsuari" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Usuari</p>
+                    <p id="headerModalEsborrarUsuari" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i> Warning!</p>
                     <a id="btnCloseModal3" class="delete" aria-label="close"></a>
                 </header>
                 <section id="cosFormEsborrarUsuari" class="modal-card-body">
                 </section>
                 <footer class="modal-card-foot is-flex is-justify-content-end">
-                    <button type="submit" class="button is-danger">Esborrar Usuari <i class="fas fa-trash-alt ml-2"></i></button>
-                    <a class="button is-light" id="btnCancelaModal3">Cancel·la</a>
+                    <button type="submit" class="button is-danger">Confirm <i class="fas fa-trash-alt ml-2"></i></button>
+                    <a class="button is-light" id="btnCancelaModal3">Cancel</a>
                 </footer>
             </form>
         </div>

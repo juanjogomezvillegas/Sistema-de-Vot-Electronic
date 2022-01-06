@@ -2,7 +2,7 @@
 <html lang="ca" class="fonsDark">
     <head>
         <?php require "../src/view/util/head.php"; ?>
-        <title>Configuració | <?php echo $titolAplicacio["titol"]; ?></title>
+        <title>Configuration | <?php echo $titolAplicacio["titol"]; ?></title>
     </head>
     <body class="fonsDark">
         <?php require "../src/view/util/menuadmin.php"; ?>
@@ -11,11 +11,11 @@
             <div class="is-full mr-6 ml-6 mb-4">
                 <?php if (isset($error) && $error === "1") { ?>
                     <div id="app">
-                        <missatge-error tittle="No has pujat cap imatge, o la imatge no està en el format .jpg o .png"></missatge-error>
+                        <missatge-error tittle="You have not uploaded any images, or the image is not in .jpg or .png format"></missatge-error>
                     </div>
                 <?php } elseif (isset($error) && $error === "2") { ?>
                     <div id="app">
-                        <missatge-error tittle='El Camp "Títol" està buit'></missatge-error>
+                        <missatge-error tittle='Title field is empty'></missatge-error>
                     </div>
                 <?php } ?>
                 <form action="index.php?r=canviarTitolAplicacio" method="POST" class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-6 mb-6">
@@ -24,7 +24,7 @@
                             <input class="input itemAdmin" type="text" id="titolAplicacio" name="titolAplicacio" value="<?php echo $titolAplicacio["titol"]; ?>">
                         </div>
                     </div>
-                    <button id="botoCanviarImage" class="button is-link">Canviar el Títol</button>
+                    <button id="botoCanviarImage" class="button is-link">Change Title</button>
                 </form>
             </div>
             <div class="columns is-variable mr-6 ml-6">
@@ -41,15 +41,15 @@
                                     <i class="fas fa-upload"></i>
                                 </span>
                                 <span class="file-label">
-                                    Puja una Imatge ...
+                                    Upload Image ...
                                 </span>
                                 </span>
                                 <span class="file-name has-background-link-light">
-                                    No has pujat cap imatge
+                                    You have not uploaded any images
                                 </span>
                             </label>
                         </div>
-                        <button id="botoCanviarImage" class="button is-link">Canviar Imatge <i class="fas fa-camera ml-2"></i></button>
+                        <button id="botoCanviarImage" class="button is-link">Change Image <i class="fas fa-camera ml-2"></i></button>
                     </form>
                 </div>
             </div>

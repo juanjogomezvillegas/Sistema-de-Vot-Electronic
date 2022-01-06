@@ -80,7 +80,7 @@ function ctrlNumVotsSi($peticio, $resposta, $contenidor)
 {
     $pactometrePDO = $contenidor->pactometrePDO();
 
-    $count = $pactometrePDO->get("si");
+    $count = $pactometrePDO->get("yes");
 
     echo $count["total"];
 
@@ -102,7 +102,7 @@ function ctrlNumVotsAbstencio($peticio, $resposta, $contenidor)
 {
     $pactometrePDO = $contenidor->pactometrePDO();
 
-    $count = $pactometrePDO->get("abstencio");
+    $count = $pactometrePDO->get("abstention");
 
     echo $count["total"];
 
