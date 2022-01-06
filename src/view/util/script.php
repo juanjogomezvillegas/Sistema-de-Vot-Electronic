@@ -5,5 +5,7 @@
 <script src="js/chart.js"></script>
 
 <!-- Fitxers Java Script -->
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="js/traductor.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/missatges.js"></script>
