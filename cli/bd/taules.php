@@ -32,3 +32,12 @@ $connexio->query(
     posicio VARCHAR(20) NOT NULL DEFAULT 'no',
     PRIMARY KEY(id));"
 );
+
+$connexio->query(
+    "CREATE TABLE historia (
+    id INT AUTO_INCREMENT,
+    data_event TIMESTAMP NOT NULL,
+    nom_event TEXT NOT NULL,
+    color VARCHAR(100) NOT NULL,
+    PRIMARY KEY(id));"
+);

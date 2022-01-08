@@ -39,6 +39,7 @@ require_once "../src/controller/doesborrarusuari.php";
 require_once "../src/controller/docrearcandidat.php";
 require_once "../src/controller/doactualitzarcandidat.php";
 require_once "../src/controller/doesborrarcandidat.php";
+require_once "../src/controller/historia.php";
 /*Inclou els middleware*/
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
@@ -89,5 +90,6 @@ $app->ruta("llistarCandidats", "ctrlLlistarCandidats", ["middleCentral", "middle
 $app->ruta("docrearcandidat", "ctrlDocrearcandidat", ["middleCentral", "middleLogat", "middleManager"]);
 $app->ruta("doactualitzarcandidat", "ctrlDoactualitzarcandidat", ["middleCentral", "middleLogat", "middleManager"]);
 $app->ruta("doesborrarcandidat", "ctrlDoesborrarcandidat", ["middleCentral", "middleLogat", "middleManager"]);
+$app->ruta("historia", "ctrlHistoria", ["middleCentral", "middleLogat", "middleSupervisor"]);
 
 $app->executa();
