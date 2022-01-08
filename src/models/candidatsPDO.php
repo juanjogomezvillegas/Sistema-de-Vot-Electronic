@@ -18,8 +18,8 @@ class CandidatsPDO extends ModelPDO
 
     public function resultats()
     {
-        $query = "select c.*, IFNULL(round((c.vots / (select sum(vots) from candidat)) * (select numEscons from config limit 1)), 0) as escons
-        from candidat c order by c.vots desc;";
+        $query = "select c.*, IFNULL(round((c.vots / (select sum(vots) from candidat) * (select numEscons from config limit 1))), 0) as escons
+        from candidat c order by escons desc, c.vots desc;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
 
