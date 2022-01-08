@@ -13,19 +13,15 @@
                     <div id="app">
                         <missatge-error tittle="You have not uploaded any images, or the image is not in .jpg or .png format"></missatge-error>
                     </div>
-                <?php } elseif (isset($error) && $error === "2") { ?>
-                    <div id="app">
-                        <missatge-error tittle='Title field is empty'></missatge-error>
-                    </div>
                 <?php } ?>
-                <form action="index.php?r=canviarTitolAplicacio" method="POST" class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-6 mb-6">
+                <div class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-6 mb-6">
                     <div class="field m-3 mb-5">
+                        <label class="label has-text-light">Change Title</label>
                         <div class="control">
                             <input class="input itemAdmin" type="text" id="titolAplicacio" name="titolAplicacio" value="<?php echo $titolAplicacio["titol"]; ?>">
                         </div>
                     </div>
-                    <button id="botoCanviarImage" class="button is-link">Change Title</button>
-                </form>
+                </div>
             </div>
             <div class="columns is-variable mr-6 ml-6">
                 <div class="column">
@@ -55,6 +51,7 @@
             </div>
         </div>
         <?php require "../src/view/util/script.php"; ?>
+        <script src="js/configuracio.js"></script>
         <script src="js/showFitxerPujat.js"></script>
     </body>
 </html>

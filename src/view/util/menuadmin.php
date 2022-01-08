@@ -33,6 +33,9 @@
             <span class="icon mr-1"><i class="fas fa-person-booth"></i></span> Candidate Management
         </a>
             <?php } ?>
+            <a class="navbar-item" href="index.php?r=historia">
+              <span class="icon mr-1"><i class="fas fa-history"></i></span> History
+            </a>
       <?php } ?>
     </div>
 

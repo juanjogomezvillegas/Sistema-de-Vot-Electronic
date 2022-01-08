@@ -21,10 +21,6 @@ function ctrlCanviarTitolAplicacio($peticio, $resposta, $contenidor)
 
     if (!empty($titolAplicacio)) {
         $configPDO->updateTitol($titolAplicacio);
-
-        $resposta->redirect("Location:index.php?r=configuracio");
-    } else {
-        $resposta->redirect("Location:index.php?r=configuracio&error=2");
     }
 
     return $resposta;
