@@ -91,5 +91,8 @@ $app->ruta("docrearcandidat", "ctrlDocrearcandidat", ["middleCentral", "middleLo
 $app->ruta("doactualitzarcandidat", "ctrlDoactualitzarcandidat", ["middleCentral", "middleLogat", "middleManager"]);
 $app->ruta("doesborrarcandidat", "ctrlDoesborrarcandidat", ["middleCentral", "middleLogat", "middleManager"]);
 $app->ruta("historia", "ctrlHistoria", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("doCrearEvent", "ctrlDoCrearEvent", ["middleCentral", "middleLogat", "middleManager"]);
+$app->ruta("doReiniciaHistoria", "ctrlDoReiniciaHistoria", ["middleCentral", "middleLogat", "middleManager"]);
+$app->ruta("doEsborrarEvent", "ctrlDoEsborrarEvent", ["middleCentral", "middleLogat", "middleManager"]);
 
 $app->executa();
