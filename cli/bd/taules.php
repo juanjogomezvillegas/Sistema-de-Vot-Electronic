@@ -36,7 +36,7 @@ $connexio->query(
 $connexio->query(
     "CREATE TABLE historia (
     id INT AUTO_INCREMENT,
-    data_event TIMESTAMP NOT NULL,
+    data_event DATETIME NOT NULL,
     nom_event TEXT NOT NULL,
     color VARCHAR(100) NOT NULL,
     PRIMARY KEY(id));"

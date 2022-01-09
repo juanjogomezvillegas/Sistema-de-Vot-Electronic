@@ -35,7 +35,9 @@ function ctrlDoCrearEvent($peticio, $resposta, $contenidor)
     if (!empty($dateEvent) && !empty($timeEvent) && !empty($nomEvent) && !empty($colorEvent)) {
         $timestamp = "$dateEvent $timeEvent";
 
-        $historiaPDO->add($timestamp, $nomEvent, $colorEvent);
+        $dateTime = new DateTime($timestamp);
+
+        $historiaPDO->add($dateTime->format("Y-n-j h:m:s"), $nomEvent, $colorEvent);
 
         $resposta->redirect("Location:index.php?r=historia");
     } else {

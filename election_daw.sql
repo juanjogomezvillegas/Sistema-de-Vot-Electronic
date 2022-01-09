@@ -36,7 +36,7 @@ INSERT INTO `config` (`id`, `numEscons`, `logo`, `titol`) VALUES
 DROP TABLE IF EXISTS `historia`;
 CREATE TABLE `historia` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `data_event` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `data_event` datetime NOT NULL,
   `nom_event` text NOT NULL,
   `color` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
@@ -59,4 +59,4 @@ INSERT INTO `usuari` (`id`, `username`, `contrasenya`, `rol`, `icona`) VALUES
 (2,	'manager',	'$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',	'Manager',	'img/usuaris/user.png'),
 (3,	'supervisor',	'$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',	'Supervisor',	'img/usuaris/user.png');
 
--- 2022-01-08 21:37:17
+-- 2022-01-09 17:23:22
