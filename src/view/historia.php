@@ -22,7 +22,6 @@
                 <?php } ?>
             </div>
             <div class="table-container is-flex is-justify-content-center">
-                <?php if (count($llistatEvents) > 0) { ?>
                 <table class="table is-narrow is-bordered is-striped is-hoverable">
                     <thead class="has-background-white-ter">
                         <tr>
@@ -49,11 +48,6 @@
                         <?php } ?>
                     </tbody>
                 </table>
-                <?php } else { ?>
-                    <div id="app">
-                        <missatge-info tittle="Create different events to generate your history"></missatge-info>
-                    </div>
-                <?php } ?>
             </div>
         </div>
         <?php require "../src/view/util/script.php"; ?>
