@@ -77,6 +77,11 @@ class Contenidor
         return new \PactometrePDO($this->connexio);
     }
 
+    public function historiaPDO()
+    {
+        return new \HistoriaPDO($this->connexio);
+    }
+
     public function configPDO()
     {
         return new \ConfigPDO($this->connexio);

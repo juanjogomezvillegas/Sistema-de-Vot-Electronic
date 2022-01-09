@@ -36,4 +36,5 @@ require_once "../src/models/modelPDO.php";
 require_once "../src/models/usuarisPDO.php";
 require_once "../src/models/candidatsPDO.php";
 require_once "../src/models/pactometrePDO.php";
+require_once "../src/models/historiaPDO.php";
 require_once "../src/models/configPDO.php";

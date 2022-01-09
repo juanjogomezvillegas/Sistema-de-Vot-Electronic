@@ -33,6 +33,16 @@ CREATE TABLE `config` (
 INSERT INTO `config` (`id`, `numEscons`, `logo`, `titol`) VALUES
 (1,	100,	'img/bd/logo.png',	'Electronic Voting System');
 
+DROP TABLE IF EXISTS `historia`;
+CREATE TABLE `historia` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `data_event` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `nom_event` text NOT NULL,
+  `color` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
 DROP TABLE IF EXISTS `usuari`;
 CREATE TABLE `usuari` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -49,4 +59,4 @@ INSERT INTO `usuari` (`id`, `username`, `contrasenya`, `rol`, `icona`) VALUES
 (2,	'manager',	'$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',	'Manager',	'img/usuaris/user.png'),
 (3,	'supervisor',	'$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',	'Supervisor',	'img/usuaris/user.png');
 
--- 2022-01-06 12:36:18
+-- 2022-01-08 21:37:17
