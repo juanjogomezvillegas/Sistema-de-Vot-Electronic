@@ -37,7 +37,7 @@ function ctrlDoCrearEvent($peticio, $resposta, $contenidor)
 
         $dateTime = new DateTime($timestamp);
 
-        $historiaPDO->add($dateTime->format("Y-n-j h:m:s"), $nomEvent, $colorEvent);
+        $historiaPDO->add($dateTime->format("Y-n-j H:i:s"), $nomEvent, $colorEvent);
 
         $resposta->redirect("Location:index.php?r=historia");
     } else {
