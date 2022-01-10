@@ -1,10 +1,10 @@
 # Sistema-de-Vot-Electronic
 
-# Autor
+## Autor
 
 - Juan José Gómez Villegas
 
-# Desplegament de l'Aplicació
+## Desplegament de l'Aplicació
 
 Es pot comprovar com funciona executant.
 
@@ -20,19 +20,9 @@ $ cd cli/
 $ ./server.sh
 ```
 
-El contingut del script server.sh es el següent:
-
-```sh
-#!/bin/sh
-cd ../public
-php -S 0.0.0.0:8081
-```
-
 I posant la barra d'adreces del navegador (http://{IP_del_servidor}:8081).
 
-Nota: "IP_del_servidor" s'ha de canviar per la IP del servidor on heu clonat el repositori.
-
-# Dades
+## Dades
 
 Base de dades de l'aplicació.
 
@@ -41,8 +31,6 @@ CREATE DATABASE election_daw;
 ```
 
 Només cal crear la base de dades, i configurar el config.php per accedir a la base de dades.
-
-Nota: Les més importants són "$config['user']" i "$config['pass']"
 
 ```php
 $config["user"] = "usuari";
@@ -58,7 +46,7 @@ $ cd src/
 $ cat config.php
 ```
 
-I Executem l'script initPDO.php que es a la carpeta cli/ per crear les taules que necessita l'aplicació per funcionar.
+I per importar la base de dades, es pot fer executant l'script initPDO.php
 
 ```sh
 $ cd cli/

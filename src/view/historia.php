@@ -67,25 +67,25 @@
                     <div class="field">
                         <label class="label">Event Date</label>
                         <div class="control">
-                            <input id="dateEvent" name="dateEvent" class="input" type="date">
+                            <input id="dateEvent" name="dateEvent" class="input" type="date" value="<?php echo $datetime[0]; ?>">
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Event Time</label>
                         <div class="control">
-                            <input id="timeEvent" name="timeEvent" class="input" type="time">
+                            <input id="timeEvent" name="timeEvent" class="input" type="time" value="<?php echo $datetime[1]; ?>">
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Event</label>
                         <div class="control">
-                            <textarea class="textarea" name="nomEvent" placeholder="Event"></textarea>
+                            <textarea class="textarea" name="nomEvent" placeholder="Event"><?php echo $ultimEvent["nom_event"]; ?></textarea>
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Color</label>
                         <div class="control">
-                            <input id="colorEvent" name="colorEvent" class="input" type="color">
+                            <input id="colorEvent" name="colorEvent" class="input" type="color" value="<?php echo $ultimEvent["color"]; ?>">
                         </div>
                     </div>
                 </section>
