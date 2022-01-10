@@ -10,7 +10,13 @@ function ctrlHistoria($peticio, $resposta, $contenidor)
 
     $llistatEvents = $historiaPDO->get();
 
+    $ultimEvent = $historiaPDO->getUltim();
+
+    $datetime = explode(" ", $ultimEvent["data_event"]);
+
     $resposta->set("llistatEvents", $llistatEvents);
+    $resposta->set("ultimEvent", $ultimEvent);
+    $resposta->set("datetime", $datetime);
     $resposta->set("error", $error);
 
     $resposta->SetTemplate("historia.php");

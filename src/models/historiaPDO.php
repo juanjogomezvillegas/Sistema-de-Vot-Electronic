@@ -18,6 +18,21 @@ class HistoriaPDO extends ModelPDO
         return $registres;
     }
 
+    public function getUltim()
+    {
+        $query = "select * from historia where data_event = (select max(data_event) from historia);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function add($data, $nom, $color)
     {
         $query = "insert into historia (data_event,nom_event,color) values (:data,:nom,:color);";
