@@ -39,6 +39,7 @@ CREATE TABLE `historia` (
   `data_event` datetime NOT NULL,
   `nom_event` text NOT NULL,
   `color` varchar(100) NOT NULL,
+  `govern` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -59,4 +60,4 @@ INSERT INTO `usuari` (`id`, `username`, `contrasenya`, `rol`, `icona`) VALUES
 (2,	'manager',	'$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',	'Manager',	'img/usuaris/user.png'),
 (3,	'supervisor',	'$2y$11$tQUb/V0aK7xxqe1hyDQxVOkVSiauRKjom7psWZwBWvrbkfYAaL5Zi',	'Supervisor',	'img/usuaris/user.png');
 
--- 2022-01-09 17:23:22
+-- 2022-02-05 12:33:04

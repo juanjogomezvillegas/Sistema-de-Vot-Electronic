@@ -27,6 +27,7 @@
                         <tr>
                             <th>Date</th>
                             <th>Event</th>
+                            <th>Government</th>
                             <?php if ($dadesUsuarilogat["rol"] === "Administrator" || $dadesUsuarilogat["rol"] === "Manager") { ?>
                                 <th>Actions</th>
                             <?php } ?>
@@ -37,8 +38,12 @@
                             <tr>
                                 <td style="background-color: <?php echo $actual["color"]; ?>;"><?php echo $actual["data_event"]; ?></td>
                                 <td style="background-color: <?php echo $actual["color"]; ?>;"><?php echo $actual["nom_event"]; ?></td>
+                                <td style="background-color: <?php echo $actual["color"]; ?>;"><?php echo $actual["govern"]; ?></td>
                                 <?php if ($dadesUsuarilogat["rol"] === "Administrator" || $dadesUsuarilogat["rol"] === "Manager") { ?>
                                     <td>
+                                    <a class="has-text-link">
+                                            <input type="hidden" name="idEvent" value="<?php echo $actual["id"]; ?>">
+                                            <i class="fas fa-edit editarEvent"></i></a>
                                         <a class="has-text-danger">
                                             <input type="hidden" name="idEvent" value="<?php echo $actual["id"]; ?>">
                                             <i class="fas fa-trash-alt esborrarEvent"></i></a>
@@ -83,6 +88,12 @@
                         </div>
                     </div>
                     <div class="field">
+                        <label class="label">Government</label>
+                        <div class="control">
+                            <input id="governEvent" name="governEvent" class="input" type="text" value="<?php echo $ultimEvent["govern"]; ?>">
+                        </div>
+                    </div>
+                    <div class="field">
                         <label class="label">Color</label>
                         <div class="control">
                             <input id="colorEvent" name="colorEvent" class="input" type="color" value="<?php echo $ultimEvent["color"]; ?>">
@@ -92,6 +103,25 @@
                 <footer class="modal-card-foot is-flex is-justify-content-end">
                     <button type="submit" class="button is-info">Create Event <i class="fas fa-folder-plus ml-2"></i></button>
                     <a class="button is-light" id="btnCancelaModal2">Cancel</a>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Esborrar Event -->
+    <div id="modalEditarEvent" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <form action="index.php?r=doEditarEvent" method="POST">
+                <header class="modal-card-head">
+                    <p id="titolEvent4" class="modal-card-title"><i class="fas fa-exclamation-circle mr-2"></i>Edit Event</p>
+                    <a id="btnCloseModal4" class="delete" aria-label="close"></a>
+                </header>
+                <section id="cosFormEditarEvent" class="modal-card-body">
+                </section>
+                <footer class="modal-card-foot is-flex is-justify-content-end">
+                    <button type="submit" class="button is-info">Save Changes</button>
+                    <a class="button is-light" id="btnCancelaModal4">Cancel</a>
                 </footer>
             </form>
         </div>

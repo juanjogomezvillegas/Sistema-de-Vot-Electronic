@@ -32,18 +32,49 @@ function ctrlDoCrearEvent($peticio, $resposta, $contenidor)
     $timeEvent2 = $peticio->get(INPUT_POST, "timeEvent");
     $nomEvent2 = $peticio->get(INPUT_POST, "nomEvent");
     $colorEvent2 = $peticio->get(INPUT_POST, "colorEvent");
+    $governEvent2 = $peticio->get(INPUT_POST, "governEvent");
 
     $dateEvent = trim(filter_var($dateEvent2, FILTER_SANITIZE_STRING));
     $timeEvent = trim(filter_var($timeEvent2, FILTER_SANITIZE_STRING));
     $nomEvent = trim(filter_var($nomEvent2, FILTER_SANITIZE_STRING));
     $colorEvent = trim(filter_var($colorEvent2, FILTER_SANITIZE_STRING));
+    $governEvent = trim(filter_var($governEvent2, FILTER_SANITIZE_STRING));
 
-    if (!empty($dateEvent) && !empty($timeEvent) && !empty($nomEvent) && !empty($colorEvent)) {
+    $nomEvent = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $nomEvent);
+
+    if (!empty($dateEvent) && !empty($timeEvent) && !empty($nomEvent) && !empty($colorEvent) && !empty($governEvent)) {
         $timestamp = "$dateEvent $timeEvent";
 
         $dateTime = new DateTime($timestamp);
 
-        $historiaPDO->add($dateTime->format("Y-n-j H:i:s"), $nomEvent, $colorEvent);
+        $historiaPDO->add($dateTime->format("Y-n-j H:i:s"), $nomEvent, $colorEvent, $governEvent);
+
+        $resposta->redirect("Location:index.php?r=historia");
+    } else {
+        $resposta->redirect("Location:index.php?r=historia&error=1");
+    }
+
+    return $resposta;
+}
+
+function ctrlDoEditarEvent($peticio, $resposta, $contenidor)
+{
+    $historiaPDO = $contenidor->historiaPDO();
+
+    $idEvent2 = $peticio->get(INPUT_POST, "idEvent");
+    $nomEvent2 = $peticio->get(INPUT_POST, "nomEvent");
+    $colorEvent2 = $peticio->get(INPUT_POST, "colorEvent");
+    $governEvent2 = $peticio->get(INPUT_POST, "governEvent");
+
+    $idEvent = filter_var($idEvent2, FILTER_SANITIZE_NUMBER_INT);
+    $nomEvent = trim(filter_var($nomEvent2, FILTER_SANITIZE_STRING));
+    $colorEvent = trim(filter_var($colorEvent2, FILTER_SANITIZE_STRING));
+    $governEvent = trim(filter_var($governEvent2, FILTER_SANITIZE_STRING));
+
+    $nomEvent = str_replace(array("\r\n", "\n\r", "\r", "\n"), "<br />", $nomEvent);
+
+    if (!empty($idEvent) && !empty($nomEvent) && !empty($colorEvent) && !empty($governEvent)) {
+        $historiaPDO->update($idEvent, $nomEvent, $colorEvent, $governEvent);
 
         $resposta->redirect("Location:index.php?r=historia");
     } else {

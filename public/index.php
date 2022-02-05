@@ -63,6 +63,7 @@ $app->ruta("actualitzarPosicio", "ctrlActualitzarPosicio", ["middleCentral", "mi
 $app->ruta("sumaVots", "ctrlSumaVots", ["middleCentral", "middleLogat", "middleSupervisor"]);
 $app->ruta("restaVots", "ctrlRestaVots", ["middleCentral", "middleLogat", "middleSupervisor"]);
 $app->ruta("obtenirResultat", "ctrlObtenirResultat", ["middleCentral", "middleLogat", "middleSupervisor"]);
+$app->ruta("obtenirDadesEvent", "ctrlObtenirDadesEvent", ["middleCentral", "middleLogat", "middleSupervisor"]);
 
 $app->ruta("", "ctrlPortada", ["middleCentral"]);
 $app->ruta("votar", "ctrlVotar", ["middleCentral"]);
@@ -92,6 +93,7 @@ $app->ruta("doactualitzarcandidat", "ctrlDoactualitzarcandidat", ["middleCentral
 $app->ruta("doesborrarcandidat", "ctrlDoesborrarcandidat", ["middleCentral", "middleLogat", "middleManager"]);
 $app->ruta("historia", "ctrlHistoria", ["middleCentral", "middleLogat", "middleSupervisor"]);
 $app->ruta("doCrearEvent", "ctrlDoCrearEvent", ["middleCentral", "middleLogat", "middleManager"]);
+$app->ruta("doEditarEvent", "ctrlDoEditarEvent", ["middleCentral", "middleLogat", "middleManager"]);
 $app->ruta("doReiniciaHistoria", "ctrlDoReiniciaHistoria", ["middleCentral", "middleLogat", "middleManager"]);
 $app->ruta("doEsborrarEvent", "ctrlDoEsborrarEvent", ["middleCentral", "middleLogat", "middleManager"]);
 
