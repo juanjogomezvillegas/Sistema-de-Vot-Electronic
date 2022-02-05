@@ -171,3 +171,18 @@ function ctrlObtenirResultat($peticio, $resposta, $contenidor)
 
     return $resposta;
 }
+
+function ctrlObtenirDadesEvent($peticio, $resposta, $contenidor)
+{
+    $historiaPDO = $contenidor->historiaPDO();
+
+    $idEvent2 = $peticio->get(INPUT_POST, "idEvent");
+
+    $idEvent = filter_var($idEvent2, FILTER_SANITIZE_NUMBER_INT);
+
+    $dadesEvent = $historiaPDO->getEvent($idEvent);
+
+    echo json_encode($dadesEvent);
+
+    return $resposta;
+}
