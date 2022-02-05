@@ -39,5 +39,6 @@ $connexio->query(
     data_event DATETIME NOT NULL,
     nom_event TEXT NOT NULL,
     color VARCHAR(100) NOT NULL,
+    govern VARCHAR(200) NOT NULL,
     PRIMARY KEY(id));"
 );
