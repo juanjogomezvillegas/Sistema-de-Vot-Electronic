@@ -1,10 +1,10 @@
 # Sistema-de-Vot-Electronic
 
-## Autor
+## Author
 
 - Juan José Gómez Villegas
 
-## Desplegament de l'Aplicació
+## Deployment of Application
 
 Es pot comprovar com funciona executant.
 
@@ -22,9 +22,7 @@ $ ./server.sh
 
 I posant la barra d'adreces del navegador (http://{IP_del_servidor}:8081).
 
-## Dades
-
-Base de dades de l'aplicació.
+## Database of Application
 
 ```sql
 CREATE DATABASE election_daw;
