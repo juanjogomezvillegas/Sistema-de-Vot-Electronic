@@ -60,8 +60,6 @@
                     </div>
                 <?php } ?>
             </div>
-
-            <div id="map"></div>
         </div>
         <?php require "../src/view/util/script.php"; ?>
         <script src="js/admin.js"></script>
