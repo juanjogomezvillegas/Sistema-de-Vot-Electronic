@@ -73,3 +73,8 @@ div.card:hover {
     background-color: hsl(219, 70%, 96%) !important;
     box-shadow: 0 0 20px 3px hsl(0, 0%, 14%) !important;
 }
+
+#map {
+    margin: 10px;
+    height: 500px;
+}
