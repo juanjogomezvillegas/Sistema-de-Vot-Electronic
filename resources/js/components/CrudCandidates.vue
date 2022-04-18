@@ -184,7 +184,7 @@
         },
         methods: {
             listCandidates() {
-                axios.get('/api/candidates')
+                axios.get('/candidates/all')
                 .then((response) => {
                     this.candidates = response.data;
                 })

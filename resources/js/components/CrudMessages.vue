@@ -78,7 +78,7 @@
         },
         methods: {
             listMessages() {
-                axios.get('/api/messages')
+                axios.get('/messages/all')
                 .then((response) => {
                     this.messages = response.data;
                 })

@@ -12,12 +12,6 @@ import CrudCandidates from './components/CrudCandidates.vue';
 
 import CrudMessages from './components/CrudMessages.vue';
 
-import CrudHistory from './components/CrudHistory.vue';
-
-import CrudInstitutions from './components/CrudInstitutions.vue';
-
-import CrudLaws from './components/CrudLaws.vue';
-
 import Results from './components/Results.vue';
 
 import Pactometer from './components/Pactometer.vue';
@@ -33,12 +27,6 @@ app.component("crud-users", CrudUsers);
 app.component('crud-candidates', CrudCandidates);
 
 app.component('crud-messages', CrudMessages);
-
-app.component('crud-history', CrudHistory);
-
-app.component('crud-institutions', CrudInstitutions);
-
-app.component('crud-laws', CrudLaws);
 
 app.component('results', Results);
 

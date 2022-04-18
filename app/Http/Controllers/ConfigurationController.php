@@ -38,21 +38,4 @@ class ConfigurationController extends Controller
 
         return redirect('/configuration');
     }
-
-    public function searchYear()
-    {
-        return Configuration::get('year')->first()->year;
-    }
-
-    public function updateSearchYear(Request $request, Configuration $configuration)
-    {
-        $request->validate([
-            'searchYear' => ['required', 'string', 'max:255'],
-        ]);
-
-        $configuration->year = $request->searchYear;
-        $configuration->save();
-
-        $request->session()->forget('config');
-    }
 }

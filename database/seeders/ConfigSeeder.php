@@ -21,7 +21,6 @@ class ConfigSeeder extends Seeder
             'logo' => 'img/apli/logo-example.png',
             'icon' => 'img/apli/icon-example.png',
             'seats' => 100,
-            'year' => '',
         ]);
     }
 }

@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string('logo')->default('img/apli/logo-example.png');
             $table->string('icon')->default('img/apli/icon-example.png');
             $table->integer('seats')->default(100);
-            $table->string('year')->default('');
-            $table->timestamps();
         });
 
         Schema::table('users', function (Blueprint $table) {
@@ -38,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('configuration');
+        Schema::dropIfExists('configurations');
     }
 };

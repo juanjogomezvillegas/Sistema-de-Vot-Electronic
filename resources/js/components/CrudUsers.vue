@@ -195,7 +195,7 @@
         },
         methods: {
             listUsers() {
-                axios.get('/api/users')
+                axios.get('/users/all')
                 .then((response) => {
                     this.users = response.data;
                 })

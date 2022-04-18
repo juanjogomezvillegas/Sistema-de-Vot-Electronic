@@ -7,12 +7,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\MessageController;
 
-
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\HistoryController;
-use App\Http\Controllers\InstitutionController;
-use App\Http\Controllers\LawController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -85,6 +79,8 @@ Route::put('/user/{user}', [UserController::class, 'update'])->middleware(['auth
 
 Route::delete('/user/{user}', [UserController::class, 'destroy'])->middleware(['auth', 'authAdmin']);
 
+Route::get('/users/all', [UserController::class, 'users'])->middleware(['auth', 'authAdmin']);
+
 Route::get('/user/{user}', [UserController::class, 'user'])->middleware(['auth', 'authAdmin']);
 
 //Crud Candidates
@@ -95,6 +91,8 @@ Route::post('/candidate/create', [CandidateController::class, 'create'])->middle
 Route::put('/candidate/{candidate}', [CandidateController::class, 'update'])->middleware(['auth', 'authManager']);
 
 Route::delete('/candidate/{candidate}', [CandidateController::class, 'destroy'])->middleware(['auth', 'authManager']);
+
+Route::get('/candidates/all', [CandidateController::class, 'candidates'])->middleware(['auth', 'authManager']);
 
 Route::get('/candidate/{candidate}', [CandidateController::class, 'candidate'])->middleware(['auth', 'authManager']);
 
@@ -127,44 +125,9 @@ Route::post('/message/create', [MessageController::class, 'create']);
 
 Route::delete('/message/{message}', [MessageController::class, 'destroy'])->middleware(['auth', 'authSupervisor']);
 
+Route::get('/messages/all', [MessageController::class, 'messages'])->middleware(['auth', 'authSupervisor']);
+
 Route::get('/message/{message}', [MessageController::class, 'message'])->middleware(['auth', 'authSupervisor']);
-
-
-
-/**
- * @deprecated version
- * **/
-//Crud History
-Route::get('/history', [PageController::class, 'showHistory'])->middleware(['apli', 'auth', 'authSupervisor'])->name('history');
-
-Route::post('/history/create', [HistoryController::class, 'create'])->middleware(['auth', 'authManager']);
-
-Route::put('/history/{history}', [HistoryController::class, 'update'])->middleware(['auth', 'authManager']);
-
-Route::delete('/history/{history}', [HistoryController::class, 'delete'])->middleware(['auth', 'authManager']);
-
-Route::get('/history/last-create', [HistoryController::class, 'dataHistoryLast'])->middleware(['auth', 'authSupervisor']);
-
-Route::get('/history/{history}', [HistoryController::class, 'dataHistory'])->middleware(['auth', 'authSupervisor']);
-
-//Search Year
-Route::get('/search-year', [ConfigurationController::class, 'searchYear'])->middleware(['apli', 'auth']);
-
-Route::put('/search-year/{configuration}', [ConfigurationController::class, 'updateSearchYear'])->middleware(['apli', 'auth']);
-
-//Crud Institutions
-Route::get('/institutions', [PageController::class, 'showInstitutions'])->middleware(['apli', 'auth', 'authSupervisor'])->name('institutions');
-
-Route::post('/institutions/create', [InstitutionController::class, 'create'])->middleware(['auth', 'authManager']);
-
-Route::delete('/institutions/{institution}', [InstitutionController::class, 'delete'])->middleware(['auth', 'authManager']);
-
-//Crud Laws
-Route::get('/laws', [PageController::class, 'showLaws'])->middleware(['apli', 'auth', 'authSupervisor'])->name('laws');
-
-Route::post('/laws/create', [LawController::class, 'create'])->middleware(['auth', 'authManager']);
-
-Route::delete('/laws/{law}', [LawController::class, 'delete'])->middleware(['auth', 'authManager']);
 
 //Users Management
 require __DIR__.'/auth.php';
