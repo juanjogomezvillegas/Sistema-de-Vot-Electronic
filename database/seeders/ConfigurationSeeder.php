@@ -15,6 +15,9 @@ class ConfigurationSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('configurations')->insert([]);
+        DB::table('configurations')->insert([
+            'title' => 'Electronic Voting System',
+            'seats' => 100,
+        ]);
     }
 }
