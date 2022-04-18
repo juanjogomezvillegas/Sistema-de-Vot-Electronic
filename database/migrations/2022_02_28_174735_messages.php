@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('legislatures', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->string('number');
-            $table->date('election');
-            $table->date('begin');
-            $table->date('end')->nullable();
-            $table->string('president')->default('');
-            $table->string('party')->default('');
+            $table->string('email');
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('legislatures');
+        Schema::dropIfExists('messages');
     }
 };

@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('configurations', function (Blueprint $table) {
+        Schema::create('legislatures', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->default('Electronic Voting System');
-            $table->string('logo')->default('img/apli/logo-example.png');
-            $table->string('icon')->default('img/apli/icon-example.png');
-            $table->integer('seats')->default(100);
+            $table->string('number');
+            $table->date('date_election');
+            $table->date('date_begin');
+            $table->date('date_end')->nullable(true);
+            $table->string('President')->default('');
+            $table->string('Party')->default('');
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('configurations');
+        Schema::dropIfExists('legislatures');
     }
 };

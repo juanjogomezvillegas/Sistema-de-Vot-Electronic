@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ConfigurationSeeder extends Seeder
+class ConfigSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,8 +16,12 @@ class ConfigurationSeeder extends Seeder
     public function run()
     {
         DB::table('configurations')->insert([
+            'id' => 1,
             'title' => 'Electronic Voting System',
+            'logo' => 'img/apli/logo-example.png',
+            'icon' => 'img/apli/icon-example.png',
             'seats' => 100,
+            'year' => '',
         ]);
     }
 }

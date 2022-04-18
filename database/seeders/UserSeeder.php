@@ -12,22 +12,28 @@ class UserSeeder extends Seeder
 {
     private $users = [
         [
-            'name' => 'admin',
-            'lastname' => 'admin',
+            'name' => 'Admin',
+            'lastname' => 'Admin',
             'email' => 'admin@election.daw',
-            'role' => 'administrator',
+            'role' => 'administrator'
         ],
         [
-            'name' => 'manager',
-            'lastname' => 'manager',
+            'name' => 'Manager',
+            'lastname' => 'Manager',
             'email' => 'manager@election.daw',
-            'role' => 'manager',
+            'role' => 'manager'
         ],
         [
-            'name' => 'supervisor',
-            'lastname' => 'supervisor',
+            'name' => 'Supervisor',
+            'lastname' => 'Supervisor',
             'email' => 'supervisor@election.daw',
-            'role' => 'supervisor',
+            'role' => 'supervisor'
+        ],
+        [
+            'name' => 'User',
+            'lastname' => 'User',
+            'email' => 'user@election.daw',
+            'role' => 'user'
         ],
     ];
 
@@ -38,14 +44,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        foreach ($this->users as $user) {
+        foreach ($this->users as $item) {
             DB::table('users')->insert([
-                'name' => $user['name'],
-                'lastname' => $user['lastname'],
-                'email' => $user['email'],
+                'name' => $item['name'],
+                'lastname' => $item['lastname'],
+                'email' => $item['email'],
                 'password' => Hash::make('12345678'),
                 'remember_token' => Str::random(10),
-                'role' => $user['role'],
+                'role' => $item['role'],
             ]);
         }
     }

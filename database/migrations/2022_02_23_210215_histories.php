@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('candidates', function (Blueprint $table) {
+        Schema::create('histories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('party');
-            $table->string('ideology');
-            $table->text('campaign');
+            $table->date('date_event');
+            $table->time('time_event');
+            $table->text('name_event');
+            $table->string('government');
             $table->string('color');
-            $table->integer('votes')->default(0);
-            $table->integer('seats')->default(0);
-            $table->string('position')->default('no');//yes - no - abstention
             $table->timestamps();
         });
     }
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('candidates');
+        Schema::dropIfExists('history');
     }
 };
