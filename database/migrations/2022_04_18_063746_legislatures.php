@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('president')->default('');
             $table->string('party')->default('');
             $table->string('government')->default('');
+            $table->string('color')->default('');
             $table->timestamps();
         });
     }
