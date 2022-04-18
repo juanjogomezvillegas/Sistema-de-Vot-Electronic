@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('end')->nullable();
             $table->date('election')->nullable();
             $table->string('president')->default('');
+            $table->string('vicepresident')->default('');
             $table->string('party')->default('');
             $table->string('government')->default('');
             $table->string('color')->default('');
