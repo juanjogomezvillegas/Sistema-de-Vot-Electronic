@@ -16,11 +16,12 @@ return new class extends Migration
         Schema::create('legislatures', function (Blueprint $table) {
             $table->id();
             $table->string('number');
-            $table->date('election');
             $table->date('begin');
-            $table->date('end')->nullable(true);
+            $table->date('end')->nullable();
+            $table->date('election')->nullable();
             $table->string('president')->default('');
             $table->string('party')->default('');
+            $table->string('government')->default('');
             $table->timestamps();
         });
     }
