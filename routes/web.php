@@ -6,6 +6,7 @@ use App\Http\Controllers\ConfigurationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\LegislatureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -128,6 +129,9 @@ Route::delete('/message/{message}', [MessageController::class, 'destroy'])->midd
 Route::get('/messages/all', [MessageController::class, 'messages'])->middleware(['auth', 'authSupervisor']);
 
 Route::get('/message/{message}', [MessageController::class, 'message'])->middleware(['auth', 'authSupervisor']);
+
+//Crud Legislatures
+Route::get('/legislatures', [LegislatureController::class, 'show'])->middleware(['apli', 'auth', 'authSupervisor'])->name('legislatures');
 
 //Users Management
 require __DIR__.'/auth.php';

@@ -32,8 +32,11 @@
                 <i class="fa-solid fa-user-group mr-2"></i> Users Management
             </a>
         @endif
-        {{-- @if(Auth::user()->role == 'administrator' || Auth::user()->role == 'manager' || Auth::user()->role == 'supervisor')
-        @endif --}}
+        @if(Auth::user()->role == 'administrator' || Auth::user()->role == 'manager' || Auth::user()->role == 'supervisor')
+            <a href="{{ route('legislatures') }}" class="navbar-item">
+                <i class="fa-solid fa-landmark mr-2"></i> Legislatures
+            </a>
+        @endif
       </div>
 
       <div class="navbar-end">

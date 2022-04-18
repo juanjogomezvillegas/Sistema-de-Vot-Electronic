@@ -1,35 +1,39 @@
 //require('./bootstrap');
 
-import { createApp } from 'vue';
+import { createApp } from 'vue'
 
-import Contact from './components/Contact.vue';
+import Contact from './components/Contact.vue'
 
-import Dashboard from './components/Dashboard.vue';
+import Dashboard from './components/Dashboard.vue'
 
-import CrudUsers from './components/CrudUsers.vue';
+import CrudUsers from './components/CrudUsers.vue'
 
-import CrudCandidates from './components/CrudCandidates.vue';
+import CrudCandidates from './components/CrudCandidates.vue'
 
-import CrudMessages from './components/CrudMessages.vue';
+import CrudMessages from './components/CrudMessages.vue'
 
-import Results from './components/Results.vue';
+import CrudLegislatures from './components/CrudLegislatures.vue'
 
-import Pactometer from './components/Pactometer.vue';
+import Results from './components/Results.vue'
 
-const app  = createApp({});
+import Pactometer from './components/Pactometer.vue'
 
-app.component("contact", Contact);
+const app  = createApp({})
 
-app.component("dashboard", Dashboard);
+app.component("contact", Contact)
 
-app.component("crud-users", CrudUsers);
+app.component("dashboard", Dashboard)
 
-app.component('crud-candidates', CrudCandidates);
+app.component("crud-users", CrudUsers)
 
-app.component('crud-messages', CrudMessages);
+app.component('crud-candidates', CrudCandidates)
 
-app.component('results', Results);
+app.component('crud-messages', CrudMessages)
 
-app.component('pactometer', Pactometer);
+app.component('crud-legislatures', CrudLegislatures)
 
-app.mount("#app");
+app.component('results', Results)
+
+app.component('pactometer', Pactometer)
+
+app.mount("#app")
