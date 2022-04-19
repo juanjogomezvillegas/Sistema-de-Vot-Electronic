@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('legislatures', function (Blueprint $table) {
             $table->id();
             $table->string('number');
-            $table->date('begin');
-            $table->date('end')->nullable();
-            $table->date('election')->nullable();
+            $table->timestamp('begin');
+            $table->timestamp('end')->nullable();
+            $table->timestamp('election')->nullable();
             $table->string('president')->default('');
             $table->string('vicepresident')->default('');
             $table->string('party')->default('');

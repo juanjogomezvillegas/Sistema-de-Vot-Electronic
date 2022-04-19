@@ -133,5 +133,9 @@ Route::get('/message/{message}', [MessageController::class, 'message'])->middlew
 //Crud Legislatures
 Route::get('/legislatures', [LegislatureController::class, 'show'])->middleware(['apli', 'auth', 'authSupervisor'])->name('legislatures');
 
+Route::get('/legislatures/all', [LegislatureController::class, 'legislatures'])->middleware(['auth', 'authSupervisor']);
+
+Route::get('/legislature/{legislature}', [LegislatureController::class, 'legislature'])->middleware(['auth', 'authSupervisor']);
+
 //Users Management
 require __DIR__.'/auth.php';

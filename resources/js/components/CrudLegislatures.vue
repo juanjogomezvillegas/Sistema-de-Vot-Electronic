@@ -19,16 +19,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr v-for="(legislature, index) in this.legislatures" :key="index">
+                        <td>{{ legislature.number }}</td>
+                        <td>{{ legislature.election }}</td>
+                        <td>{{ legislature.begin }}</td>
+                        <td>{{ legislature.end }}</td>
+                        <td>{{ legislature.president }}</td>
+                        <td>{{ legislature.party }}</td>
+                        <td>{{ legislature.government }}</td>
+                        <td>{{ legislature.vicepresident }}</td>
+                        <td>
+                            <button class="button is-link"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="button is-danger ml-1"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -43,14 +46,22 @@
         name: 'CrudLegislatures',
         data() {
             return {
-                //
+                legislatures: [],
             }
         },
         mounted() {
-            //
+            this.listLegislatures();
         },
         methods: {
-            //
+            listLegislatures() {
+                axios.get('/legislatures/all')
+                .then((response) => {
+                    this.legislatures = response.data;
+                })
+                .catch((error) => {
+                    //
+                });
+            },
         },
     }
 </script>
