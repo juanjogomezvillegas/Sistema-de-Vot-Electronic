@@ -133,6 +133,12 @@ Route::get('/message/{message}', [MessageController::class, 'message'])->middlew
 //Crud Legislatures
 Route::get('/legislatures', [LegislatureController::class, 'show'])->middleware(['apli', 'auth', 'authSupervisor'])->name('legislatures');
 
+Route::post('/legislatures/create', [LegislatureController::class, 'create'])->middleware(['auth', 'authManager']);
+
+Route::put('/legislatures/{legislatures}', [LegislatureController::class, 'update'])->middleware(['auth', 'authManager']);
+
+Route::delete('/legislatures/{legislatures}', [LegislatureController::class, 'destroy'])->middleware(['auth', 'authManager']);
+
 Route::get('/legislatures/all', [LegislatureController::class, 'legislatures'])->middleware(['auth', 'authSupervisor']);
 
 Route::get('/legislature/{legislature}', [LegislatureController::class, 'legislature'])->middleware(['auth', 'authSupervisor']);

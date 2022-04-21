@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('number');
             $table->timestamp('begin');
             $table->timestamp('end')->nullable();
-            $table->timestamp('election')->nullable();
+            $table->date('election')->nullable();
             $table->string('president')->default('');
             $table->string('vicepresident')->default('');
             $table->string('party')->default('');
