@@ -18,10 +18,7 @@
                 <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
             </a>
         @endauth
-        <a href="{{ route('vote') }}" class="navbar-item">
-            <i class="fa-solid fa-share mr-2"></i> Vote
-        </a>
-        <a href="/#contactHome" class="navbar-item">
+        <a href="{{ route('contact') }}" class="navbar-item">
             <i class="fa-solid fa-paper-plane mr-2"></i> Contact
         </a>
       </div>

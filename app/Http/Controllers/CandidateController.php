@@ -90,13 +90,6 @@ class CandidateController extends Controller
         $candidate->delete();
     }
 
-    public function vote()
-    {
-        return view('vote', [
-            'candidates' => Candidate::orderBy('votes', 'DESC')->orderBy('seats', 'DESC')->get(),
-        ]);
-    }
-
     public function votes(Candidate $candidate)
     {
         $candidate->votes = $candidate->votes + 1;

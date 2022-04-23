@@ -40,9 +40,10 @@ Route::get('/logout', [HomeController::class, 'logout'])->middleware('apli', 'au
 //Home Page
 Route::get('/', [HomeController::class, 'index'])->name('home')->middleware(['apli']);
 
-//Vote
-Route::get('/vote', [CandidateController::class, 'vote'])->name('vote')->middleware(['apli']);
+//Contact
+Route::get('/contact', [MessageController::class, 'contact'])->name('contact')->middleware(['apli']);
 
+//Vote
 Route::post('/vote/{candidate}', [CandidateController::class, 'votes']);
 
 Route::get('/voted', [CandidateController::class, 'voted'])->name('voted')->middleware(['apli']);
@@ -135,9 +136,9 @@ Route::get('/legislatures', [LegislatureController::class, 'show'])->middleware(
 
 Route::post('/legislatures/create', [LegislatureController::class, 'create'])->middleware(['auth', 'authManager']);
 
-Route::put('/legislatures/{legislatures}', [LegislatureController::class, 'update'])->middleware(['auth', 'authManager']);
+Route::put('/legislatures/{legislature}', [LegislatureController::class, 'update'])->middleware(['auth', 'authManager']);
 
-Route::delete('/legislatures/{legislatures}', [LegislatureController::class, 'destroy'])->middleware(['auth', 'authManager']);
+Route::delete('/legislatures/{legislature}', [LegislatureController::class, 'destroy'])->middleware(['auth', 'authManager']);
 
 Route::get('/legislatures/all', [LegislatureController::class, 'legislatures'])->middleware(['auth', 'authSupervisor']);
 

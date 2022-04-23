@@ -18,8 +18,7 @@ class ConfigSeeder extends Seeder
         DB::table('configurations')->insert([
             'id' => 1,
             'title' => 'Electronic Voting System',
-            'logo' => 'img/apli/logo-example.png',
-            'icon' => 'img/apli/icon-example.png',
+            'logo' => 'img/apli/EuropeanUnion.png',
             'seats' => 100,
         ]);
     }

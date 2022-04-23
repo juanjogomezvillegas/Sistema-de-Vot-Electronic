@@ -17,8 +17,7 @@ return new class extends Migration
         Schema::create('configurations', function (Blueprint $table) {
             $table->id();
             $table->string('title')->default('Electronic Voting System');
-            $table->string('logo')->default('img/apli/logo-example.png');
-            $table->string('icon')->default('img/apli/icon-example.png');
+            $table->string('logo')->default('img/apli/EuropeanUnion.png');
             $table->integer('seats')->default(100);
         });
 

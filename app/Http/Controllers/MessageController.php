@@ -22,6 +22,11 @@ class MessageController extends Controller
         return $message;
     }
 
+    public function contact()
+    {
+        return view('contact');
+    }
+
     public function show()
     {
         return view('messages.show');

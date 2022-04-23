@@ -7,7 +7,7 @@
         <meta name="author" content="Juan José Gómez Villegas">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="icon" href="{{ session('config')['icon'] }}">
+        <link rel="icon" href="{{ session('config')['logo'] }}">
         <title>{{ session('config')['title'] }}</title>
 
         <!-- Fonts -->
@@ -22,8 +22,6 @@
         <div id="app">
             @yield('content')
         </div>
-
-        @include('includes.footer')
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
