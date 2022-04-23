@@ -9,7 +9,7 @@ class LegislatureController extends Controller
 {
     public function legislatures()
     {
-        return Legislature::get();
+        return Legislature::orderBy('begin', 'DESC')->get();
     }
 
     public function legislature(Legislature $legislature)
