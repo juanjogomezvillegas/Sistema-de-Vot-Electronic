@@ -17,6 +17,11 @@ class LegislatureController extends Controller
         return $legislature;
     }
 
+    public function lastLegislature()
+    {
+        return Legislature::orderBy('begin', 'DESC')->first();
+    }
+
     public function show()
     {
         return view('legislatures.show');

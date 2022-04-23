@@ -283,7 +283,7 @@
                 yourrole: '',
                 legislatures: [],
                 arrayDataLegislature: [],
-                arrayCreateLegislature: {
+                arrayCreateLegislature2: {
                     'number': '',
                     'election': '',
                     'begin': '',
@@ -293,7 +293,8 @@
                     'party': '',
                     'government': '',
                     'color': '',
-                }
+                },
+                arrayCreateLegislature: [],
             }
         },
         mounted() {
@@ -322,6 +323,13 @@
             showModal(action, id) {
                 if (action == '1') {
                     document.getElementById("modalcreateLegislature").classList.add('is-active');
+                    axios.get('/legislature/last')
+                    .then((response) => {
+                        this.arrayCreateLegislature = response.data;
+                    })
+                    .catch((error) => {
+                        //
+                    });
                 } else if (action == '2') {
                     document.getElementById("modalupdateLegislature").classList.add('is-active');
                     this.dataLegislature(id);

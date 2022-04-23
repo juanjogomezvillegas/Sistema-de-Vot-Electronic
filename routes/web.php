@@ -142,6 +142,8 @@ Route::delete('/legislatures/{legislature}', [LegislatureController::class, 'des
 
 Route::get('/legislatures/all', [LegislatureController::class, 'legislatures'])->middleware(['auth', 'authSupervisor']);
 
+Route::get('/legislature/last', [LegislatureController::class, 'lastLegislature'])->middleware(['auth', 'authSupervisor']);
+
 Route::get('/legislature/{legislature}', [LegislatureController::class, 'legislature'])->middleware(['auth', 'authSupervisor']);
 
 //Users Management
