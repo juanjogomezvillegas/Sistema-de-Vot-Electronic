@@ -19,7 +19,23 @@ class LegislatureController extends Controller
 
     public function lastLegislature()
     {
-        return Legislature::orderBy('begin', 'DESC')->first();
+        if (Legislature::orderBy('begin', 'DESC')->count() == 0) {
+            $object = [
+                'number' => '',
+                'election' => '',
+                'begin' => '',
+                'end' => '',
+                'president'=> '',
+                'vicepresident' => '',
+                'party' => '',
+                'government' => '',
+                'color' => '',
+            ];
+
+            return $object;
+        } else {
+            return Legislature::orderBy('begin', 'DESC')->first();
+        }
     }
 
     public function show()
