@@ -1,7 +1,7 @@
 <head>
     <title>Login | {{ session('config')['title'] }}</title>
 </head>
-<section class="hero is-link is-fullheight">
+<section class="hero is-dark is-fullheight">
     <div class="hero-body">
         <div class="container">
             <div class="columns is-centered">
