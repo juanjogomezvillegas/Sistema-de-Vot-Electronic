@@ -15,7 +15,7 @@ $ npm install && npm run dev
 Després, Només cal crear la base de dades
 
 ```sql
-CREATE DATABASE election_daw_laravel;
+CREATE DATABASE election;
 ```
 
 I configurar el fitxer .env per accedir a la base de dades
@@ -30,7 +30,7 @@ Al Fitxer .env s'han de configurar les linies següents:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=election_daw_laravel
+DB_DATABASE=election
 DB_USERNAME=userDB
 DB_PASSWORD=passwordDB
 ```
