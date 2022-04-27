@@ -1,4 +1,4 @@
-# Sistema-de-Vot-Electronic
+# Sistema-de-Vot-Electronic-Laravel
 
 ## Author
 
@@ -6,47 +6,46 @@
 
 ## Deployment of Application
 
-Es pot comprovar com funciona executant.
-
 ```sh
-$ cd public/
-$ php -S 0.0.0.0:8081
+$ git clone https://github.com/juanjogomezvillegas/Sistema-de-Vot-Electronic-Laravel.git o git@github.com:juanjogomezvillegas/Sistema-de-Vot-Electronic-Laravel.git
+$ composer install
+$ npm install && npm run dev
 ```
 
-O
-
-```sh
-$ cd cli/
-$ ./server.sh
-```
-
-I posant la barra d'adreces del navegador (http://{IP_del_servidor}:8081).
-
-## Database of Application
+Després, Només cal crear la base de dades
 
 ```sql
-CREATE DATABASE election_daw;
+CREATE DATABASE election;
 ```
 
-Només cal crear la base de dades, i configurar el config.php per accedir a la base de dades.
-
-```php
-$config["user"] = "usuari";
-$config["pass"] = "password";
-$config["dbname"] = "election_daw";
-$config["host"] = "localhost";
-```
-
-Per accedir al config.php.
+I configurar el fitxer .env per accedir a la base de dades
 
 ```sh
-$ cd src/
-$ cat config.php
+$ cp .env.example .env
 ```
 
-I per importar la base de dades, es pot fer executant l'script initPDO.php
+Al Fitxer .env s'han de configurar les linies següents:
 
 ```sh
-$ cd cli/
-$ php initPDO.php
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=election
+DB_USERNAME=userDB
+DB_PASSWORD=passwordDB
 ```
+
+I Finalment
+
+```sh
+$ php artisan migrate o php artisan migrate:fresh
+$ php artisan db:seed
+```
+
+I es pot comprovar com funciona executant.
+
+```sh
+$ php artisan serve
+```
+
+I posant la barra d'adreces del navegador (http://127.0.0.1:8000).
