@@ -31,7 +31,7 @@
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-content">
-                                    <p class="title is-4">{{ this.dataMessage.email }}</p>
+                                    <p class="title is-5">{{ this.dataMessage.email }}</p>
                                 </div>
                             </div>
                             <div class="content">

@@ -1,24 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero is-info is-medium has-text-centered">
-        <div class="hero-body">
-            <div class="container">
-                <div class="columns is-centered">
-                    <div data-aos="zoom-in-up" class="column is-8">
-                        <div class="box">
-                            <div class="is-flex is-justify-content-center mb-4">
-                                <figure class="image is-128x128">
-                                    <img src="{{ Auth::user()->icon }}" alt="Avatar user" class="is-rounded">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="p-6">
+    <div class="mt-6 p-6">
         <h1 class="title has-text-centered mb-3">Change Image</h1>
         <form action="/change-image/{{ Auth::user()->id }}" method="POST">
             @method('PUT')

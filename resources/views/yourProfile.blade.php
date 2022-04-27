@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero is-info is-medium has-text-centered">
+    <section class="hero is-link is-medium has-text-centered">
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-centered">
                     <div data-aos="zoom-in-up" class="column is-8">
-                        <div class="box">
+                        <div class="box has-background-black">
                             <div class="is-flex is-justify-content-center mb-4">
                                 <figure class="image is-128x128">
                                     <img src="{{ Auth::user()->icon }}" alt="Avatar user" class="is-rounded">
                                 </figure>
                             </div>
-                            <a href="{{ route('changeImage') }}" class="button is-link">Change Image <i class="fas fa-image ml-2"></i></a>
-                            <a href="{{ route('changePassword') }}" class="button is-link ml-3">Change Password <i class="fas fa-lock ml-2"></i></a>
+                            <a href="{{ route('changeImage') }}" class="button is-black">Change Image <i class="fas fa-image ml-2"></i></a>
+                            <a href="{{ route('changePassword') }}" class="button is-black ml-3">Change Password <i class="fas fa-lock ml-2"></i></a>
                         </div>
                     </div>
                 </div>

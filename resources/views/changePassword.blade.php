@@ -1,17 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero is-info is-medium has-text-centered">
-        <div class="hero-body">
-            <div class="container">
-                <div class="columns is-centered">
-                    <div data-aos="zoom-in-up" class="column is-8">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="p-6">
+    <div class="mt-6 p-6">
         <h1 class="title has-text-centered mb-3">Change Password</h1>
         @if(session()->exists('messageChangePassword'))
             <article class="message is-success">
