@@ -13,6 +13,10 @@ class CountrySeeder extends Seeder
             'name' => 'European Union',
             'logo' => 'img/apli/EuropeanUnion.png',
         ],
+        [
+            'name' => 'United States of America',
+            'logo' => 'img/apli/UnitedStatesAmerica.png',
+        ],
     ];
 
     /**
