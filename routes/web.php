@@ -35,116 +35,178 @@ delete - 3
 });*/
 
 //Logout
-Route::get('/logout', [HomeController::class, 'logout'])->middleware('apli', 'auth')->name('logout');
+Route::get('/logout', [HomeController::class, 'logout'])
+    ->name('logout')
+    ->middleware('apli', 'auth');
 
 //Home Page
-Route::get('/', [HomeController::class, 'index'])->name('home')->middleware(['apli']);
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home')
+    ->middleware(['apli']);
 
 //Contact
-Route::get('/contact', [MessageController::class, 'contact'])->name('contact')->middleware(['apli']);
+Route::get('/contact', [MessageController::class, 'contact'])
+    ->name('contact')
+    ->middleware(['apli']);
 
 //Vote
 Route::post('/vote/{candidate}', [CandidateController::class, 'votes']);
 
-Route::get('/voted', [CandidateController::class, 'voted'])->name('voted')->middleware(['apli']);
+Route::get('/voted', [CandidateController::class, 'voted'])
+    ->name('voted')
+    ->middleware(['apli']);
 
 //Your Role
-Route::get('/your-role', [UserController::class, 'yourRole'])->middleware(['apli', 'auth']);
+Route::get('/your-role', [UserController::class, 'yourRole'])
+    ->middleware(['apli', 'auth']);
 
 //Your Profile
-Route::get('/your-profile', [UserController::class, 'yourProfile'])->middleware(['apli', 'auth'])->name('yourProfile');
+Route::get('/your-profile', [UserController::class, 'yourProfile'])
+    ->name('yourProfile')
+    ->middleware(['apli', 'auth']);
 
-Route::put('/change-data/{user}', [UserController::class, 'updateProfile'])->middleware(['auth']);
+Route::put('/change-data/{user}', [UserController::class, 'updateProfile'])
+    ->middleware(['auth']);
 
-Route::get('/change-image', [UserController::class, 'changeImage'])->middleware(['apli', 'auth'])->name('changeImage');
+Route::get('/change-image', [UserController::class, 'changeImage'])
+    ->name('changeImage')
+    ->middleware(['apli', 'auth']);
 
-Route::put('/change-image/{user}', [UserController::class, 'updateChangeImage'])->middleware(['auth']);
+Route::put('/change-image/{user}', [UserController::class, 'updateChangeImage'])
+    ->middleware(['auth']);
 
-Route::get('/change-password', [UserController::class, 'changePassword'])->middleware(['apli', 'auth'])->name('changePassword');
+Route::get('/change-password', [UserController::class, 'changePassword'])
+    ->name('changePassword')
+    ->middleware(['apli', 'auth']);
 
-Route::put('/change-password/{user}', [UserController::class, 'updateChangePassword'])->middleware(['auth']);
+Route::put('/change-password/{user}', [UserController::class, 'updateChangePassword'])
+    ->middleware(['auth']);
 
 //Home Admin Page
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['apli', 'auth'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])
+    ->name('dashboard')
+    ->middleware(['apli', 'auth']);
 
 //Configuration Page
-Route::get('/configuration', [ConfigurationController::class, 'show'])->middleware(['apli', 'auth', 'authAdmin'])->name('configuration');
+Route::get('/configuration', [ConfigurationController::class, 'show'])
+    ->name('configuration')
+    ->middleware(['apli', 'auth', 'authAdmin']);
 
-Route::put('/configuration/{configuration}', [ConfigurationController::class, 'update'])->middleware(['auth', 'authAdmin']);
+Route::put('/configuration/{configuration}', [ConfigurationController::class, 'update'])
+    ->middleware(['auth', 'authAdmin']);
 
 //Crud Users
-Route::get('/users', [UserController::class, 'show'])->middleware(['apli', 'auth', 'authAdmin'])->name('users');
+Route::get('/users', [UserController::class, 'show'])
+    ->name('users')
+    ->middleware(['apli', 'auth', 'authAdmin']);
 
-Route::post('/user/create', [UserController::class, 'create'])->middleware(['auth', 'authAdmin']);
+Route::post('/user/create', [UserController::class, 'create'])
+    ->middleware(['auth', 'authAdmin']);
 
-Route::put('/user/{user}', [UserController::class, 'update'])->middleware(['auth', 'authAdmin']);
+Route::put('/user/{user}', [UserController::class, 'update'])
+    ->middleware(['auth', 'authAdmin']);
 
-Route::delete('/user/{user}', [UserController::class, 'destroy'])->middleware(['auth', 'authAdmin']);
+Route::delete('/user/{user}', [UserController::class, 'destroy'])
+    ->middleware(['auth', 'authAdmin']);
 
-Route::get('/users/all', [UserController::class, 'users'])->middleware(['auth', 'authAdmin']);
+Route::get('/users/all', [UserController::class, 'users'])
+    ->middleware(['auth', 'authAdmin']);
 
-Route::get('/user/{user}', [UserController::class, 'user'])->middleware(['auth', 'authAdmin']);
+Route::get('/user/{user}', [UserController::class, 'user'])
+    ->middleware(['auth', 'authAdmin']);
 
 //Crud Candidates
-Route::get('/candidates', [CandidateController::class, 'show'])->middleware(['apli', 'auth', 'authManager'])->name('candidates');
+Route::get('/candidates', [CandidateController::class, 'show'])
+    ->name('candidates')
+    ->middleware(['apli', 'auth', 'authManager']);
 
-Route::post('/candidate/create', [CandidateController::class, 'create'])->middleware(['auth', 'authManager']);
+Route::post('/candidate/create', [CandidateController::class, 'create'])
+    ->middleware(['auth', 'authManager']);
 
-Route::put('/candidate/{candidate}', [CandidateController::class, 'update'])->middleware(['auth', 'authManager']);
+Route::put('/candidate/{candidate}', [CandidateController::class, 'update'])
+    ->middleware(['auth', 'authManager']);
 
-Route::delete('/candidate/{candidate}', [CandidateController::class, 'destroy'])->middleware(['auth', 'authManager']);
+Route::delete('/candidate/{candidate}', [CandidateController::class, 'destroy'])
+    ->middleware(['auth', 'authManager']);
 
-Route::get('/candidates/all', [CandidateController::class, 'candidates'])->middleware(['auth', 'authManager']);
+Route::get('/candidates/all', [CandidateController::class, 'candidates'])
+    ->middleware(['auth', 'authManager']);
 
-Route::get('/candidate/{candidate}', [CandidateController::class, 'candidate'])->middleware(['auth', 'authManager']);
+Route::get('/candidate/{candidate}', [CandidateController::class, 'candidate'])
+    ->middleware(['auth', 'authManager']);
 
-Route::get('/candidates-seats', [CandidateController::class, 'candidatesSeats'])->middleware(['auth', 'authManager']);
+Route::get('/candidates-seats', [CandidateController::class, 'candidatesSeats'])
+    ->middleware(['auth', 'authManager']);
 
 //Results Page
-Route::get('/results', [CandidateController::class, 'results'])->middleware(['apli', 'auth'])->name('results', 'authUser');
+Route::get('/results', [CandidateController::class, 'results'])
+    ->name('results', 'authUser')
+    ->middleware(['apli', 'auth']);
 
-Route::delete('/restart-votes', [CandidateController::class, 'restartVotes'])->middleware(['auth', 'authManager']);
+Route::delete('/restart-votes', [CandidateController::class, 'restartVotes'])
+    ->middleware(['auth', 'authManager']);
 
-Route::put('/sum-votes/{candidate}', [CandidateController::class, 'sumVotes'])->middleware(['auth', 'authManager']);
+Route::put('/sum-votes/{candidate}', [CandidateController::class, 'sumVotes'])
+    ->middleware(['auth', 'authManager']);
 
-Route::put('/substract-votes/{candidate}', [CandidateController::class, 'substractVotes'])->middleware(['auth', 'authManager']);
+Route::put('/substract-votes/{candidate}', [CandidateController::class, 'substractVotes'])
+    ->middleware(['auth', 'authManager']);
 
 //Pactometer Page
-Route::get('/pactometer', [CandidateController::class, 'pactometer'])->middleware(['apli', 'auth', 'authUser'])->name('pactometer');
+Route::get('/pactometer', [CandidateController::class, 'pactometer'])
+    ->name('pactometer')
+    ->middleware(['apli', 'auth', 'authUser']);
 
-Route::put('/candidate/position/{candidate}', [CandidateController::class, 'updatePosition'])->middleware(['auth', 'authUser']);
+Route::put('/candidate/position/{candidate}', [CandidateController::class, 'updatePosition'])
+    ->middleware(['auth', 'authUser']);
 
-Route::get('/votes-yes', [CandidateController::class, 'votesYes'])->middleware(['auth', 'authUser']);
+Route::get('/votes-yes', [CandidateController::class, 'votesYes'])
+    ->middleware(['auth', 'authUser']);
 
-Route::get('/votes-no', [CandidateController::class, 'votesNo'])->middleware(['auth', 'authUser']);
+Route::get('/votes-no', [CandidateController::class, 'votesNo'])
+    ->middleware(['auth', 'authUser']);
 
-Route::get('/votes-abstention', [CandidateController::class, 'votesAbstention'])->middleware(['auth', 'authUser']);
+Route::get('/votes-abstention', [CandidateController::class, 'votesAbstention'])
+    ->middleware(['auth', 'authUser']);
 
 //Crud Message
-Route::get('/messages', [MessageController::class, 'show'])->middleware(['apli', 'auth', 'authSupervisor'])->name('messages');
+Route::get('/messages', [MessageController::class, 'show'])
+    ->name('messages')
+    ->middleware(['apli', 'auth', 'authSupervisor']);
 
 Route::post('/message/create', [MessageController::class, 'create']);
 
-Route::delete('/message/{message}', [MessageController::class, 'destroy'])->middleware(['auth', 'authSupervisor']);
+Route::delete('/message/{message}', [MessageController::class, 'destroy'])
+    ->middleware(['auth', 'authSupervisor']);
 
-Route::get('/messages/all', [MessageController::class, 'messages'])->middleware(['auth', 'authSupervisor']);
+Route::get('/messages/all', [MessageController::class, 'messages'])
+    ->middleware(['auth', 'authSupervisor']);
 
-Route::get('/message/{message}', [MessageController::class, 'message'])->middleware(['auth', 'authSupervisor']);
+Route::get('/message/{message}', [MessageController::class, 'message'])
+    ->middleware(['auth', 'authSupervisor']);
 
 //Crud Legislatures
-Route::get('/legislatures', [LegislatureController::class, 'show'])->middleware(['apli', 'auth', 'authSupervisor'])->name('legislatures');
+Route::get('/legislatures', [LegislatureController::class, 'show'])
+    ->name('legislatures')
+    ->middleware(['apli', 'auth', 'authSupervisor']);
 
-Route::post('/legislatures/create', [LegislatureController::class, 'create'])->middleware(['auth', 'authManager']);
+Route::post('/legislatures/create', [LegislatureController::class, 'create'])
+    ->middleware(['auth', 'authManager']);
 
-Route::put('/legislatures/{legislature}', [LegislatureController::class, 'update'])->middleware(['auth', 'authManager']);
+Route::put('/legislatures/{legislature}', [LegislatureController::class, 'update'])
+    ->middleware(['auth', 'authManager']);
 
-Route::delete('/legislatures/{legislature}', [LegislatureController::class, 'destroy'])->middleware(['auth', 'authManager']);
+Route::delete('/legislatures/{legislature}', [LegislatureController::class, 'destroy'])
+    ->middleware(['auth', 'authManager']);
 
-Route::get('/legislatures/all', [LegislatureController::class, 'legislatures'])->middleware(['auth', 'authSupervisor']);
+Route::get('/legislatures/all', [LegislatureController::class, 'legislatures'])
+    ->middleware(['auth', 'authSupervisor']);
 
-Route::get('/legislature/last', [LegislatureController::class, 'lastLegislature'])->middleware(['auth', 'authSupervisor']);
+Route::get('/legislature/last', [LegislatureController::class, 'lastLegislature'])
+    ->middleware(['auth', 'authSupervisor']);
 
-Route::get('/legislature/{legislature}', [LegislatureController::class, 'legislature'])->middleware(['auth', 'authSupervisor']);
+Route::get('/legislature/{legislature}', [LegislatureController::class, 'legislature'])
+    ->middleware(['auth', 'authSupervisor']);
 
 //Users Management
 require __DIR__.'/auth.php';
