@@ -15,6 +15,7 @@
                         <th><abbr title="Party">Party</abbr></th>
                         <th><abbr title="Government">Government</abbr></th>
                         <th><abbr title="Vicepresident">Vicepresident</abbr></th>
+                        <th><abbr title="Head of State">Head of State</abbr></th>
                         <th v-if="this.yourrole == 'administrator' || this.yourrole == 'manager'">Actions</th>
                     </tr>
                 </thead>
@@ -30,6 +31,7 @@
                         <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.party }}</td>
                         <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.government }}</td>
                         <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.vicepresident }}</td>
+                        <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.headofstate }}</td>
                         <td v-if="this.yourrole == 'administrator' || this.yourrole == 'manager'">
                             <button class="button is-link" v-on:click="showModal('2', legislature.id)"><i class="fa-solid fa-pen-to-square"></i></button>
                             <button class="button is-danger ml-1" v-on:click="showModal('3', legislature.id)"><i class="fa-solid fa-trash-can"></i></button>
@@ -130,13 +132,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="field">
-                        <label class="label">Color</label>
-                        <div class="control has-icons-left has-icons-right">
-                            <input class="input is-dark" type="color" v-model="this.arrayCreateLegislature.color">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-paintbrush"></i>
-                            </span>
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <label class="label">Head of State</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input is-dark" type="text" placeholder="Head of State" v-model="this.arrayCreateLegislature.headofstate">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Color</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input is-dark" type="color" v-model="this.arrayCreateLegislature.color">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-paintbrush"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -238,13 +253,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="field">
-                        <label class="label">Color</label>
-                        <div class="control has-icons-left has-icons-right">
-                            <input class="input is-dark" type="color" v-model="this.arrayDataLegislature.color">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-paintbrush"></i>
-                            </span>
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <label class="label">Head of State</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input is-dark" type="text" placeholder="Head of State" v-model="this.arrayDataLegislature.headofstate">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Color</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input is-dark" type="color" v-model="this.arrayDataLegislature.color">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-paintbrush"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -293,6 +321,7 @@
                     'party': '',
                     'government': '',
                     'color': '',
+                    'headofstate': '',
                 },
                 arrayCreateLegislature: [],
             }
@@ -368,6 +397,7 @@
                         'party': this.arrayCreateLegislature.party,
                         'government': this.arrayCreateLegislature.government,
                         'color': this.arrayCreateLegislature.color,
+                        'headofstate': this.arrayCreateLegislature.headofstate,
                     })
                     .then((response) => {
                         document.getElementById("modalcreateLegislature").classList.remove('is-active');
@@ -387,6 +417,7 @@
                         'party': this.arrayDataLegislature.party,
                         'government': this.arrayDataLegislature.government,
                         'color': this.arrayDataLegislature.color,
+                        'headofstate': this.arrayDataLegislature.headofstate,
                     })
                     .then((response) => {
                         document.getElementById("modalupdateLegislature").classList.remove('is-active');

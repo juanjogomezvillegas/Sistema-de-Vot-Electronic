@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('party')->default('');
             $table->string('government')->default('');
             $table->string('color')->default('');
+            $table->string('headofstate')->default('');
             $table->timestamps();
         });
     }
