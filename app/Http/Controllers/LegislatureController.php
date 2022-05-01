@@ -30,6 +30,7 @@ class LegislatureController extends Controller
                 'party' => '',
                 'government' => '',
                 'color' => '',
+                'headofstate' => '',
             ];
 
             return $object;
@@ -55,6 +56,7 @@ class LegislatureController extends Controller
             'party' => ['required', 'string', 'max:255'],
             'government' => ['required', 'string', 'max:255'],
             'color' => ['required', 'string', 'max:255'],
+            'headofstate' => ['required', 'string', 'max:255'],
         ]);
 
         $legislature = new Legislature();
@@ -71,6 +73,7 @@ class LegislatureController extends Controller
         $legislature->party = $validated['party'];
         $legislature->government = $validated['government'];
         $legislature->color = $validated['color'];
+        $legislature->headofstate = $validated['headofstate'];
         $legislature->save();
     }
 
@@ -86,6 +89,7 @@ class LegislatureController extends Controller
             'party' => ['required', 'string', 'max:255'],
             'government' => ['required', 'string', 'max:255'],
             'color' => ['required', 'string', 'max:255'],
+            'headofstate' => ['required', 'string', 'max:255'],
         ]);
 
         $legislature->number = $validated['number'];
@@ -101,6 +105,7 @@ class LegislatureController extends Controller
         $legislature->party = $validated['party'];
         $legislature->government = $validated['government'];
         $legislature->color = $validated['color'];
+        $legislature->headofstate = $validated['headofstate'];
         $legislature->save();
     }
 

@@ -24,5 +24,6 @@ class Legislature extends Model
         'party',
         'government',
         'color',
+        'headofstate',
     ];
 }
