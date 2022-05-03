@@ -8,11 +8,22 @@ use App\Models\Country;
 
 class ConfigurationController extends Controller
 {
+    /**
+     * Returns number of seats
+     *
+     * @return Integer
+     * **/
     public function countSeats()
     {
         return Configuration::get('seats')->first()->seats;
     }
 
+    /**
+     * Returns view configuration
+     *
+     * @param Request $request request param received
+     * @return Response|ResponseFactory
+     * **/
     public function show(Request $request)
     {
         $config = Configuration::get()->first();
@@ -27,6 +38,13 @@ class ConfigurationController extends Controller
         ]);
     }
 
+    /**
+     * Update a configuration and returns redirect /configuration
+     *
+     * @param Request $request request param received
+     * @param Configuration $configuration data configuration
+     * @return Response|ResponseFactorys
+     * **/
     public function update(Request $request, Configuration $configuration)
     {
         $validated = $request->validate([

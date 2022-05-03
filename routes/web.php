@@ -34,33 +34,33 @@ delete - 3
     return view('welcome');
 });*/
 
-//Logout
+// Logout
 Route::get('/logout', [HomeController::class, 'logout'])
     ->name('logout')
     ->middleware('apli', 'auth');
 
-//Home Page
+// Home Page
 Route::get('/', [HomeController::class, 'index'])
     ->name('home')
     ->middleware(['apli']);
 
-//Contact
+// Contact
 Route::get('/contact', [MessageController::class, 'contact'])
     ->name('contact')
     ->middleware(['apli']);
 
-//Vote
+// Vote
 Route::post('/vote/{candidate}', [CandidateController::class, 'votes']);
 
 Route::get('/voted', [CandidateController::class, 'voted'])
     ->name('voted')
     ->middleware(['apli']);
 
-//Your Role
+// Your Role
 Route::get('/your-role', [UserController::class, 'yourRole'])
     ->middleware(['apli', 'auth']);
 
-//Your Profile
+// Your Profile
 Route::get('/your-profile', [UserController::class, 'yourProfile'])
     ->name('yourProfile')
     ->middleware(['apli', 'auth']);
@@ -82,12 +82,12 @@ Route::get('/change-password', [UserController::class, 'changePassword'])
 Route::put('/change-password/{user}', [UserController::class, 'updateChangePassword'])
     ->middleware(['auth']);
 
-//Home Admin Page
+// Home Admin Page
 Route::get('/dashboard', [HomeController::class, 'dashboard'])
     ->name('dashboard')
     ->middleware(['apli', 'auth']);
 
-//Configuration Page
+// Configuration Page
 Route::get('/configuration', [ConfigurationController::class, 'show'])
     ->name('configuration')
     ->middleware(['apli', 'auth', 'authAdmin']);
@@ -95,7 +95,7 @@ Route::get('/configuration', [ConfigurationController::class, 'show'])
 Route::put('/configuration/{configuration}', [ConfigurationController::class, 'update'])
     ->middleware(['auth', 'authAdmin']);
 
-//Crud Users
+// Crud Users
 Route::get('/users', [UserController::class, 'show'])
     ->name('users')
     ->middleware(['apli', 'auth', 'authAdmin']);
@@ -115,7 +115,7 @@ Route::get('/users/all', [UserController::class, 'users'])
 Route::get('/user/{user}', [UserController::class, 'user'])
     ->middleware(['auth', 'authAdmin']);
 
-//Crud Candidates
+// Crud Candidates
 Route::get('/candidates', [CandidateController::class, 'show'])
     ->name('candidates')
     ->middleware(['apli', 'auth', 'authManager']);
@@ -138,7 +138,7 @@ Route::get('/candidate/{candidate}', [CandidateController::class, 'candidate'])
 Route::get('/candidates-seats', [CandidateController::class, 'candidatesSeats'])
     ->middleware(['auth', 'authManager']);
 
-//Results Page
+// Results Page
 Route::get('/results', [CandidateController::class, 'results'])
     ->name('results', 'authUser')
     ->middleware(['apli', 'auth']);
@@ -152,7 +152,7 @@ Route::put('/sum-votes/{candidate}', [CandidateController::class, 'sumVotes'])
 Route::put('/substract-votes/{candidate}', [CandidateController::class, 'substractVotes'])
     ->middleware(['auth', 'authManager']);
 
-//Pactometer Page
+// Pactometer Page
 Route::get('/pactometer', [CandidateController::class, 'pactometer'])
     ->name('pactometer')
     ->middleware(['apli', 'auth', 'authUser']);
@@ -169,7 +169,7 @@ Route::get('/votes-no', [CandidateController::class, 'votesNo'])
 Route::get('/votes-abstention', [CandidateController::class, 'votesAbstention'])
     ->middleware(['auth', 'authUser']);
 
-//Crud Message
+// Crud Message
 Route::get('/messages', [MessageController::class, 'show'])
     ->name('messages')
     ->middleware(['apli', 'auth', 'authSupervisor']);
@@ -185,7 +185,7 @@ Route::get('/messages/all', [MessageController::class, 'messages'])
 Route::get('/message/{message}', [MessageController::class, 'message'])
     ->middleware(['auth', 'authSupervisor']);
 
-//Crud Legislatures
+// Crud Legislatures
 Route::get('/legislatures', [LegislatureController::class, 'show'])
     ->name('legislatures')
     ->middleware(['apli', 'auth', 'authSupervisor']);
@@ -208,5 +208,5 @@ Route::get('/legislature/last', [LegislatureController::class, 'lastLegislature'
 Route::get('/legislature/{legislature}', [LegislatureController::class, 'legislature'])
     ->middleware(['auth', 'authSupervisor']);
 
-//Users Management
+// Users Management
 require __DIR__.'/auth.php';

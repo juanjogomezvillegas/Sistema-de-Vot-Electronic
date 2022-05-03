@@ -7,16 +7,32 @@ use App\Models\Legislature;
 
 class LegislatureController extends Controller
 {
+    /**
+     * Returns list legislatures
+     *
+     * @return Object
+     * **/
     public function legislatures()
     {
         return Legislature::orderBy('begin', 'DESC')->get();
     }
 
+    /**
+     * Returns data legislature
+     *
+     * @param Legislature $legislature data legislature
+     * @return Object
+     * **/
     public function legislature(Legislature $legislature)
     {
         return $legislature;
     }
 
+    /**
+     * Returns data last legislature
+     *
+     * @return Object
+     * **/
     public function lastLegislature()
     {
         if (Legislature::orderBy('begin', 'DESC')->count() == 0) {
@@ -39,11 +55,21 @@ class LegislatureController extends Controller
         }
     }
 
+    /**
+     * Returns view legislatures.show
+     *
+     * @return Response|ResponseFactory
+     * **/
     public function show()
     {
         return view('legislatures.show');
     }
 
+    /**
+     * Create a new legislature
+     *
+     * @param Request $request request param received
+     * **/
     public function create(Request $request)
     {
         $validated = $request->validate([
@@ -77,6 +103,12 @@ class LegislatureController extends Controller
         $legislature->save();
     }
 
+    /**
+     * Update a legislature
+     *
+     * @param Request $request request param received
+     * @param Legislature $legislature data legislature
+     * **/
     public function update(Request $request, Legislature $legislature)
     {
         $validated = $request->validate([
@@ -109,6 +141,11 @@ class LegislatureController extends Controller
         $legislature->save();
     }
 
+    /**
+     * Delete a legislature
+     *
+     * @param Legislature $legislature data legislature
+     * **/
     public function destroy(Legislature $legislature)
     {
         $legislature->delete();

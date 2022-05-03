@@ -7,6 +7,11 @@ use App\Models\Candidate;
 
 class HomeController extends Controller
 {
+    /**
+     * Returns view index
+     *
+     * @return Response|ResponseFactory
+     * **/
     public function index()
     {
         return view('index', [
@@ -14,11 +19,21 @@ class HomeController extends Controller
         ]);
     }
 
+    /**
+     * Returns view dashboard
+     *
+     * @return Response|ResponseFactory
+     * **/
     public function dashboard()
     {
         return view('dashboard');
     }
 
+    /**
+     * Returns redirect / and session flush
+     *
+     * @return Response|ResponseFactory
+     * **/
     public function logout()
     {
         session()->flush();
