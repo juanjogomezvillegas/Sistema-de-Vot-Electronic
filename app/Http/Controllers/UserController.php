@@ -9,34 +9,65 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    /**
+     * Returns count users
+     *
+     * @return Integer
+     * **/
     public function countUsers()
     {
         return User::count();
     }
 
+    /**
+     * Returns list users
+     *
+     * @return Object
+     * **/
     public function users()
     {
         return User::get();
     }
 
+    /**
+     * Returns data user
+     *
+     * @param User $user data user
+     * @return Object
+     * **/
     public function user(User $user)
     {
         return $user;
     }
 
+    /**
+     * Returns role login user
+     *
+     * @return String
+     * **/
     public function yourRole()
     {
         return Auth::user()->role;
     }
 
+    /**
+     * Returns view users.show
+     *
+     * @return Response|ResponseFactory
+     * **/
     public function show()
     {
         return view('users.show');
     }
 
+    /**
+     * Create a new user
+     *
+     * @param Request $request request param received
+     * **/
     public function create(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255'],
@@ -45,61 +76,94 @@ class UserController extends Controller
         ]);
 
         $user = new User();
-        $user->name = $request->name;
-        $user->lastname = $request->lastname;
-        $user->email = $request->email;
-        $user->role = $request->role;
-        $user->password = $request->password;
+        $user->name = $validated['name'];
+        $user->lastname = $validated['lastname'];
+        $user->email = $validated['email'];
+        $user->role = $validated['role'];
+        $user->password = $validated['password'];
         $user->save();
     }
 
+    /**
+     * Update a user
+     *
+     * @param Request $request request param received
+     * @param User $user data user
+     * **/
     public function update(Request $request, User $user)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255'],
             'role' => ['required', 'string', 'max:255'],
         ]);
 
-        $user->name = $request->name;
-        $user->lastname = $request->lastname;
-        $user->email = $request->email;
-        $user->role = $request->role;
+        $user->name = $validated['name'];
+        $user->lastname = $validated['lastname'];
+        $user->email = $validated['email'];
+        $user->role = $validated['role'];
         $user->save();
     }
 
+    /**
+     * Delete a user
+     *
+     * @param User $user data user
+     * **/
     public function destroy(User $user)
     {
         $user->delete();
     }
 
+    /**
+     * Returns view yourProfile
+     *
+     * @return Response|ResponseFactory
+     * **/
     public function yourProfile()
     {
         return view('yourProfile');
     }
 
+    /**
+     * Returns view changeImage
+     *
+     * @return Response|ResponseFactory
+     * **/
     public function changeImage()
     {
         return view('changeImage');
     }
 
+    /**
+     * Returns view changePassword
+     *
+     * @return Response|ResponseFactory
+     * **/
     public function changePassword()
     {
         return view('changePassword');
     }
 
+    /**
+     * Returns redirect /your-profile
+     *
+     * @param Request $request request param received
+     * @param User $user data user
+     * @return Response|ResponseFactory
+     * **/
     public function updateProfile(Request $request, User $user)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255'],
         ]);
 
-        $user->name = $request->name;
-        $user->lastname = $request->lastname;
-        $user->email = $request->email;
+        $user->name = $validated['name'];
+        $user->lastname = $validated['lastname'];
+        $user->email = $validated['email'];
         $user->save();
 
         session()->flash('messageUpdateAuth', 'Information updated successfully !!!');
@@ -107,6 +171,13 @@ class UserController extends Controller
         return redirect('/your-profile');
     }
 
+    /**
+     * Returns redirect /change-image
+     *
+     * @param Request $request request param received
+     * @param User $user data user
+     * @return Response|ResponseFactory
+     * **/
     public function updateChangeImage(Request $request, User $user)
     {
         $user->icon = $request->image;
@@ -115,15 +186,22 @@ class UserController extends Controller
         return redirect('/change-image');
     }
 
+    /**
+     * Returns redirect /change-password
+     *
+     * @param Request $request request param received
+     * @param User $user data user
+     * @return Response|ResponseFactory
+     * **/
     public function updateChangePassword(Request $request, User $user)
     {
-        $request->validate([
+        $validated = $request->validate([
             'newpassword' => ['required', 'string', 'max:255'],
             'newpasswordverify' => ['required', 'string', 'max:255'],
         ]);
 
-        if ($request->newpassword == $request->newpasswordverify) {
-            $user->password = Hash::make($request->newpassword);
+        if ($validated['newpassword'] == $validated['newpasswordverify']) {
+            $user->password = Hash::make($validated['newpassword']);
             $user->save();
 
             session()->flash('messageChangePassword', 'Password updated successfully !!!');

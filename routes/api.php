@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Dashboard Items
+// Dashboard Items
 Route::get('/count-votes', [CandidateController::class, 'countVotes']);
 
 Route::get('/count-candidates', [CandidateController::class, 'countCandidates']);
