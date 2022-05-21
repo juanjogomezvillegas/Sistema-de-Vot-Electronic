@@ -21,7 +21,7 @@
             </div>
         </nav>
         <div class="table-container is-flex is-justify-content-center">
-            <table class="table is-bordered is-striped is-narrow is-hoverable">
+            <table class="table is-narrow is-bordered is-striped is-hoverable">
                 <thead class="has-background-grey-lighter">
                     <tr>
                         <th><abbr title="Color">#</abbr></th>

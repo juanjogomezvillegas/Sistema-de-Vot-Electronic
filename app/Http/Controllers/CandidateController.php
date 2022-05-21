@@ -13,7 +13,7 @@ class CandidateController extends Controller
      * **/
     private function calculateSeats()
     {
-        $candidates = Candidate::get();
+        $candidates = Candidate::orderBy('votes', 'DESC')->get();
 
         foreach ($candidates as $item) {
             $item->seats = round(($item->votes / Candidate::sum('votes')) * Configuration::first()->seats);
@@ -120,6 +120,7 @@ class CandidateController extends Controller
             'ideology' => ['required', 'string', 'max:255'],
             'campaign' => ['required'],
             'color' => ['required', 'string', 'max:255'],
+            'votes' => ['required', 'integer'],
         ]);
 
         $candidate->name = $validated['name'];
@@ -127,7 +128,10 @@ class CandidateController extends Controller
         $candidate->ideology = $validated['ideology'];
         $candidate->campaign = $validated['campaign'];
         $candidate->color = $validated['color'];
+        $candidate->votes = $validated['votes'];
         $candidate->save();
+
+        $this->calculateSeats();
     }
 
     /**

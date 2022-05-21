@@ -97,6 +97,15 @@
                 </header>
                 <section class="modal-card-body">
                     <div class="field">
+                        <label class="label">Votes</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-dark" type="number" v-model="this.arrayDataCandidate.votes">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-paper-plane"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
                         <label class="label">Name</label>
                         <div class="control has-icons-left has-icons-right">
                             <input class="input is-dark" type="text" placeholder="name" v-model="this.arrayDataCandidate.name">
@@ -105,22 +114,26 @@
                             </span>
                         </div>
                     </div>
-                    <div class="field">
-                        <label class="label">Party</label>
-                        <div class="control has-icons-left has-icons-right">
-                            <input class="input is-dark" type="text" placeholder="party" v-model="this.arrayDataCandidate.party">
-                            <span class="icon is-small is-left">
-                                <i class="fa-solid fa-handshake"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Ideology</label>
-                        <div class="control has-icons-left has-icons-right">
-                            <input class="input is-dark" type="text" placeholder="ideology" v-model="this.arrayDataCandidate.ideology">
-                            <span class="icon is-small is-left">
-                                <i class="fa-solid fa-lightbulb"></i>
-                            </span>
+                    <div class="field is-horizontal">
+                        <div class="field-body">
+                            <div class="field">
+                                <label class="label">Party</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input is-dark" type="text" placeholder="party" v-model="this.arrayDataCandidate.party">
+                                    <span class="icon is-small is-left">
+                                        <i class="fa-solid fa-handshake"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Ideology</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input is-dark" type="text" placeholder="ideology" v-model="this.arrayDataCandidate.ideology">
+                                    <span class="icon is-small is-left">
+                                        <i class="fa-solid fa-lightbulb"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="field">
@@ -176,7 +189,9 @@
                     'ideology': '',
                     'campaign': '',
                     'color': '',
-                }
+                    'votes': '',
+                },
+                votes: 0,
             }
         },
         mounted() {
@@ -244,6 +259,7 @@
                         'ideology': this.arrayDataCandidate.ideology,
                         'campaign': this.arrayDataCandidate.campaign,
                         'color': this.arrayDataCandidate.color,
+                        'votes': this.arrayDataCandidate.votes,
                     })
                     .then((response) => {
                         document.getElementById("modalupdatecandidate").classList.remove('is-active');
