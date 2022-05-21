@@ -6,25 +6,27 @@
 
 ## Deployment of Application
 
+The following commands must be run to Deploy the Application.
+
 ```sh
 $ git clone https://github.com/juanjogomezvillegas/Sistema-de-Vot-Electronic-Laravel.git o git@github.com:juanjogomezvillegas/Sistema-de-Vot-Electronic-Laravel.git
 $ composer install
 $ npm install && npm run dev
 ```
 
-Després, Només cal crear la base de dades
+After, need to create the database.
 
 ```sql
 CREATE DATABASE election;
 ```
 
-I configurar el fitxer .env per accedir a la base de dades
+And configure the .env file to access the database.
 
 ```sh
 $ cp .env.example .env
 ```
 
-Al Fitxer .env s'han de configurar les linies següents:
+The following lines must be configured in the .env file:
 
 ```sh
 DB_CONNECTION=mysql
@@ -35,17 +37,27 @@ DB_USERNAME=userDB
 DB_PASSWORD=passwordDB
 ```
 
-I Finalment
+And finally.
 
 ```sh
 $ php artisan migrate o php artisan migrate:fresh
 $ php artisan db:seed
 ```
 
-I es pot comprovar com funciona executant.
+To start the Server you need to run.
 
 ```sh
 $ php artisan serve
 ```
 
-I posant la barra d'adreces del navegador (http://127.0.0.1:8000).
+And to access the application, in your browser we access the address ({SERVER_IP}:8080).
+
+{SERVER_IP} => The IP address of your Server.
+
+![imatge](https://user-images.githubusercontent.com/83291394/169663378-ffbd1bce-1ddc-4dcc-b66e-9fd6bcd2eef0.png)
+
+# License
+
+![MIT License](https://github.com/juanjogomezvillegas/Sistema-de-Vot-Electronic/blob/develop/LICENSE)
+
+Copyright (c) 2022 Juan José Gómez Villegas
