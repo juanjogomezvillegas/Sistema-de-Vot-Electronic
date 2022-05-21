@@ -58,6 +58,6 @@ And to access the application, in your browser we access the address ({SERVER_IP
 
 # License
 
-![MIT License](https://github.com/juanjogomezvillegas/Sistema-de-Vot-Electronic/blob/develop/LICENSE)
+![MIT License](https://github.com/juanjogomezvillegas/Sistema-de-Vot-Electronic/blob/main/LICENSE)
 
 Copyright (c) 2022 Juan José Gómez Villegas
