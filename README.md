@@ -54,6 +54,10 @@ And to access the application, in your browser we access the address ({SERVER_IP
 
 {SERVER_IP} => The IP address of your Server.
 
-![MIT License]()
+![imatge](https://user-images.githubusercontent.com/83291394/169663320-67b5d692-1a61-4c2a-aa73-acb6dabdab7f.png)
+
+# License
+
+![MIT License](https://github.com/juanjogomezvillegas/Sistema-de-Vot-Electronic/blob/develop/LICENSE)
 
 Copyright (c) 2022 Juan José Gómez Villegas
