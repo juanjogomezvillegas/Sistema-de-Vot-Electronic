@@ -50,11 +50,11 @@ To start the Server you need to run.
 $ php artisan serve
 ```
 
-And to access the application, in your browser we access the address ({SERVER_IP}:8080).
+And to access the application, in your browser we access the address ({SERVER_IP}:8000).
 
 {SERVER_IP} => The IP address of your Server.
 
-![imatge](https://user-images.githubusercontent.com/83291394/169663378-ffbd1bce-1ddc-4dcc-b66e-9fd6bcd2eef0.png)
+![imatge](https://user-images.githubusercontent.com/83291394/170352142-0b91c481-f8d6-41cf-8abd-df00580f5106.png)
 
 # License
 
