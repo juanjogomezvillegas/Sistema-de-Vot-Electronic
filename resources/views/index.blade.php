@@ -9,7 +9,7 @@
                 @foreach($candidates as $key => $value)
                     <form action="/vote/{{ $value->id }}" method="POST">
                         @csrf
-                        <div class="card mt-4 has-background-white-ter">
+                        <div class="card mt-4 has-background-grey-lighter">
                             <div class="card-content">
                                 <div class="media">
                                     <div class="media-left">
@@ -26,7 +26,7 @@
                                 </div>
                                 <br>
                                 <div class="is-flex is-justify-content-end">
-                                    <button type="submit" class="button is-dark">Vote <i class="fa-solid fa-paper-plane ml-2"></i></button>
+                                    <button type="submit" class="button is-black">Vote <i class="fa-solid fa-paper-plane ml-2"></i></button>
                                 </div>
                             </div>
                         </div>

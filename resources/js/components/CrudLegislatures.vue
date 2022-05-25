@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="is-flex is-justify-content-center mb-5" v-if="this.yourrole == 'administrator' || this.yourrole == 'manager'">
-            <button class="button is-link" v-on:click="showModal('1', -1)">Legilature Create <i class="fa-solid fa-folder-plus ml-2"></i></button>
+            <button class="button is-black" v-on:click="showModal('1', -1)">Legilature Create <i class="fa-solid fa-folder-plus ml-2"></i></button>
         </div>
         <div class="table-container is-flex is-justify-content-center">
-            <table class="table is-narrow is-bordered is-striped is-hoverable">
-                <thead class="has-background-grey-lighter">
+            <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+                <thead class="has-text-centered has-background-grey-light">
                     <tr>
                         <th><abbr title="Number of legilature">#</abbr></th>
                         <th><abbr title="Election">Election</abbr></th>
@@ -21,18 +21,18 @@
                 </thead>
                 <tbody>
                     <tr v-for="(legislature, index) in this.legislatures" :key="index">
-                        <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.number }}</td>
-                        <td v-bind:style="'background-color: '+legislature.color+';'" v-if="legislature.election != null">{{ legislature.election }}</td>
-                        <td v-bind:style="'background-color: '+legislature.color+';'" v-else> - </td>
-                        <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.begin }}</td>
-                        <td v-bind:style="'background-color: '+legislature.color+';'" v-if="legislature.end != null">{{ legislature.end }}</td>
-                        <td v-bind:style="'background-color: '+legislature.color+';'" v-else> - </td>
-                        <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.president }}</td>
-                        <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.party }}</td>
-                        <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.government }}</td>
-                        <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.vicepresident }}</td>
-                        <td v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.headofstate }}</td>
-                        <td v-if="this.yourrole == 'administrator' || this.yourrole == 'manager'">
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.number }}</td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'" v-if="legislature.election != null">{{ legislature.election }}</td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'" v-else> - </td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.begin }}</td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'" v-if="legislature.end != null">{{ legislature.end }}</td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'" v-else> - </td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.president }}</td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.party }}</td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.government }}</td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.vicepresident }}</td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+legislature.color+';'">{{ legislature.headofstate }}</td>
+                        <td class="has-text-left" v-if="this.yourrole == 'administrator' || this.yourrole == 'manager'">
                             <button class="button is-link" v-on:click="showModal('2', legislature.id)"><i class="fa-solid fa-pen-to-square"></i></button>
                             <button class="button is-danger ml-1" v-on:click="showModal('3', legislature.id)"><i class="fa-solid fa-trash-can"></i></button>
                         </td>

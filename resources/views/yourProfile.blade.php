@@ -63,7 +63,7 @@
             <div class="field ">
                 <label class="label m-2">Role: {{ Auth::user()->role }}</label>
             </div>
-            <button type="submit" class="button is-fullwidth is-dark mt-5">Apply Changes <i class="fas fa-user ml-2"></i></button>
+            <button type="submit" class="button is-fullwidth is-black mt-5">Apply Changes <i class="fas fa-user ml-2"></i></button>
         </form>
     </div>
 @endsection

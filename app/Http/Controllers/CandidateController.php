@@ -16,8 +16,10 @@ class CandidateController extends Controller
         $candidates = Candidate::orderBy('votes', 'DESC')->get();
 
         foreach ($candidates as $item) {
-            $item->seats = round(($item->votes / Candidate::sum('votes')) * Configuration::first()->seats);
-            $item->save();
+            if ($item->votes > 0) {
+                $item->seats = round(($item->votes / Candidate::sum('votes')) * Configuration::first()->seats);
+                $item->save();
+            }
         }
     }
 

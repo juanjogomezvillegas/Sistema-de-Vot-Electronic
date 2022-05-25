@@ -1,15 +1,15 @@
 <template>
     <div>
         <div class="is-flex is-justify-content-center mb-5" v-if="this.yourrole == 'administrator' || this.yourrole == 'manager'">
-            <button class="button is-link" v-if="this.countCandidates > 0" v-on:click="this.showModal">Restart Votes <i class="fa-solid fa-rotate-right ml-2"></i></button>
-            <button class="button is-link ml-2" v-on:click="this.pactometer">Pactometer <i class="fa-solid fa-handshake ml-2"></i></button>
+            <button class="button is-black" v-if="this.countCandidates > 0" v-on:click="this.showModal">Restart Votes <i class="fa-solid fa-rotate-right ml-2"></i></button>
+            <button class="button is-black ml-2" v-on:click="this.pactometer">Pactometer <i class="fa-solid fa-handshake ml-2"></i></button>
         </div>
         <div class="is-flex is-justify-content-center mb-5" v-else>
-            <button class="button is-link ml-2" v-on:click="this.pactometer">Pactometer <i class="fa-solid fa-handshake ml-2"></i></button>
+            <button class="button is-black ml-2" v-on:click="this.pactometer">Pactometer <i class="fa-solid fa-handshake ml-2"></i></button>
         </div>
         <div class="table-container is-flex is-justify-content-center">
-            <table class="table is-bordered is-striped is-narrow is-hoverable">
-                <thead class="has-background-grey-lighter">
+            <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+                <thead class="has-text-centered has-background-grey-light">
                     <tr>
                         <th><abbr title="Color">#</abbr></th>
                         <th><abbr title="Name">Name</abbr></th>
@@ -18,7 +18,7 @@
                         <th><abbr title="Seats">Seats</abbr></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="has-text-centered has-background-white-ter">
                     <tr v-for="(candidate, index) in this.candidates" :key="index">
                         <td v-bind:style="'background-color: '+candidate.color+';'"></td>
                         <td>{{ candidate.name }}</td>
@@ -27,7 +27,7 @@
                         <td>{{ candidate.seats }}</td>
                     </tr>
                 </tbody>
-                <tfoot v-if="this.countCandidates > 0" class="has-background-grey-lighter">
+                <tfoot v-if="this.countCandidates > 0" class="has-text-centered has-background-grey-light">
                     <tr>
                         <td></td>
                         <td></td>

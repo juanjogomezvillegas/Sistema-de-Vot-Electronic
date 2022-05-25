@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="is-flex is-justify-content-center mb-5">
-            <button class="button is-link" v-on:click="this.showModal('1', 0)">Candidates Create <i class="fa-solid fa-folder-plus ml-2"></i></button>
+            <button class="button is-black" v-on:click="this.showModal('1', 0)">Candidates Create <i class="fa-solid fa-folder-plus ml-2"></i></button>
         </div>
         <div class="table-container is-flex is-justify-content-center">
-            <table class="table is-narrow is-bordered is-striped is-hoverable">
-                <thead class="has-background-grey-lighter">
+            <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+                <thead class="has-text-centered has-background-grey-light">
                     <tr>
                         <th><abbr title="Color">#</abbr></th>
                         <th><abbr title="Name">Name</abbr></th>
@@ -16,15 +16,15 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="has-background-white-ter">
                     <tr v-for="(candidate, index) in this.candidates" :key="index">
-                        <td v-bind:style="'background-color: '+candidate.color+';'"></td>
-                        <td>{{ candidate.name }}</td>
-                        <td>{{ candidate.party }}</td>
-                        <td>{{ candidate.ideology }}</td>
-                        <td>{{ candidate.campaign }}</td>
-                        <td>{{ candidate.votes }}</td>
-                        <td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+candidate.color+';'"></td>
+                        <td class="has-text-centered">{{ candidate.name }}</td>
+                        <td class="has-text-centered">{{ candidate.party }}</td>
+                        <td class="has-text-centered">{{ candidate.ideology }}</td>
+                        <td class="has-text-centered">{{ candidate.campaign }}</td>
+                        <td class="has-text-centered">{{ candidate.votes }}</td>
+                        <td class="has-text-left">
                             <button class="button is-link" v-on:click="this.showModal('2', candidate.id)"><i class="fa-solid fa-pen-to-square"></i></button>
                             <button class="button is-danger ml-1" v-on:click="this.showModal('3', candidate.id)"><i class="fa-solid fa-trash-can"></i></button>
                             <button class="button is-light ml-2" v-on:click="this.setSumVotes(candidate.id)"><i class="fa-solid fa-plus"></i></button>

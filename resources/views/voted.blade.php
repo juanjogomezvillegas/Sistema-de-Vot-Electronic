@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        <section class="hero is-light is-fullheight">
+        <section class="hero is-white is-fullheight">
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title is-1 has-text-centered">I Voted <i class="fa-solid fa-thumbs-up has-text-link is-size-1 ml-2"></i></h1>
