@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="table-container is-flex is-justify-content-center">
-            <table class="table is-bordered is-striped is-narrow is-hoverable">
-                <thead class="has-background-grey-lighter">
+            <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+                <thead class="has-text-centered has-background-grey-light">
                     <tr>
                         <th><abbr title="Message Id">#</abbr></th>
                         <th><abbr title="Message Origin">Email</abbr></th>
@@ -10,12 +10,12 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="has-background-white-ter">
                     <tr v-for="(message, index) in this.messages" :key="index">
-                        <td>{{ message.id }}</td>
-                        <td><a v-bind:href="'mailto:'+message.email">{{ message.email }}</a></td>
-                        <td>{{ message.created_at }}</td>
-                        <td>
+                        <td class="has-text-centered">{{ message.id }}</td>
+                        <td class="has-text-centered"><a v-bind:href="'mailto:'+message.email">{{ message.email }}</a></td>
+                        <td class="has-text-centered">{{ message.created_at }}</td>
+                        <td class="has-text-left">
                             <button class="button is-link ml-1" v-on:click="this.showModal('1', message.id)"><i class="fa-solid fa-envelope-open-text"></i></button>
                             <button class="button is-danger ml-1" v-on:click="this.showModal('2', message.id)"><i class="fa-solid fa-trash-can"></i></button>
                         </td>

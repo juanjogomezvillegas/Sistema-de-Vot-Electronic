@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="is-flex is-justify-content-center mb-5">
-            <button class="button is-link" v-on:click="this.showModal('1', 0)">User Create <i class="fa-solid fa-folder-plus ml-2"></i></button>
+            <button class="button is-black" v-on:click="this.showModal('1', 0)">User Create <i class="fa-solid fa-folder-plus ml-2"></i></button>
         </div>
         <div class="table-container is-flex is-justify-content-center">
-            <table class="table is-bordered is-striped is-narrow is-hoverable">
-                <thead class="has-background-grey-lighter">
+            <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+                <thead class="has-text-centered has-background-grey-light">
                     <tr>
                         <th><abbr title="User Icon">#</abbr></th>
                         <th><abbr title="User Full Name">Full Name</abbr></th>
@@ -14,17 +14,17 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="has-background-white-ter">
                     <tr v-for="(user, index) in this.users" :key="index">
-                        <td>
+                        <td class="is-flex is-justify-content-center">
                             <figure class="image is-32x32">
                                 <img class="is-rounded" v-bind:src="user.icon" v-bind:alt="'avatar user '+user.id">
                             </figure>
                         </td>
-                        <td>{{ user.name }} {{ user.lastname }}</td>
-                        <td><a v-bind:href="'mailto:'+user.email">{{ user.email }}</a></td>
-                        <td>{{ user.role }}</td>
-                        <td>
+                        <td class="has-text-centered">{{ user.name }} {{ user.lastname }}</td>
+                        <td class="has-text-centered"><a v-bind:href="'mailto:'+user.email">{{ user.email }}</a></td>
+                        <td class="has-text-centered">{{ user.role }}</td>
+                        <td class="has-text-left">
                             <button class="button is-link" v-on:click="this.showModal('2', user.id)"><i class="fa-solid fa-pen-to-square"></i></button>
                             <button class="button is-danger ml-1" v-on:click="this.showModal('3', user.id)"><i class="fa-solid fa-trash-can"></i></button>
                         </td>

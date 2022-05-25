@@ -38,7 +38,7 @@
                     </span>
                 </div>
             </div>
-            <button type="submit" class="button is-fullwidth is-dark mt-5">Change Password <i class="fas fa-lock ml-2"></i></button>
+            <button type="submit" class="button is-fullwidth is-black mt-5">Change Password <i class="fas fa-lock ml-2"></i></button>
         </form>
     </div>
 @endsection

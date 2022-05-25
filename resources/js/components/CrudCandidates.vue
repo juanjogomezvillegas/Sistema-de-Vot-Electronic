@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="is-flex is-justify-content-center mb-5">
-            <button class="button is-link" v-on:click="this.showModal('1', 0)">Candidates Create <i class="fa-solid fa-folder-plus ml-2"></i></button>
+            <button class="button is-black" v-on:click="this.showModal('1', 0)">Candidates Create <i class="fa-solid fa-folder-plus ml-2"></i></button>
         </div>
         <div class="table-container is-flex is-justify-content-center">
-            <table class="table is-narrow is-bordered is-striped is-hoverable">
-                <thead class="has-background-grey-lighter">
+            <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+                <thead class="has-text-centered has-background-grey-light">
                     <tr>
                         <th><abbr title="Color">#</abbr></th>
                         <th><abbr title="Name">Name</abbr></th>
@@ -16,19 +16,19 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="has-background-white-ter">
                     <tr v-for="(candidate, index) in this.candidates" :key="index">
-                        <td v-bind:style="'background-color: '+candidate.color+';'"></td>
-                        <td>{{ candidate.name }}</td>
-                        <td>{{ candidate.party }}</td>
-                        <td>{{ candidate.ideology }}</td>
-                        <td>{{ candidate.campaign }}</td>
-                        <td>{{ candidate.votes }}</td>
+                        <td class="has-text-centered" v-bind:style="'background-color: '+candidate.color+';'"></td>
+                        <td class="has-text-centered">{{ candidate.name }}</td>
+                        <td class="has-text-centered">{{ candidate.party }}</td>
+                        <td class="has-text-centered">{{ candidate.ideology }}</td>
+                        <td class="has-text-centered">{{ candidate.campaign }}</td>
+                        <td>
+                            <input class="input is-dark has-text-centered" type="number" :value="candidate.votes" @change="changeVotes($event, candidate.id)">
+                        </td>
                         <td>
                             <button class="button is-link" v-on:click="this.showModal('2', candidate.id)"><i class="fa-solid fa-pen-to-square"></i></button>
                             <button class="button is-danger ml-1" v-on:click="this.showModal('3', candidate.id)"><i class="fa-solid fa-trash-can"></i></button>
-                            <button class="button is-light ml-2" v-on:click="this.setSumVotes(candidate.id)"><i class="fa-solid fa-plus"></i></button>
-                            <button class="button is-light ml-1" v-on:click="this.setSubstractVotes(candidate.id)"><i class="fa-solid fa-minus"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -97,15 +97,6 @@
                 </header>
                 <section class="modal-card-body">
                     <div class="field">
-                        <label class="label">Votes</label>
-                        <div class="control has-icons-left has-icons-right">
-                            <input class="input is-dark" type="number" v-model="this.arrayDataCandidate.votes">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-paper-plane"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="field">
                         <label class="label">Name</label>
                         <div class="control has-icons-left has-icons-right">
                             <input class="input is-dark" type="text" placeholder="name" v-model="this.arrayDataCandidate.name">
@@ -114,26 +105,22 @@
                             </span>
                         </div>
                     </div>
-                    <div class="field is-horizontal">
-                        <div class="field-body">
-                            <div class="field">
-                                <label class="label">Party</label>
-                                <div class="control has-icons-left has-icons-right">
-                                    <input class="input is-dark" type="text" placeholder="party" v-model="this.arrayDataCandidate.party">
-                                    <span class="icon is-small is-left">
-                                        <i class="fa-solid fa-handshake"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label class="label">Ideology</label>
-                                <div class="control has-icons-left has-icons-right">
-                                    <input class="input is-dark" type="text" placeholder="ideology" v-model="this.arrayDataCandidate.ideology">
-                                    <span class="icon is-small is-left">
-                                        <i class="fa-solid fa-lightbulb"></i>
-                                    </span>
-                                </div>
-                            </div>
+                    <div class="field">
+                        <label class="label">Party</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-dark" type="text" placeholder="party" v-model="this.arrayDataCandidate.party">
+                            <span class="icon is-small is-left">
+                                <i class="fa-solid fa-handshake"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Ideology</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input is-dark" type="text" placeholder="ideology" v-model="this.arrayDataCandidate.ideology">
+                            <span class="icon is-small is-left">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </span>
                         </div>
                     </div>
                     <div class="field">
@@ -198,6 +185,19 @@
             this.listCandidates();
         },
         methods: {
+            changeVotes(event, id) {
+                if (event.target.value != '') {
+                    axios.put('/update-votes/'+id, {
+                        'votes': event.target.value,
+                    })
+                    .then((response) => {
+                        this.listCandidates();
+                    })
+                    .catch((error) => {
+                        //
+                    });
+                }
+            },
             listCandidates() {
                 axios.get('/candidates/all')
                 .then((response) => {
@@ -278,24 +278,6 @@
                         //
                     });
                 }
-            },
-            setSumVotes(id) {
-                axios.put('/sum-votes/'+id)
-                .then((response) => {
-                    this.listCandidates();
-                })
-                .catch((error) => {
-                    //
-                });
-            },
-            setSubstractVotes(id) {
-                axios.put('/substract-votes/'+id)
-                .then((response) => {
-                    this.listCandidates();
-                })
-                .catch((error) => {
-                    //
-                });
             }
         }
     }

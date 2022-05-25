@@ -21,8 +21,8 @@
             </div>
         </nav>
         <div class="table-container is-flex is-justify-content-center">
-            <table class="table is-narrow is-bordered is-striped is-hoverable">
-                <thead class="has-background-grey-lighter">
+            <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+                <thead class="has-text-centered has-background-grey-light">
                     <tr>
                         <th><abbr title="Color">#</abbr></th>
                         <th><abbr title="Name">Name</abbr></th>
@@ -31,14 +31,14 @@
                         <th><abbr title="Position">Position</abbr></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="has-text-centered has-background-white-ter">
                     <tr v-for="(candidate, index) in this.candidates" :key="index">
                         <td v-bind:style="'background-color: '+candidate.color+';'"></td>
                         <td>{{ candidate.name }}</td>
                         <td>{{ candidate.party }}</td>
                         <td>{{ candidate.seats }}</td>
                         <td>
-                            <div class="select">
+                            <div class="select is-dark is-fullwidth">
                                 <select v-model="candidate.position" v-on:change="this.updatePosition(candidate.id, candidate.position)">
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>

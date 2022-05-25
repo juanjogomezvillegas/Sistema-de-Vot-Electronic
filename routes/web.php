@@ -146,10 +146,7 @@ Route::get('/results', [CandidateController::class, 'results'])
 Route::delete('/restart-votes', [CandidateController::class, 'restartVotes'])
     ->middleware(['auth', 'authManager']);
 
-Route::put('/sum-votes/{candidate}', [CandidateController::class, 'sumVotes'])
-    ->middleware(['auth', 'authManager']);
-
-Route::put('/substract-votes/{candidate}', [CandidateController::class, 'substractVotes'])
+Route::put('/update-votes/{candidate}', [CandidateController::class, 'updateVotes'])
     ->middleware(['auth', 'authManager']);
 
 // Pactometer Page
