@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero is-link is-medium has-text-centered">
+    <section class="pt-6 hero is-link is-medium has-text-centered">
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-centered">

@@ -1,5 +1,5 @@
 <template>
-    <div class="container p-6" id="contactHome">
+    <div class="container" id="contactHome">
         <h1 class="title has-text-centered">Contact</h1>
         <article id="messageSendMessage" class="message is-success is-hidden">
             <div class="message-body">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="button is-fullwidth is-dark mt-5" v-on:click="sendMessage">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
+        <button type="submit" class="button is-fullwidth is-black mt-5" v-on:click="sendMessage">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
     </div>
 </template>
 
