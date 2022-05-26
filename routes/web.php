@@ -50,11 +50,12 @@ Route::get('/contact', [MessageController::class, 'contact'])
     ->middleware(['apli']);
 
 // Vote
-Route::post('/vote/{candidate}', [CandidateController::class, 'votes']);
+Route::post('/vote/{candidate}', [CandidateController::class, 'votes'])
+    ->middleware('allowElection');
 
 Route::get('/voted', [CandidateController::class, 'voted'])
     ->name('voted')
-    ->middleware(['apli']);
+    ->middleware(['apli', 'allowElection']);
 
 // Your Role
 Route::get('/your-role', [UserController::class, 'yourRole'])
@@ -138,33 +139,33 @@ Route::get('/candidate/{candidate}', [CandidateController::class, 'candidate'])
 Route::get('/candidates-seats', [CandidateController::class, 'candidatesSeats'])
     ->middleware(['auth', 'authManager']);
 
+Route::put('/update-votes/{candidate}', [CandidateController::class, 'updateVotes'])
+    ->middleware(['auth', 'authManager']);
+
 // Results Page
 Route::get('/results', [CandidateController::class, 'results'])
     ->name('results', 'authUser')
-    ->middleware(['apli', 'auth']);
+    ->middleware(['apli', 'auth', 'allowResult']);
 
 Route::delete('/restart-votes', [CandidateController::class, 'restartVotes'])
-    ->middleware(['auth', 'authManager']);
-
-Route::put('/update-votes/{candidate}', [CandidateController::class, 'updateVotes'])
-    ->middleware(['auth', 'authManager']);
+    ->middleware(['auth', 'authManager', 'allowResult']);
 
 // Pactometer Page
 Route::get('/pactometer', [CandidateController::class, 'pactometer'])
     ->name('pactometer')
-    ->middleware(['apli', 'auth', 'authUser']);
+    ->middleware(['apli', 'auth', 'authUser', 'allowPactometer']);
 
 Route::put('/candidate/position/{candidate}', [CandidateController::class, 'updatePosition'])
-    ->middleware(['auth', 'authUser']);
+    ->middleware(['auth', 'authUser', 'allowPactometer']);
 
 Route::get('/votes-yes', [CandidateController::class, 'votesYes'])
-    ->middleware(['auth', 'authUser']);
+    ->middleware(['auth', 'authUser', 'allowPactometer']);
 
 Route::get('/votes-no', [CandidateController::class, 'votesNo'])
-    ->middleware(['auth', 'authUser']);
+    ->middleware(['auth', 'authUser', 'allowPactometer']);
 
 Route::get('/votes-abstention', [CandidateController::class, 'votesAbstention'])
-    ->middleware(['auth', 'authUser']);
+    ->middleware(['auth', 'authUser', 'allowPactometer']);
 
 // Crud Message
 Route::get('/messages', [MessageController::class, 'show'])
@@ -185,25 +186,25 @@ Route::get('/message/{message}', [MessageController::class, 'message'])
 // Crud Legislatures
 Route::get('/legislatures', [LegislatureController::class, 'show'])
     ->name('legislatures')
-    ->middleware(['apli', 'auth', 'authSupervisor']);
+    ->middleware(['apli', 'auth', 'authSupervisor', 'allowLegislatures']);
 
 Route::post('/legislatures/create', [LegislatureController::class, 'create'])
-    ->middleware(['auth', 'authManager']);
+    ->middleware(['auth', 'authManager', 'allowLegislatures']);
 
 Route::put('/legislatures/{legislature}', [LegislatureController::class, 'update'])
-    ->middleware(['auth', 'authManager']);
+    ->middleware(['auth', 'authManager', 'allowLegislatures']);
 
 Route::delete('/legislatures/{legislature}', [LegislatureController::class, 'destroy'])
-    ->middleware(['auth', 'authManager']);
+    ->middleware(['auth', 'authManager', 'allowLegislatures']);
 
 Route::get('/legislatures/all', [LegislatureController::class, 'legislatures'])
-    ->middleware(['auth', 'authSupervisor']);
+    ->middleware(['auth', 'authSupervisor', 'allowLegislatures']);
 
 Route::get('/legislature/last', [LegislatureController::class, 'lastLegislature'])
-    ->middleware(['auth', 'authSupervisor']);
+    ->middleware(['auth', 'authSupervisor', 'allowLegislatures']);
 
 Route::get('/legislature/{legislature}', [LegislatureController::class, 'legislature'])
-    ->middleware(['auth', 'authSupervisor']);
+    ->middleware(['auth', 'authSupervisor', 'allowLegislatures']);
 
 // Users Management
 require __DIR__.'/auth.php';

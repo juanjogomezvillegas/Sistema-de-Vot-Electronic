@@ -25,11 +25,9 @@ class ConfigurationController extends Controller
      * **/
     public function show()
     {
-        $allowElection = Configuration::first()->allowElection;
         $countries = Country::get();
 
         return view('configuration', [
-            'allowElection' => $allowElection,
             'countries' => $countries,
         ]);
     }
@@ -54,11 +52,29 @@ class ConfigurationController extends Controller
         } else {
             $validated['allowElection'] = false;
         }
+        if ($request->allowResult) {
+            $validated['allowResult'] = true;
+        } else {
+            $validated['allowResult'] = false;
+        }
+        if ($request->allowPactometer) {
+            $validated['allowPactometer'] = true;
+        } else {
+            $validated['allowPactometer'] = false;
+        }
+        if ($request->allowLegislatures) {
+            $validated['allowLegislatures'] = true;
+        } else {
+            $validated['allowLegislatures'] = false;
+        }
 
         $configuration->title = $validated['title'];
         $configuration->seats = $validated['seats'];
         $configuration->logo = $validated['countries'];
         $configuration->allowElection = $validated['allowElection'];
+        $configuration->allowResult = $validated['allowResult'];
+        $configuration->allowPactometer = $validated['allowPactometer'];
+        $configuration->allowLegislatures = $validated['allowLegislatures'];
         $configuration->save();
 
         $request->session()->forget('config');

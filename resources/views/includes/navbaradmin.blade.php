@@ -16,12 +16,16 @@
         <a href="{{ route('home') }}" class="navbar-item">
             <i class="fa-solid fa-globe mr-2"></i> Web
         </a>
-        <a href="{{ route('results') }}" class="navbar-item">
-            <i class="fa-solid fa-square-poll-vertical mr-2"></i> Results
-        </a>
-        <a href="{{ route('pactometer') }}" class="navbar-item">
-            <i class="fa-solid fa-handshake mr-2"></i> Pactometer
-        </a>
+        @if(session('config')['allowResult'])
+            <a href="{{ route('results') }}" class="navbar-item">
+                <i class="fa-solid fa-square-poll-vertical mr-2"></i> Results
+            </a>
+        @endif
+        @if(session('config')['allowPactometer'])
+            <a href="{{ route('pactometer') }}" class="navbar-item">
+                <i class="fa-solid fa-handshake mr-2"></i> Pactometer
+            </a>
+        @endif
         @if(Auth::user()->role == 'administrator' || Auth::user()->role == 'manager')
             <a href="{{ route('candidates') }}" class="navbar-item">
                 <i class="fa-solid fa-person-booth mr-2"></i> Candidates Management
@@ -32,7 +36,7 @@
                 <i class="fa-solid fa-user-group mr-2"></i> Users Management
             </a>
         @endif
-        @if(Auth::user()->role == 'administrator' || Auth::user()->role == 'manager' || Auth::user()->role == 'supervisor')
+        @if((Auth::user()->role == 'administrator' || Auth::user()->role == 'manager' || Auth::user()->role == 'supervisor') && (session('config')['allowLegislatures']))
             <a href="{{ route('legislatures') }}" class="navbar-item">
                 <i class="fa-solid fa-landmark mr-2"></i> Legislatures
             </a>

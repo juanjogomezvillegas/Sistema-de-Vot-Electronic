@@ -2,10 +2,6 @@
     <div>
         <div class="is-flex is-justify-content-center mb-5" v-if="this.yourrole == 'administrator' || this.yourrole == 'manager'">
             <button class="button is-black" v-if="this.countCandidates > 0" v-on:click="this.showModal">Restart Votes <i class="fa-solid fa-rotate-right ml-2"></i></button>
-            <button class="button is-black ml-2" v-on:click="this.pactometer">Pactometer <i class="fa-solid fa-handshake ml-2"></i></button>
-        </div>
-        <div class="is-flex is-justify-content-center mb-5" v-else>
-            <button class="button is-black ml-2" v-on:click="this.pactometer">Pactometer <i class="fa-solid fa-handshake ml-2"></i></button>
         </div>
         <div class="table-container is-flex is-justify-content-center">
             <table class="table is-striped is-narrow is-hoverable is-fullwidth">

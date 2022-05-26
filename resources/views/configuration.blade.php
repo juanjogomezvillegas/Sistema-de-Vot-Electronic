@@ -47,10 +47,55 @@
                     </div>
                     <div class="field-body">
                         <label class="switch">
-                            @if($allowElection)
+                            @if(session('config')['allowElection'])
                                 <input type="checkbox" name="allowElection" id="allowElection" checked>
                             @else
                                 <input type="checkbox" name="allowElection" id="allowElection">
+                            @endif
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field is-horizontal mt-5">
+                    <div class="field-label is-normal">
+                        <label for="allowResult" class="label has-text-light">Results</label>
+                    </div>
+                    <div class="field-body">
+                        <label class="switch">
+                            @if(session('config')['allowResult'])
+                                <input type="checkbox" name="allowResult" id="allowResult" checked>
+                            @else
+                                <input type="checkbox" name="allowResult" id="allowResult">
+                            @endif
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field is-horizontal mt-5">
+                    <div class="field-label is-normal">
+                        <label for="allowPactometer" class="label has-text-light">Pactometer</label>
+                    </div>
+                    <div class="field-body">
+                        <label class="switch">
+                            @if(session('config')['allowPactometer'])
+                                <input type="checkbox" name="allowPactometer" id="allowPactometer" checked>
+                            @else
+                                <input type="checkbox" name="allowPactometer" id="allowPactometer">
+                            @endif
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field is-horizontal mt-5">
+                    <div class="field-label is-normal">
+                        <label for="allowLegislatures" class="label has-text-light">Legislatures</label>
+                    </div>
+                    <div class="field-body">
+                        <label class="switch">
+                            @if(session('config')['allowLegislatures'])
+                                <input type="checkbox" name="allowLegislatures" id="allowLegislatures" checked>
+                            @else
+                                <input type="checkbox" name="allowLegislatures" id="allowLegislatures">
                             @endif
                             <span class="slider round"></span>
                         </label>
