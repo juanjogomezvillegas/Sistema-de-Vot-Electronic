@@ -11,29 +11,25 @@ class ConfigurationController extends Controller
     /**
      * Returns number of seats
      *
-     * @return Integer
+     * @return Int
      * **/
     public function countSeats()
     {
-        return Configuration::get('seats')->first()->seats;
+        return Configuration::first()->seats;
     }
 
     /**
      * Returns view configuration
      *
-     * @param Request $request request param received
      * @return Response|ResponseFactory
      * **/
-    public function show(Request $request)
+    public function show()
     {
-        $config = Configuration::get()->first();
+        $allowElection = Configuration::first()->allowElection;
         $countries = Country::get();
 
-        if (!$request->session()->exists('config')) {
-            $request->session()->put('config', $config);
-        }
-
         return view('configuration', [
+            'allowElection' => $allowElection,
             'countries' => $countries,
         ]);
     }
@@ -53,9 +49,16 @@ class ConfigurationController extends Controller
             'countries' => ['required', 'string', 'max:255'],
         ]);
 
+        if ($request->allowElection) {
+            $validated['allowElection'] = true;
+        } else {
+            $validated['allowElection'] = false;
+        }
+
         $configuration->title = $validated['title'];
         $configuration->seats = $validated['seats'];
         $configuration->logo = $validated['countries'];
+        $configuration->allowElection = $validated['allowElection'];
         $configuration->save();
 
         $request->session()->forget('config');

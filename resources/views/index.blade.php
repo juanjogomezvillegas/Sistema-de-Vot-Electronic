@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if(Auth::check())
+    @if(Auth::check() && $allowElection)
         <div class="mt-6 p-6">
             <div class="container is-fluid">
                 @if($candidates->count() > 0)

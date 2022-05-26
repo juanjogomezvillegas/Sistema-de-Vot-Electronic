@@ -17,7 +17,14 @@ class Apli
      */
     public function handle(Request $request, Closure $next)
     {
-        $config = Configuration::get()->first();
+        $configdb = Configuration::first();
+
+        $config = [
+            'id' => $configdb['id'],
+            'title' => $configdb['title'],
+            'logo' => $configdb['logo'],
+            'seats' => $configdb['seats'],
+        ];
 
         if (!$request->session()->exists('config')) {
             $request->session()->put('config', $config);

@@ -2,12 +2,12 @@
     <div>
         <div class="table-container is-flex is-justify-content-center">
             <table class="table is-striped is-narrow is-hoverable is-fullwidth">
-                <thead class="has-text-centered has-background-grey-light">
+                <thead class="has-background-grey-light">
                     <tr>
-                        <th><abbr title="Message Id">#</abbr></th>
-                        <th><abbr title="Message Origin">Email</abbr></th>
-                        <th><abbr title="Message Send Date">Send Date</abbr></th>
-                        <th>Actions</th>
+                        <th class="has-text-centered"><abbr title="Message Id">#</abbr></th>
+                        <th class="has-text-centered"><abbr title="Message Origin">Email</abbr></th>
+                        <th class="has-text-centered"><abbr title="Message Send Date">Send Date</abbr></th>
+                        <th class="has-text-centered">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="has-background-white-ter">

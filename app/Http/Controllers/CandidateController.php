@@ -17,7 +17,7 @@ class CandidateController extends Controller
 
         foreach ($candidates as $item) {
             if ($item->votes > 0) {
-                $item->seats = round(($item->votes / Candidate::sum('votes')) * Configuration::first()->seats);
+                $item->seats = round(($item->votes / $this->countVotes()) * Configuration::first()->seats);
                 $item->save();
             }
         }
@@ -26,17 +26,17 @@ class CandidateController extends Controller
     /**
      * Returns count votes candidates
      *
-     * @return Integer
+     * @return Int
      * **/
     public function countVotes()
     {
-        return Candidate::get()->sum('votes');
+        return Candidate::sum('votes');
     }
 
     /**
      * Returns count candidates
      *
-     * @return Integer
+     * @return Int
      * **/
     public function countCandidates()
     {
@@ -122,7 +122,6 @@ class CandidateController extends Controller
             'ideology' => ['required', 'string', 'max:255'],
             'campaign' => ['required'],
             'color' => ['required', 'string', 'max:255'],
-            'votes' => ['required', 'integer'],
         ]);
 
         $candidate->name = $validated['name'];
@@ -130,10 +129,7 @@ class CandidateController extends Controller
         $candidate->ideology = $validated['ideology'];
         $candidate->campaign = $validated['campaign'];
         $candidate->color = $validated['color'];
-        $candidate->votes = $validated['votes'];
         $candidate->save();
-
-        $this->calculateSeats();
     }
 
     /**
@@ -243,7 +239,7 @@ class CandidateController extends Controller
     /**
      * Returns count seats yes
      *
-     * @return Integer
+     * @return Int
      * **/
     public function votesYes()
     {
@@ -253,7 +249,7 @@ class CandidateController extends Controller
     /**
      * Returns count seats no
      *
-     * @return Integer
+     * @return Int
      * **/
     public function votesNo()
     {
@@ -263,7 +259,7 @@ class CandidateController extends Controller
     /**
      * Returns count seats abstention
      *
-     * @return Integer
+     * @return Int
      * **/
     public function votesAbstention()
     {

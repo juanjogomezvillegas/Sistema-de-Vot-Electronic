@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Configuration;
 use App\Models\Candidate;
 
 class HomeController extends Controller
@@ -14,7 +15,10 @@ class HomeController extends Controller
      * **/
     public function index()
     {
+        $allowElection = Configuration::first()->allowElection;
+
         return view('index', [
+            'allowElection' => $allowElection,
             'candidates' => Candidate::orderBy('votes', 'DESC')->orderBy('seats', 'DESC')->get(),
         ]);
     }

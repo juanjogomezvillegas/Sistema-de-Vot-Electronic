@@ -35,7 +35,7 @@ class LegislatureController extends Controller
      * **/
     public function lastLegislature()
     {
-        if (Legislature::orderBy('begin', 'DESC')->count() == 0) {
+        if (Legislature::count() == 0) {
             $object = [
                 'number' => '',
                 'election' => '',

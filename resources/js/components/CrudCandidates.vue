@@ -5,15 +5,15 @@
         </div>
         <div class="table-container is-flex is-justify-content-center">
             <table class="table is-striped is-narrow is-hoverable is-fullwidth">
-                <thead class="has-text-centered has-background-grey-light">
+                <thead class="has-background-grey-light">
                     <tr>
-                        <th><abbr title="Color">#</abbr></th>
-                        <th><abbr title="Name">Name</abbr></th>
-                        <th><abbr title="Party">Party</abbr></th>
-                        <th><abbr title="Ideology">Ideology</abbr></th>
-                        <th><abbr title="Campaign">Campaign</abbr></th>
-                        <th><abbr title="Votes">Votes</abbr></th>
-                        <th>Actions</th>
+                        <th class="has-text-centered"><abbr title="Color">#</abbr></th>
+                        <th class="has-text-centered"><abbr title="Name">Name</abbr></th>
+                        <th class="has-text-centered"><abbr title="Party">Party</abbr></th>
+                        <th class="has-text-centered"><abbr title="Ideology">Ideology</abbr></th>
+                        <th class="has-text-centered"><abbr title="Campaign">Campaign</abbr></th>
+                        <th class="has-text-centered"><abbr title="Votes">Votes</abbr></th>
+                        <th class="has-text-centered">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="has-background-white-ter">

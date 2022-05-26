@@ -7,6 +7,9 @@
             @csrf
 
             <div class="is-flex is-flex-direction-column is-justify-content-center">
+                <div class="mb-6">
+                    <button class="button is-fullwidth is-black">Save Changes <i class="fa-solid fa-floppy-disk ml-2"></i></button>
+                </div>
                 <div class="field mt-2">
                     <div class="control">
                         <div class="select is-fullwidth is-dark">
@@ -38,8 +41,20 @@
                         </span>
                     </div>
                 </div>
-                <div class="mt-6">
-                    <button class="button is-fullwidth is-black">Save Changes <i class="fa-solid fa-floppy-disk ml-2"></i></button>
+                <div class="field is-horizontal mt-5">
+                    <div class="field-label is-normal">
+                        <label for="allowElection" class="label has-text-light">Elections</label>
+                    </div>
+                    <div class="field-body">
+                        <label class="switch">
+                            @if($allowElection)
+                                <input type="checkbox" name="allowElection" id="allowElection" checked>
+                            @else
+                                <input type="checkbox" name="allowElection" id="allowElection">
+                            @endif
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </form>

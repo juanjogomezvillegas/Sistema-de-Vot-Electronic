@@ -10,7 +10,7 @@ class MessageController extends Controller
     /**
      * Returns count messages
      *
-     * @return Integer
+     * @return Int
      * **/
     public function countMessages()
     {
