@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use App\Models\Configuration;
 
-class Apli
+class AllowResult
 {
     /**
      * Handle an incoming request.
@@ -17,14 +17,12 @@ class Apli
      */
     public function handle(Request $request, Closure $next)
     {
-        $config = Configuration::first();
+        $allowResult = Configuration::first()->allowResult;
 
-        $request->session()->forget('config');
-
-        if (!$request->session()->exists('config')) {
-            $request->session()->put('config', $config);
+        if (!$allowResult) {
+            return redirect('/dashboard');
+        } else {
+            return $next($request);
         }
-
-        return $next($request);
     }
 }

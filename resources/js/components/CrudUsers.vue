@@ -5,13 +5,13 @@
         </div>
         <div class="table-container is-flex is-justify-content-center">
             <table class="table is-striped is-narrow is-hoverable is-fullwidth">
-                <thead class="has-text-centered has-background-grey-light">
+                <thead class="has-background-grey-light">
                     <tr>
-                        <th><abbr title="User Icon">#</abbr></th>
-                        <th><abbr title="User Full Name">Full Name</abbr></th>
-                        <th><abbr title="User Email">Email</abbr></th>
-                        <th><abbr title="User Role">Role</abbr></th>
-                        <th>Actions</th>
+                        <th class="has-text-centered"><abbr title="User Icon">#</abbr></th>
+                        <th class="has-text-centered"><abbr title="User Full Name">Full Name</abbr></th>
+                        <th class="has-text-centered"><abbr title="User Email">Email</abbr></th>
+                        <th class="has-text-centered"><abbr title="User Role">Role</abbr></th>
+                        <th class="has-text-centered">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="has-background-white-ter">

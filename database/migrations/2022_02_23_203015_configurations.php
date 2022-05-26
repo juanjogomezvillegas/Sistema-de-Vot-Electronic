@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('title')->default('Electronic Voting System');
             $table->string('logo')->default('img/apli/EuropeanUnion.png');
             $table->integer('seats')->default(100);
+            $table->boolean('allowElection')->default(false);
+            $table->boolean('allowResult')->default(true);
+            $table->boolean('allowPactometer')->default(true);
+            $table->boolean('allowLegislatures')->default(true);
             $table->timestamps();
         });
 

@@ -11,27 +11,21 @@ class ConfigurationController extends Controller
     /**
      * Returns number of seats
      *
-     * @return Integer
+     * @return Int
      * **/
     public function countSeats()
     {
-        return Configuration::get('seats')->first()->seats;
+        return Configuration::first()->seats;
     }
 
     /**
      * Returns view configuration
      *
-     * @param Request $request request param received
      * @return Response|ResponseFactory
      * **/
-    public function show(Request $request)
+    public function show()
     {
-        $config = Configuration::get()->first();
         $countries = Country::get();
-
-        if (!$request->session()->exists('config')) {
-            $request->session()->put('config', $config);
-        }
 
         return view('configuration', [
             'countries' => $countries,
@@ -53,9 +47,34 @@ class ConfigurationController extends Controller
             'countries' => ['required', 'string', 'max:255'],
         ]);
 
+        if ($request->allowElection) {
+            $validated['allowElection'] = true;
+        } else {
+            $validated['allowElection'] = false;
+        }
+        if ($request->allowResult) {
+            $validated['allowResult'] = true;
+        } else {
+            $validated['allowResult'] = false;
+        }
+        if ($request->allowPactometer) {
+            $validated['allowPactometer'] = true;
+        } else {
+            $validated['allowPactometer'] = false;
+        }
+        if ($request->allowLegislatures) {
+            $validated['allowLegislatures'] = true;
+        } else {
+            $validated['allowLegislatures'] = false;
+        }
+
         $configuration->title = $validated['title'];
         $configuration->seats = $validated['seats'];
         $configuration->logo = $validated['countries'];
+        $configuration->allowElection = $validated['allowElection'];
+        $configuration->allowResult = $validated['allowResult'];
+        $configuration->allowPactometer = $validated['allowPactometer'];
+        $configuration->allowLegislatures = $validated['allowLegislatures'];
         $configuration->save();
 
         $request->session()->forget('config');

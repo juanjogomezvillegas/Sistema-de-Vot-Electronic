@@ -12,7 +12,7 @@ class UserController extends Controller
     /**
      * Returns count users
      *
-     * @return Integer
+     * @return Int
      * **/
     public function countUsers()
     {

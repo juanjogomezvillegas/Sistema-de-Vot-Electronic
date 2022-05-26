@@ -5,18 +5,18 @@
         </div>
         <div class="table-container is-flex is-justify-content-center">
             <table class="table is-striped is-narrow is-hoverable is-fullwidth">
-                <thead class="has-text-centered has-background-grey-light">
+                <thead class="has-background-grey-light">
                     <tr>
-                        <th><abbr title="Number of legilature">#</abbr></th>
-                        <th><abbr title="Election">Election</abbr></th>
-                        <th><abbr title="Begin of legilature">Begin</abbr></th>
-                        <th><abbr title="End of legilature">End</abbr></th>
-                        <th><abbr title="President">President</abbr></th>
-                        <th><abbr title="Party">Party</abbr></th>
-                        <th><abbr title="Government">Government</abbr></th>
-                        <th><abbr title="Vicepresident">Vicepresident</abbr></th>
-                        <th><abbr title="Head of State">Head of State</abbr></th>
-                        <th v-if="this.yourrole == 'administrator' || this.yourrole == 'manager'">Actions</th>
+                        <th class="has-text-centered"><abbr title="Number of legilature">#</abbr></th>
+                        <th class="has-text-centered"><abbr title="Election">Election</abbr></th>
+                        <th class="has-text-centered"><abbr title="Begin of legilature">Begin</abbr></th>
+                        <th class="has-text-centered"><abbr title="End of legilature">End</abbr></th>
+                        <th class="has-text-centered"><abbr title="President">President</abbr></th>
+                        <th class="has-text-centered"><abbr title="Party">Party</abbr></th>
+                        <th class="has-text-centered"><abbr title="Government">Government</abbr></th>
+                        <th class="has-text-centered"><abbr title="Vicepresident">Vicepresident</abbr></th>
+                        <th class="has-text-centered"><abbr title="Head of State">Head of State</abbr></th>
+                        <th class="has-text-centered" v-if="this.yourrole == 'administrator' || this.yourrole == 'manager'">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
