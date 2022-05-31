@@ -63,7 +63,18 @@
                     <div class="field">
                         <label class="label">Ideology</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input class="input is-dark" type="text" placeholder="ideology" v-model="this.arrayCreateCandidate.ideology">
+                            <div class="select is-dark is-fullwidth">
+                                <select v-model="this.arrayCreateCandidate.ideology">
+                                    <option value="">Select to one Option</option>
+                                    <option value="Far Right">Far Right</option>
+                                    <option value="Right">Right</option>
+                                    <option value="Centre Right">Centre Right</option>
+                                    <option value="Centre">Centre</option>
+                                    <option value="Centre Left">Centre Left</option>
+                                    <option value="Left">Left</option>
+                                    <option value="Far Left">Far Left</option>
+                                </select>
+                            </div>
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-lightbulb"></i>
                             </span>
@@ -117,7 +128,18 @@
                     <div class="field">
                         <label class="label">Ideology</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input class="input is-dark" type="text" placeholder="ideology" v-model="this.arrayDataCandidate.ideology">
+                            <div class="select is-dark is-fullwidth">
+                                <select v-model="this.arrayDataCandidate.ideology">
+                                    <option value="">Select to one Option</option>
+                                    <option value="Far Right">Far Right</option>
+                                    <option value="Right">Right</option>
+                                    <option value="Centre Right">Centre Right</option>
+                                    <option value="Centre">Centre</option>
+                                    <option value="Centre Left">Centre Left</option>
+                                    <option value="Left">Left</option>
+                                    <option value="Far Left">Far Left</option>
+                                </select>
+                            </div>
                             <span class="icon is-small is-left">
                                 <i class="fa-solid fa-lightbulb"></i>
                             </span>
