@@ -149,6 +149,7 @@
                         }]
                     },
                     options: {
+                        indexAxis: 'y',
                         responsive: true,
                         scales: {
                             y: {
