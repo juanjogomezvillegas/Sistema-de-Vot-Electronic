@@ -3,8 +3,10 @@
 <html lang="ca" class="has-background-black">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Is a administrator panel of the web Election.daw electronic voting system">
+        <meta name="keywords" content="election election.daw admin">
         <meta name="author" content="Juan José Gómez Villegas">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="icon" href="{{ session('config')['logo'] }}">
         <title>{{ session('config')['title'] }}</title>

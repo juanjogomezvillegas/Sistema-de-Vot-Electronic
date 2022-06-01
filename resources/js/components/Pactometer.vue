@@ -50,8 +50,8 @@
                 </tbody>
             </table>
         </div>
-        <div class="columns is-centered">
-            <div class="chart-container column is-8">
+        <div class="mt-3 columns is-centered">
+            <div class="chart-container column is-10">
                 <canvas id="myChart"></canvas>
             </div>
         </div>
@@ -139,7 +139,7 @@
 
                 const ctx = document.getElementById('myChart').getContext('2d');
                 const myChart = new Chart(ctx, {
-                    type: 'doughnut',
+                    type: 'bar',
                     data: {
                         labels: arraylabels,
                         datasets: [{
@@ -149,17 +149,20 @@
                         }]
                     },
                     options: {
+                        indexAxis: 'y',
                         responsive: true,
-                        circumference: 180,
-                        rotation: -90,
+                        scales: {
+                            y: {
+                                beginAtZero: 0,
+                            }
+                        },
                         layout: {
                             autoPadding: false,
                             padding: 0
                         },
                         plugins: {
                             legend: {
-                                display: true,
-                                position: 'right'
+                                display: false
                             }
                         }
                     }
