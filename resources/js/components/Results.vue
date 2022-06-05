@@ -34,6 +34,11 @@
                 </tfoot>
             </table>
         </div>
+        <div class="mt-3 columns is-centered">
+            <div class="chart-container column is-10">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
         <div class="modal" id="modalrestartvotes">
             <div class="modal-background" v-on:click="this.hideModal"></div>
             <div class="modal-card">
@@ -79,6 +84,7 @@
                 axios.get('/candidates/all')
                 .then((response) => {
                     this.candidates = response.data;
+                    this.chartjs();
                 })
                 .catch((error) => {
                     //
@@ -139,6 +145,48 @@
                 })
                 .catch(error => {
                     //console.log(error);
+                });
+            },
+            chartjs() {
+                let arraylabels = new Array();
+                let arraydates = new Array();
+                let arraycolors = new Array();
+
+                for (let i = 0; i < this.candidates.length; i++) {
+                    arraylabels.push(this.candidates[i].name);
+                    arraydates.push(this.candidates[i].seats);
+                    arraycolors.push(this.candidates[i].color);
+                }
+
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: arraylabels,
+                        datasets: [{
+                            data: arraydates,
+                            backgroundColor: arraycolors,
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: 0,
+                            }
+                        },
+                        layout: {
+                            autoPadding: false,
+                            padding: 0
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
                 });
             }
         }
