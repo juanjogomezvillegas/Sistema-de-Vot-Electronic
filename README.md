@@ -1,8 +1,10 @@
 # Sistema-de-Vot-Electronic-Laravel
 
-## Author
+## Author and License
 
-- Juan José Gómez Villegas
+![GPL-3.0 License](https://github.com/juanjogomezvillegas/Sistema-de-Vot-Electronic/blob/main/LICENSE)
+
+Copyright (c) 2022,2025 Juan José Gómez Villegas
 
 ## Deployment of Application
 
@@ -55,9 +57,3 @@ And to access the application, in your browser we access the address ({SERVER_IP
 {SERVER_IP} => The IP address of your Server.
 
 ![imatge](https://user-images.githubusercontent.com/83291394/170352142-0b91c481-f8d6-41cf-8abd-df00580f5106.png)
-
-# License
-
-![MIT License](https://github.com/juanjogomezvillegas/Sistema-de-Vot-Electronic/blob/main/LICENSE)
-
-Copyright (c) 2022 Juan José Gómez Villegas
